@@ -1,0 +1,22 @@
+{
+  "checkpoint": {
+    "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+    "sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177"
+  },
+  "config": {
+    "path": "projects/configs/bevformer_ablation/temporal_off.py",
+    "sha256": "92f96328932a08c215ea034f9f0d7f46d10b7f87e838bad6eff9735a792a583d"
+  },
+  "exit_code": 0,
+  "experiment": "temporal_off",
+  "finished_at_utc": "2026-08-12T03:58:53Z",
+  "metrics_path": "test/temporal_off/Wed_Aug_12_11_55_06_2026/pts_bbox/metrics_summary.json",
+  "process_exit": {
+    "tee": 0,
+    "test": 0
+  },
+  "reason": "new complete metrics selected",
+  "schema_version": 1,
+  "started_at_utc": "2026-08-12T03:33:57Z",
+  "status": "SUCCESS"
+}

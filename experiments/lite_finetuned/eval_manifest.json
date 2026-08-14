@@ -1,0 +1,22 @@
+{
+  "checkpoint": {
+    "path": "work_dirs/bev150_finetune_2ep/epoch_2.pth",
+    "sha256": "268a83dbd256bc993e3eb8538a7b98c316b884bec8ea60919cf90ca82aac8e11"
+  },
+  "config": {
+    "path": "projects/configs/bevformer_ablation/bev150_finetune.py",
+    "sha256": "ae9a56a4ad241a2124c47c0e32255b194e7bffa71657494b80f3435597ef15fc"
+  },
+  "exit_code": 0,
+  "experiment": "bev150_finetune",
+  "finished_at_utc": "2026-08-13T20:47:03Z",
+  "metrics_path": "test/bev150_finetune/Fri_Aug_14_04_43_21_2026/pts_bbox/metrics_summary.json",
+  "process_exit": {
+    "tee": 0,
+    "test": 0
+  },
+  "reason": "new complete fine-tuned metrics selected",
+  "schema_version": 1,
+  "started_at_utc": "2026-08-13T20:23:50Z",
+  "status": "SUCCESS"
+}

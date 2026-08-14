@@ -1,0 +1,22 @@
+{
+  "checkpoint": {
+    "path": "ckpts/ablation/bevformer_r101_dcn_24ep_bev100_interp.pth",
+    "sha256": "4a2f8a900eec9293b7b943fc01a8f0325ba4410e4a28d8bdaf5c64fa0f8c4f5d"
+  },
+  "config": {
+    "path": "projects/configs/bevformer_ablation/bev100.py",
+    "sha256": "65b6131853c1075766a80a34a5fbf822ffc17ccaae1de2ce1a3bf28ded3b0858"
+  },
+  "exit_code": 0,
+  "experiment": "bev100",
+  "finished_at_utc": "2026-08-12T04:44:17Z",
+  "metrics_path": "test/bev100/Wed_Aug_12_12_40_31_2026/pts_bbox/metrics_summary.json",
+  "process_exit": {
+    "tee": 0,
+    "test": 0
+  },
+  "reason": "new complete metrics selected",
+  "schema_version": 1,
+  "started_at_utc": "2026-08-12T04:22:11Z",
+  "status": "SUCCESS"
+}

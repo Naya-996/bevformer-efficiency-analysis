@@ -8,4 +8,11 @@ from .datasets.pipelines import (
 from .models.utils import *
 from .models.opt.adamw import AdamW2
 from .bevformer import *
-from .dd3d import *
+
+# DD3D is only required by BEVFormerV2 configs. Keep the base BEVFormer
+# plugin usable when its optional Detectron2 dependency is not installed.
+try:
+    from .dd3d import *
+except ModuleNotFoundError as exc:
+    if exc.name != 'detectron2':
+        raise

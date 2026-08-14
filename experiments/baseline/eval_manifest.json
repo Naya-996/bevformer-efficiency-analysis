@@ -1,0 +1,22 @@
+{
+  "checkpoint": {
+    "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+    "sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177"
+  },
+  "config": {
+    "path": "projects/configs/bevformer/bevformer_base.py",
+    "sha256": "b9330b85d825c48971c37e3d6354a0cda181fc3ec853cbfde5f768e98707cca6"
+  },
+  "exit_code": 0,
+  "experiment": "bevformer_base",
+  "finished_at_utc": "2026-08-10T09:12:51Z",
+  "metrics_path": "test/bevformer_base/Mon_Aug_10_17_02_09_2026/pts_bbox/metrics_summary.json",
+  "process_exit": {
+    "tee": 0,
+    "test": 0
+  },
+  "reason": "retrospective import of the verified full baseline evaluation",
+  "schema_version": 1,
+  "started_at_utc": "2026-08-10T08:35:24Z",
+  "status": "SUCCESS"
+}

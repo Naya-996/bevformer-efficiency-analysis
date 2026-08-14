@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "selection_uses_predictions": false,
+  "dataroot": "data/nuscenes",
+  "base_results": "test/bevformer_base/Mon_Aug_10_17_02_09_2026/pts_bbox/results_nusc.json",
+  "lite_results": "test/bev150/Wed_Aug_12_12_18_15_2026/pts_bbox/results_nusc.json",
+  "base_meta": {
+    "use_lidar": false,
+    "use_camera": true,
+    "use_radar": false,
+    "use_map": false,
+    "use_external": true
+  },
+  "lite_meta": {
+    "use_lidar": false,
+    "use_camera": true,
+    "use_radar": false,
+    "use_map": false,
+    "use_external": true
+  },
+  "score_threshold": 0.3,
+  "max_distance_m": 50.0,
+  "rows": [
+    "GT",
+    "Base",
+    "Lite"
+  ],
+  "selections": [
+    {
+      "sample_token": "94126983bc0c4de89fb27cefb81f24ef",
+      "scene_token": "fcc020250f884397965ba00c1d9ad9e6",
+      "scene_name": "scene-0345",
+      "frame_index": 17,
+      "valid_gt_50m": 113,
+      "dense_gt_30m": 87,
+      "far_gt_35_50m": 16,
+      "low_visibility_gt_50m": 71,
+      "yaw_change_rad": 0.46174214370419175,
+      "displacement_m": 10.382505427412445,
+      "selection_reason": "dense",
+      "output": "docs/assets/visualizations/dense_94126983bc0c4de89fb27cefb81f24ef.png"
+    },
+    {
+      "sample_token": "1eeeb68791084aa7b2e5d05223796e1e",
+      "scene_token": "d29527ec841045d18d04a933e7a0afd2",
+      "scene_name": "scene-1069",
+      "frame_index": 3,
+      "valid_gt_50m": 14,
+      "dense_gt_30m": 9,
+      "far_gt_35_50m": 2,
+      "low_visibility_gt_50m": 5,
+      "yaw_change_rad": 1.0925538873226674,
+      "displacement_m": 7.182855459349108,
+      "selection_reason": "turning",
+      "output": "docs/assets/visualizations/turning_1eeeb68791084aa7b2e5d05223796e1e.png"
+    },
+    {
+      "sample_token": "2ff5689a089844f0a2097b1883916003",
+      "scene_token": "b51869782c0e464b8021eb798609f35f",
+      "scene_name": "scene-0018",
+      "frame_index": 6,
+      "valid_gt_50m": 106,
+      "dense_gt_30m": 76,
+      "far_gt_35_50m": 21,
+      "low_visibility_gt_50m": 59,
+      "yaw_change_rad": 0.16828607045284016,
+      "displacement_m": 4.949907804020836,
+      "selection_reason": "occlusion",
+      "output": "docs/assets/visualizations/occlusion_2ff5689a089844f0a2097b1883916003.png"
+    },
+    {
+      "sample_token": "cdc90732e957479da6c8a80c9fad6f78",
+      "scene_token": "3dd9ad3f963e4f588d75c112cbf07f56",
+      "scene_name": "scene-0017",
+      "frame_index": 21,
+      "valid_gt_50m": 66,
+      "dense_gt_30m": 25,
+      "far_gt_35_50m": 35,
+      "low_visibility_gt_50m": 15,
+      "yaw_change_rad": 0.029496960760940993,
+      "displacement_m": 14.244826915019932,
+      "selection_reason": "far",
+      "output": "docs/assets/visualizations/far_cdc90732e957479da6c8a80c9fad6f78.png"
+    }
+  ]
+}

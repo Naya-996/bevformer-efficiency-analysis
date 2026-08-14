@@ -1,0 +1,22 @@
+{
+  "checkpoint": {
+    "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+    "sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177"
+  },
+  "config": {
+    "path": "projects/configs/bevformer_ablation/encoder3.py",
+    "sha256": "e36bd62611fef7cc535e07fb55b45af4aaa16a71aa79f7390f93b19dfa9bf8dc"
+  },
+  "exit_code": 0,
+  "experiment": "encoder3",
+  "finished_at_utc": "2026-08-12T03:33:47Z",
+  "metrics_path": "test/encoder3/Wed_Aug_12_11_28_48_2026/pts_bbox/metrics_summary.json",
+  "process_exit": {
+    "tee": 0,
+    "test": 0
+  },
+  "reason": "new complete metrics selected",
+  "schema_version": 1,
+  "started_at_utc": "2026-08-12T03:10:11Z",
+  "status": "SUCCESS"
+}

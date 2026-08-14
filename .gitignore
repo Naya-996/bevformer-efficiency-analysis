@@ -134,3 +134,27 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Local development environments and CUDA installers
+.venv*/
+.cuda*/
+.downloads/
+
+# Local source builds used for compatibility testing
+mmdetection3d/
+third_party/
+
+# Machine-specific paths, logs, and runtime artifacts
+env_5090.sh
+logs/
+samples
+*.pth
+*.ckpt
+
+# Local experiment logs
+experiments/**/profile.log
+experiments/baseline/README.md
+experiments/lite/README.md
+
+# Personal application notes
+docs/resume_and_interview.md
