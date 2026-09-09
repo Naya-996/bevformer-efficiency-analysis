@@ -27,6 +27,15 @@ for import_root in (PROJECT_ROOT, LOCAL_MMDET3D_ROOT):
     if import_root.exists() and import_root_str not in sys.path:
         sys.path.insert(0, import_root_str)
 
+
+def portable_path(path):
+    """Use repository-relative provenance paths when possible."""
+    resolved = path.resolve()
+    try:
+        return str(resolved.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(resolved)
+
 import mmcv  # noqa: E402
 import mmdet  # noqa: E402
 import mmdet3d  # noqa: E402
@@ -335,8 +344,8 @@ def main():
     report = {
         "schema_version": 2,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "config": str(config_path),
-        "checkpoint": str(checkpoint_path),
+        "config": portable_path(config_path),
+        "checkpoint": portable_path(checkpoint_path),
         "plugin_module": plugin_module,
         "cfg_options": json_safe(args.cfg_options or {}),
         "software": {

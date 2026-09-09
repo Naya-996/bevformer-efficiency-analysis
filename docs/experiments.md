@@ -8,7 +8,8 @@ measurement protocol.
 ## Measurement protocol
 
 - Dataset: nuScenes v1.0-trainval, validation split (6,019 samples)
-- GPU: NVIDIA GeForce RTX 5090, GPU 0 only
+- GPU: NVIDIA GeForce RTX 5090. The original ablation matrix was measured on
+  GPU0; the final Base/L2/L3 comparison was measured back-to-back on GPU1.
 - Software: PyTorch 2.7.1+cu128, CUDA 12.8, MMCV 1.4.0
 - Input: six cameras at 1600 x 900, padded internally to a multiple of 32
 - Batch size: 1
@@ -49,6 +50,25 @@ complete: NDS 0.5097, mAP 0.4074, FPS 5.487, and mean latency
 comparison; it remains a short adaptation rather than a full retraining.
 <!-- END L2_STATUS -->
 
+## Final trained lightweight model (L3)
+
+L2 was extended from epoch 2 to epoch 6 while preserving AdamW moments and
+rebasing the peak learning rate from `2e-5` to `5e-6`. Epochs 3--6 were each
+evaluated on all 6,019 validation samples; epoch 6 had the highest NDS.
+
+| Variant | NDS | mAP | Mean / P95 latency (ms) | FPS | Params (M) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| B0 Base | 0.5173 | 0.4163 | 253.12 / 253.61 | 3.951 | 69.034947 |
+| L2 BEV-150, 2 ep | 0.5097 | 0.4074 | 231.20 / 231.90 | 4.325 | 64.542147 |
+| **L3 BEV-150, 6 ep** | **0.5123** | **0.4082** | **231.33 / 231.77** | **4.323** | **64.542147** |
+
+These three profiles use physical GPU1, 20 warmup iterations, and 200 measured
+iterations. L3 improves NDS by 0.0026 over L2 while remaining effectively
+identical in runtime. Relative to Base it reduces mean latency by 8.61%, raises
+FPS by 9.42%, and reduces parameters by 6.51%, with an NDS gap of 0.0051.
+Detailed epoch metrics, class deltas, hashes, and paired profiles are in
+`experiments/bev150_extended/result_report.md`.
+
 ## B0: official base
 
 - Config: `projects/configs/bevformer/bevformer_base.py`
@@ -68,7 +88,7 @@ Evaluation reproduced the published BEVFormer base result: mAP 41.63 and NDS
 
 ## Selected Lite candidate
 
-BEV-150 is the selected zero-shot Lite candidate. Relative to B0 it reduces
+BEV-150 was first selected as the zero-shot Lite candidate. Relative to B0 it reduces
 the BEV query count by 43.75% and parameter count by 6.51%. On the shared RTX
 5090 protocol it improves FPS by 11.84% and reduces mean latency by 10.58%,
 while absolute NDS and mAP decrease by 0.0256 and 0.0278 respectively. Peak
@@ -81,9 +101,8 @@ compression method: removing trained upper layers without optimization makes
 mAP collapse to zero. Temporal OFF loses 0.1046 NDS and 0.0477 mAVE while
 providing no throughput benefit, so temporal history is retained in L1.
 
-The current L1 numbers must be described as zero-shot interpolation results.
-A separately identified fine-tuned checkpoint is required before describing
-L1 as a trained lightweight model.
+The zero-shot L1 numbers remain an interpolation robustness experiment. L3 is
+the separately trained lightweight checkpoint used for the final claim.
 
 ## Visual comparison
 
@@ -136,6 +155,17 @@ python tools/train.py \
   projects/configs/bevformer_ablation/bev150_finetune.py \
   --work-dir work_dirs/bev150_finetune_2ep \
   --gpus 1 --seed 0 --no-validate
+
+# Continue from epoch 2 with retained AdamW state and lower learning rate
+python tools/rebase_optimizer_lr.py \
+  work_dirs/bev150_finetune_2ep/epoch_2.pth \
+  ckpts/ablation/bev150_epoch2_resume_lr5e-6.pth \
+  --target-lr 5e-6
+python tools/train.py \
+  projects/configs/bevformer_ablation/bev150_finetune_6ep.py \
+  --work-dir work_dirs/bev150_finetune_6ep \
+  --resume-from ckpts/ablation/bev150_epoch2_resume_lr5e-6.pth \
+  --gpus 1 --seed 0 --no-validate
 ```
 
 The fine-tune uses
@@ -143,4 +173,5 @@ The fine-tune uses
 interpolated BEV-150 checkpoint, runs two epochs at learning rate `2e-5`, and
 writes to `work_dirs/bev150_finetune_2ep`. Its epoch-2 checkpoint was evaluated
 and profiled independently as L2; the original zero-shot B1/L1 result remains
-unchanged for comparison.
+unchanged for comparison. The extended L3 run evaluates epochs 3--6 and uses
+epoch 6, selected by full-validation NDS.

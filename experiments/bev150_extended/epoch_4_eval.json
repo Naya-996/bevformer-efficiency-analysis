@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "recorded_at_utc": "2026-09-09T00:59:17.948452+00:00",
+  "epoch": 4,
+  "checkpoint": "work_dirs/bev150_finetune_6ep/epoch_4.pth",
+  "checkpoint_sha256": "5f62ec3d1d7b6ce14ae9cddbab193025183b52aa330dd30b6a0aa1989c603ea0",
+  "metrics_path": "test/bev150_finetune_6ep/Wed_Sep__9_08_55_34_2026/pts_bbox/metrics_summary.json",
+  "metrics": {
+    "nd_score": 0.5076988559814494,
+    "mean_ap": 0.4034103274745993,
+    "tp_errors": {
+      "trans_err": 0.6893914356360764,
+      "scale_err": 0.2758650470911622,
+      "orient_err": 0.3799241443285241,
+      "vel_err": 0.3989329844809856,
+      "attr_err": 0.1959494660217546
+    }
+  }
+}
