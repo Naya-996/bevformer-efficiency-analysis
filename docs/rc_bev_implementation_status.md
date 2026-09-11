@@ -14,8 +14,9 @@ be replaced by an explicitly requested GPU0+GPU1 DDP run. The replacement seed-0
 run uses the Gloo backend because the currently loaded NVIDIA kernel module and
 installed NVML library do not match. It reached iteration 2538, but its tmux session
 and ranks later exited while paused before an epoch checkpoint was written. A new
-seed-0 run is therefore required. Neither run is counted as a result until complete
-validation.
+seed-0 GPU0+GPU1 run was started after the conflicting Autoware/CARLA processes
+were stopped and is currently active using Gloo. None of these runs is counted as
+a result until complete validation.
 
 ## Delivered files
 
