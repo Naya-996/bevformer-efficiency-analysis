@@ -153,6 +153,7 @@ samples
 
 # Local experiment logs
 experiments/**/profile.log
+experiments/rc_bev/runs/*/work_dir/
 experiments/baseline/README.md
 experiments/lite/README.md
 
