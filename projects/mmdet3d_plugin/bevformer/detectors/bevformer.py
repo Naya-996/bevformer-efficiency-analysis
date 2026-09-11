@@ -4,6 +4,9 @@
 #  Modified by Zhiqi Li
 # ---------------------------------------------
 
+import json
+from pathlib import Path
+
 import torch
 from mmcv.runner import force_fp32, auto_fp16
 from mmdet.models import DETECTORS
@@ -15,6 +18,8 @@ import copy
 import numpy as np
 import mmdet3d
 from projects.mmdet3d_plugin.models.utils.bricks import run_time
+from projects.mmdet3d_plugin.bevformer.modules.budget_controller import (
+    BudgetAdaptiveResolutionController)
 
 
 @DETECTORS.register_module()
@@ -40,7 +45,9 @@ class BEVFormer(MVXTwoStageDetector):
                  train_cfg=None,
                  test_cfg=None,
                  pretrained=None,
-                 video_test_mode=False
+                 video_test_mode=False,
+                 budget_controller=None,
+                 controller_trace_path=None
                  ):
 
         super(BEVFormer,
@@ -56,11 +63,17 @@ class BEVFormer(MVXTwoStageDetector):
 
         # temporal
         self.video_test_mode = video_test_mode
+        self.budget_controller = (BudgetAdaptiveResolutionController(
+            **budget_controller) if budget_controller is not None else None)
+        self.controller_trace_path = controller_trace_path
         self.prev_frame_info = {
             'prev_bev': None,
+            'prev_bev_shape': None,
             'scene_token': None,
             'prev_pos': 0,
             'prev_angle': 0,
+            'low_confidence_ratio': 0.0,
+            'controller_records': [],
         }
 
 
@@ -114,7 +127,8 @@ class BEVFormer(MVXTwoStageDetector):
                           gt_labels_3d,
                           img_metas,
                           gt_bboxes_ignore=None,
-                          prev_bev=None):
+                          prev_bev=None,
+                          prev_bev_shape=None):
         """Forward function'
         Args:
             pts_feats (list[torch.Tensor]): Features of point cloud branch
@@ -131,7 +145,8 @@ class BEVFormer(MVXTwoStageDetector):
         """
 
         outs = self.pts_bbox_head(
-            pts_feats, img_metas, prev_bev)
+            pts_feats, img_metas, prev_bev,
+            prev_bev_shape=prev_bev_shape)
         loss_inputs = [gt_bboxes_3d, gt_labels_3d, outs]
         losses = self.pts_bbox_head.loss(*loss_inputs, img_metas=img_metas)
         return losses
@@ -162,6 +177,7 @@ class BEVFormer(MVXTwoStageDetector):
 
         with torch.no_grad():
             prev_bev = None
+            prev_bev_shape = None
             bs, len_queue, num_cams, C, H, W = imgs_queue.shape
             imgs_queue = imgs_queue.reshape(bs*len_queue, num_cams, C, H, W)
             img_feats_list = self.extract_feat(img=imgs_queue, len_queue=len_queue)
@@ -169,12 +185,15 @@ class BEVFormer(MVXTwoStageDetector):
                 img_metas = [each[i] for each in img_metas_list]
                 if not img_metas[0]['prev_bev_exists']:
                     prev_bev = None
+                    prev_bev_shape = None
                 # img_feats = self.extract_feat(img=img, img_metas=img_metas)
                 img_feats = [each_scale[:, i] for each_scale in img_feats_list]
                 prev_bev = self.pts_bbox_head(
-                    img_feats, img_metas, prev_bev, only_bev=True)
+                    img_feats, img_metas, prev_bev, only_bev=True,
+                    prev_bev_shape=prev_bev_shape)
+                prev_bev_shape = self.pts_bbox_head.last_bev_shape
             self.train()
-            return prev_bev
+            return prev_bev, prev_bev_shape
 
     @auto_fp16(apply_to=('img', 'points'))
     def forward_train(self,
@@ -215,20 +234,28 @@ class BEVFormer(MVXTwoStageDetector):
         """
         
         len_queue = img.size(1)
+        if getattr(self.pts_bbox_head, 'continuous_bev_enabled', False):
+            active_shape = self.pts_bbox_head.sample_train_bev_shape()
+            for sample_metas in img_metas:
+                for frame_meta in sample_metas.values():
+                    frame_meta['rc_bev_shape'] = active_shape
         prev_img = img[:, :-1, ...]
         img = img[:, -1, ...]
 
         prev_img_metas = copy.deepcopy(img_metas)
-        prev_bev = self.obtain_history_bev(prev_img, prev_img_metas)
+        prev_bev, prev_bev_shape = self.obtain_history_bev(
+            prev_img, prev_img_metas)
 
         img_metas = [each[len_queue-1] for each in img_metas]
         if not img_metas[0]['prev_bev_exists']:
             prev_bev = None
+            prev_bev_shape = None
         img_feats = self.extract_feat(img=img, img_metas=img_metas)
         losses = dict()
         losses_pts = self.forward_pts_train(img_feats, gt_bboxes_3d,
                                             gt_labels_3d, img_metas,
-                                            gt_bboxes_ignore, prev_bev)
+                                            gt_bboxes_ignore, prev_bev,
+                                            prev_bev_shape)
 
         losses.update(losses_pts)
         return losses
@@ -240,15 +267,20 @@ class BEVFormer(MVXTwoStageDetector):
                     name, type(var)))
         img = [img] if img is None else img
 
-        if img_metas[0][0]['scene_token'] != self.prev_frame_info['scene_token']:
+        scene_changed = (img_metas[0][0]['scene_token'] !=
+                         self.prev_frame_info['scene_token'])
+        if scene_changed:
             # the first sample of each scene is truncated
             self.prev_frame_info['prev_bev'] = None
+            self.prev_frame_info['prev_bev_shape'] = None
+            self.prev_frame_info['low_confidence_ratio'] = 0.0
         # update idx
         self.prev_frame_info['scene_token'] = img_metas[0][0]['scene_token']
 
         # do not use temporal information
         if not self.video_test_mode:
             self.prev_frame_info['prev_bev'] = None
+            self.prev_frame_info['prev_bev_shape'] = None
 
         # Get the delta of ego position and angle between two timestamps.
         tmp_pos = copy.deepcopy(img_metas[0][0]['can_bus'][:3])
@@ -260,17 +292,53 @@ class BEVFormer(MVXTwoStageDetector):
             img_metas[0][0]['can_bus'][-1] = 0
             img_metas[0][0]['can_bus'][:3] = 0
 
+        if self.budget_controller is not None:
+            delta = img_metas[0][0]['can_bus']
+            translation_m = float(np.linalg.norm(np.asarray(delta[:2])))
+            resolution = self.budget_controller.select({
+                'translation_m': translation_m,
+                'yaw_deg': float(delta[-1]),
+                'low_confidence_ratio': self.prev_frame_info['low_confidence_ratio'],
+            }, scene_changed=scene_changed)
+            img_metas[0][0]['rc_bev_shape'] = (resolution, resolution)
+            self.prev_frame_info['controller_records'].append(
+                dict(self.budget_controller.last_record))
+
         new_prev_bev, bbox_results = self.simple_test(
-            img_metas[0], img[0], prev_bev=self.prev_frame_info['prev_bev'], **kwargs)
+            img_metas[0], img[0], prev_bev=self.prev_frame_info['prev_bev'],
+            prev_bev_shape=self.prev_frame_info['prev_bev_shape'], **kwargs)
         # During inference, we save the BEV features and ego motion of each timestamp.
         self.prev_frame_info['prev_pos'] = tmp_pos
         self.prev_frame_info['prev_angle'] = tmp_angle
         self.prev_frame_info['prev_bev'] = new_prev_bev
+        self.prev_frame_info['prev_bev_shape'] = self.pts_bbox_head.last_bev_shape
+        if bbox_results and bbox_results[0].get('pts_bbox') is not None:
+            scores = bbox_results[0]['pts_bbox'].get('scores_3d')
+            if scores is not None and scores.numel():
+                self.prev_frame_info['low_confidence_ratio'] = float(
+                    (scores < 0.3).float().mean().item())
+        if self.budget_controller is not None:
+            record = self.prev_frame_info['controller_records'][-1]
+            record.update({
+                'scene_token': img_metas[0][0]['scene_token'],
+                'bev_shape': list(self.pts_bbox_head.last_bev_shape),
+                'prev_bev_resize_ms': float(getattr(
+                    self.pts_bbox_head.transformer,
+                    'last_prev_bev_resize_ms', 0.0)),
+            })
+            if self.controller_trace_path:
+                output = Path(self.controller_trace_path)
+                output.parent.mkdir(parents=True, exist_ok=True)
+                with output.open('a', encoding='utf-8') as stream:
+                    stream.write(json.dumps(record, sort_keys=True) + '\n')
         return bbox_results
 
-    def simple_test_pts(self, x, img_metas, prev_bev=None, rescale=False):
+    def simple_test_pts(self, x, img_metas, prev_bev=None, rescale=False,
+                        prev_bev_shape=None):
         """Test function"""
-        outs = self.pts_bbox_head(x, img_metas, prev_bev=prev_bev)
+        outs = self.pts_bbox_head(
+            x, img_metas, prev_bev=prev_bev,
+            prev_bev_shape=prev_bev_shape)
 
         bbox_list = self.pts_bbox_head.get_bboxes(
             outs, img_metas, rescale=rescale)
@@ -280,13 +348,15 @@ class BEVFormer(MVXTwoStageDetector):
         ]
         return outs['bev_embed'], bbox_results
 
-    def simple_test(self, img_metas, img=None, prev_bev=None, rescale=False):
+    def simple_test(self, img_metas, img=None, prev_bev=None, rescale=False,
+                    prev_bev_shape=None):
         """Test function without augmentaiton."""
         img_feats = self.extract_feat(img=img, img_metas=img_metas)
 
         bbox_list = [dict() for i in range(len(img_metas))]
         new_prev_bev, bbox_pts = self.simple_test_pts(
-            img_feats, img_metas, prev_bev, rescale=rescale)
+            img_feats, img_metas, prev_bev, rescale=rescale,
+            prev_bev_shape=prev_bev_shape)
         for result_dict, pts_bbox in zip(bbox_list, bbox_pts):
             result_dict['pts_bbox'] = pts_bbox
         return new_prev_bev, bbox_list

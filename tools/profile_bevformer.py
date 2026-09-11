@@ -310,6 +310,7 @@ def main():
 
     batch_stream = infinite_batches(data_loader)
     latencies_ms = []
+    end_to_end_latencies_ms = []
     with torch.no_grad():
         for _ in range(args.warmup):
             batch = next(batch_stream)
@@ -325,6 +326,7 @@ def main():
 
         for _ in range(args.iters):
             # Fetching/decoding/collating this batch is intentionally untimed.
+            end_to_end_start = time.perf_counter()
             batch = next(batch_stream)
             torch.cuda.synchronize(device)
             start = time.perf_counter()
@@ -332,11 +334,14 @@ def main():
             torch.cuda.synchronize(device)
             elapsed_ms = (time.perf_counter() - start) * 1000.0
             latencies_ms.append(elapsed_ms)
+            end_to_end_latencies_ms.append(
+                (time.perf_counter() - end_to_end_start) * 1000.0)
             del result, batch
 
     torch.cuda.synchronize(device)
     timing_end_load = list(os.getloadavg())
     latency_array = np.asarray(latencies_ms, dtype=np.float64)
+    end_to_end_array = np.asarray(end_to_end_latencies_ms, dtype=np.float64)
     total_timed_seconds = float(latency_array.sum() / 1000.0)
     measured_samples = int(args.iters * samples_per_gpu)
     device_properties = torch.cuda.get_device_properties(device)
@@ -395,10 +400,21 @@ def main():
             "avg": float(latency_array.mean()),
             "p50": float(np.percentile(latency_array, 50)),
             "p95": float(np.percentile(latency_array, 95)),
+            "p99": float(np.percentile(latency_array, 99)),
             "std": float(latency_array.std(ddof=0)),
             "min": float(latency_array.min()),
             "max": float(latency_array.max()),
             "per_iteration": [float(value) for value in latency_array],
+        },
+        "end_to_end_latency_ms": {
+            "avg": float(end_to_end_array.mean()),
+            "p50": float(np.percentile(end_to_end_array, 50)),
+            "p95": float(np.percentile(end_to_end_array, 95)),
+            "p99": float(np.percentile(end_to_end_array, 99)),
+            "std": float(end_to_end_array.std(ddof=0)),
+            "min": float(end_to_end_array.min()),
+            "max": float(end_to_end_array.max()),
+            "per_iteration": [float(value) for value in end_to_end_array],
         },
         "throughput": {
             "fps": float(measured_samples / total_timed_seconds),

@@ -5,9 +5,7 @@
   },
   "config": {
     "path": "projects/configs/bevformer/bevformer_base.py",
-    "sha256": "45905ac50a8afa841f0be43c81152277dd694de62054c3595dfd56efd33d6324",
-    "legacy_declared_sha256": "b9330b85d825c48971c37e3d6354a0cda181fc3ec853cbfde5f768e98707cca6",
-    "provenance_note": "Legacy hash did not match any available file or Git revision; sha256 now records the archived current source file. The original manifest is preserved in the 20260911 provenance archive."
+    "sha256": "b9330b85d825c48971c37e3d6354a0cda181fc3ec853cbfde5f768e98707cca6"
   },
   "exit_code": 0,
   "experiment": "bevformer_base",

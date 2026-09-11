@@ -12,5 +12,13 @@
     "sha256": "978cb2d8fe67304bfc7ab0a5ac788478b5dccd9e5508c6fb227ec4f31c9df966",
     "round_trip_load": "passed"
   },
-  "training_checkpoints": []
+  "training_checkpoints": [
+    {
+      "path": "work_dirs/bev150_fulltrain_24ep/epoch_1.pth",
+      "bytes": 773294351,
+      "epoch": 1,
+      "status": "preserved_resume_checkpoint",
+      "sha256": "c2c1097dea1354359e5f51c44c48196f08267576afd4bfc5f44f2cf714fae87e"
+    }
+  ]
 }

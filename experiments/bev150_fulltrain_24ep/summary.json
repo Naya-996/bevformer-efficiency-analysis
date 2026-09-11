@@ -1,7 +1,7 @@
 {
   "experiment": "bev150_fulltrain_24ep",
   "experiment_type": "full_training",
-  "status": "training",
+  "status": "paused",
   "bev_size": [150, 150],
   "initialization": "r101_dcn_fcos3d_pretrain",
   "uses_interpolated_bevformer_checkpoint": false,
@@ -11,5 +11,14 @@
   "best_epoch": null,
   "selection_rule": "maximum NDS, then maximum mAP",
   "metrics": {},
-  "profile": {}
+  "profile": {},
+  "pause": {
+    "paused_at": "2026-09-11T10:30:31+08:00",
+    "last_complete_checkpoint": "work_dirs/bev150_fulltrain_24ep/epoch_1.pth",
+    "last_complete_epoch": 1,
+    "partial_epoch": 2,
+    "partial_iteration": 22000,
+    "iterations_per_epoch": 28130,
+    "partial_epoch_checkpoint_available": false
+  }
 }

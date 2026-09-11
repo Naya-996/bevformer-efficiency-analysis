@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "complete_result_count": 0,
+  "not_run_count": 20,
+  "artifacts": [
+    {
+      "path": "experiments/rc_bev/results.json",
+      "sha256": "8a1af86f0b06bd50bd48ef872a68317e91e929590b454fb0d89162c8576d7179",
+      "bytes": 2739
+    },
+    {
+      "path": "experiments/rc_bev/results.csv",
+      "sha256": "64763908eed1174da5a7b8badb6963b5fbcef96c2198f70955b01c26644ebbe5",
+      "bytes": 1299
+    },
+    {
+      "path": "experiments/rc_bev/generated/main_results.tex",
+      "sha256": "39d8c857a2fbd0a7b8ef14455bfdba5f7367372df043177c18a90ce9ab916dc0",
+      "bytes": 224
+    },
+    {
+      "path": "experiments/rc_bev/generated/ablations.tex",
+      "sha256": "cdbd74be5f09d11d04dea02911d9ee363b4bf6cbee9b9f9442779111f71b7dcd",
+      "bytes": 199
+    },
+    {
+      "path": "experiments/rc_bev/generated/accuracy_latency_pareto.png",
+      "sha256": "6e0bd87773e02e61e3d44ce55106f4fd339cd4c8af64f8900974325876a210ab",
+      "bytes": 13549
+    },
+    {
+      "path": "experiments/rc_bev/generated/resolution_nds_curve.png",
+      "sha256": "6e61f6fcacbfe5341516241c78d96a51a0ccee3816bf4f2e67b8fce227ddfeaf",
+      "bytes": 11933
+    },
+    {
+      "path": "experiments/rc_bev/generated/dynamic_resolution_timeline.png",
+      "sha256": "888041e83aa52f57f14c400aa060ab4e23a5fc28f0cba422fda348d201ef1585",
+      "bytes": 11071
+    }
+  ]
+}

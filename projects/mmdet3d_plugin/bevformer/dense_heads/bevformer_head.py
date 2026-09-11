@@ -11,6 +11,8 @@ from mmdet.models.dense_heads import DETRHead
 from mmdet3d.core.bbox.coders import build_bbox_coder
 from projects.mmdet3d_plugin.core.bbox.util import normalize_bbox
 from mmcv.runner import force_fp32, auto_fp16
+from projects.mmdet3d_plugin.bevformer.modules.resolution_continuous import (
+    ContinuousBEVQueryGenerator, deterministic_resolution)
 
 
 @HEADS.register_module()
@@ -36,10 +38,23 @@ class BEVFormerHead(DETRHead):
                  code_weights=None,
                  bev_h=30,
                  bev_w=30,
+                 continuous_bev_query=None,
+                 train_bev_shapes=None,
+                 test_bev_shape=None,
+                 resolution_seed=0,
+                 prev_bev_migration='physical',
                  **kwargs):
 
         self.bev_h = bev_h
         self.bev_w = bev_w
+        self.continuous_bev_query_cfg = continuous_bev_query
+        self.train_bev_shapes = tuple(train_bev_shapes or ())
+        self.test_bev_shape = test_bev_shape
+        self.resolution_seed = int(resolution_seed)
+        if prev_bev_migration not in ('physical', 'reset_on_change'):
+            raise ValueError('prev_bev_migration must be physical or reset_on_change')
+        self.prev_bev_migration = prev_bev_migration
+        self.last_bev_shape = (int(bev_h), int(bev_w))
         self.fp16_enabled = False
 
         self.with_box_refine = with_box_refine
@@ -105,6 +120,39 @@ class BEVFormerHead(DETRHead):
                 self.bev_h * self.bev_w, self.embed_dims)
             self.query_embedding = nn.Embedding(self.num_query,
                                                 self.embed_dims * 2)
+            if self.continuous_bev_query_cfg is not None:
+                generator_cfg = dict(self.continuous_bev_query_cfg)
+                generator_cfg.setdefault('embed_dims', self.embed_dims)
+                generator_cfg.setdefault('pc_range', self.pc_range)
+                self.continuous_query_generator = ContinuousBEVQueryGenerator(
+                    **generator_cfg)
+
+    @property
+    def continuous_bev_enabled(self):
+        return hasattr(self, 'continuous_query_generator')
+
+    def sample_train_bev_shape(self):
+        """Select one reproducible shape for a complete training batch/queue."""
+        if not self.continuous_bev_enabled or not self.train_bev_shapes:
+            return int(self.bev_h), int(self.bev_w)
+        shape = deterministic_resolution(
+            int(self.continuous_query_generator.schedule_step.item()),
+            self.train_bev_shapes, self.resolution_seed)
+        self.continuous_query_generator.schedule_step.add_(1)
+        return shape
+
+    def _active_bev_shape(self, img_metas):
+        if not self.continuous_bev_enabled:
+            return int(self.bev_h), int(self.bev_w)
+        if img_metas and img_metas[0].get('rc_bev_shape') is not None:
+            value = img_metas[0]['rc_bev_shape']
+        elif not self.training and self.test_bev_shape is not None:
+            value = self.test_bev_shape
+        else:
+            value = (self.bev_h, self.bev_w)
+        if isinstance(value, int):
+            value = (value, value)
+        return int(value[0]), int(value[1])
 
     def init_weights(self):
         """Initialize weights of the DeformDETR head."""
@@ -115,7 +163,8 @@ class BEVFormerHead(DETRHead):
                 nn.init.constant_(m[-1].bias, bias_init)
 
     @auto_fp16(apply_to=('mlvl_feats'))
-    def forward(self, mlvl_feats, img_metas, prev_bev=None,  only_bev=False):
+    def forward(self, mlvl_feats, img_metas, prev_bev=None, only_bev=False,
+                prev_bev_shape=None):
         """Forward function.
         Args:
             mlvl_feats (tuple[Tensor]): Features from the upstream
@@ -134,41 +183,61 @@ class BEVFormerHead(DETRHead):
         bs, num_cam, _, _, _ = mlvl_feats[0].shape
         dtype = mlvl_feats[0].dtype
         object_query_embeds = self.query_embedding.weight.to(dtype)
-        bev_queries = self.bev_embedding.weight.to(dtype)
-
-        bev_mask = torch.zeros((bs, self.bev_h, self.bev_w),
-                               device=bev_queries.device).to(dtype)
-        bev_pos = self.positional_encoding(bev_mask).to(dtype)
+        bev_h, bev_w = self._active_bev_shape(img_metas)
+        self.last_bev_shape = (bev_h, bev_w)
+        if self.continuous_bev_enabled:
+            bev_queries, bev_pos = self.continuous_query_generator(
+                bev_h, bev_w, pc_range=self.pc_range, dtype=dtype,
+                device=object_query_embeds.device, batch_size=bs)
+        else:
+            bev_queries = self.bev_embedding.weight.to(dtype)
+            bev_mask = torch.zeros((bs, self.bev_h, self.bev_w),
+                                   device=bev_queries.device).to(dtype)
+            bev_pos = self.positional_encoding(bev_mask).to(dtype)
+        rc_kwargs = {}
+        if self.continuous_bev_enabled:
+            rc_kwargs = dict(
+                prev_bev_shape=prev_bev_shape,
+                continuous_bev_enabled=True,
+                bev_pc_range=self.pc_range,
+                prev_bev_migration=self.prev_bev_migration)
 
         if only_bev:  # only use encoder to obtain BEV features, TODO: refine the workaround
-            return self.transformer.get_bev_features(
+            bev_embed = self.transformer.get_bev_features(
                 mlvl_feats,
                 bev_queries,
-                self.bev_h,
-                self.bev_w,
-                grid_length=(self.real_h / self.bev_h,
-                             self.real_w / self.bev_w),
+                bev_h,
+                bev_w,
+                grid_length=(self.real_h / bev_h,
+                             self.real_w / bev_w),
                 bev_pos=bev_pos,
                 img_metas=img_metas,
                 prev_bev=prev_bev,
+                **rc_kwargs,
             )
+            if self.continuous_bev_enabled:
+                bev_embed.rc_bev_shape = (bev_h, bev_w)
+            return bev_embed
         else:
             outputs = self.transformer(
                 mlvl_feats,
                 bev_queries,
                 object_query_embeds,
-                self.bev_h,
-                self.bev_w,
-                grid_length=(self.real_h / self.bev_h,
-                             self.real_w / self.bev_w),
+                bev_h,
+                bev_w,
+                grid_length=(self.real_h / bev_h,
+                             self.real_w / bev_w),
                 bev_pos=bev_pos,
                 reg_branches=self.reg_branches if self.with_box_refine else None,  # noqa:E501
                 cls_branches=self.cls_branches if self.as_two_stage else None,
                 img_metas=img_metas,
-                prev_bev=prev_bev
+                prev_bev=prev_bev,
+                **rc_kwargs,
         )
 
         bev_embed, hs, init_reference, inter_references = outputs
+        if self.continuous_bev_enabled:
+            bev_embed.rc_bev_shape = (bev_h, bev_w)
         hs = hs.permute(0, 2, 1, 3)
         outputs_classes = []
         outputs_coords = []
@@ -209,6 +278,8 @@ class BEVFormerHead(DETRHead):
             'enc_cls_scores': None,
             'enc_bbox_preds': None,
         }
+        if self.continuous_bev_enabled:
+            outs['bev_shape'] = (bev_h, bev_w)
 
         return outs
 

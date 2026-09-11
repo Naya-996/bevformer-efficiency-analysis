@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "timestamp_utc": "2026-09-11T03:14:55.578555+00:00",
+  "config": "projects/configs/bevformer_rc/rc_bev_eval_seen.py",
+  "checkpoint": "ckpts/bevformer_r101_dcn_24ep.pth",
+  "plugin_module": "projects.mmdet3d_plugin",
+  "cfg_options": {
+    "model.pts_bbox_head.test_bev_shape": [
+      100,
+      100
+    ]
+  },
+  "software": {
+    "python": "3.9.23",
+    "torch": "2.7.1+cu128",
+    "torch_cuda": "12.8",
+    "mmcv": "1.4.0",
+    "mmdet": "2.14.0",
+    "mmdet3d": "0.17.1",
+    "mmseg": "0.14.1"
+  },
+  "device": {
+    "logical_index": 0,
+    "name": "NVIDIA GeForce RTX 5090",
+    "compute_capability": [
+      12,
+      0
+    ],
+    "total_memory_bytes": 33670758400,
+    "visible_device_count": 1,
+    "cuda_visible_devices": "1"
+  },
+  "host": {
+    "logical_cpu_count": 32,
+    "load_average_process_start": [
+      0.33349609375,
+      0.16162109375,
+      0.3125
+    ],
+    "load_average_timing_start": [
+      0.38720703125,
+      0.17578125,
+      0.31640625
+    ],
+    "load_average_timing_end": [
+      0.38720703125,
+      0.17578125,
+      0.31640625
+    ]
+  },
+  "settings": {
+    "warmup_iterations": 0,
+    "measured_iterations": 1,
+    "workers": 0,
+    "samples_per_gpu": 1,
+    "measured_samples": 1,
+    "dataset_size": 6019,
+    "data_loading_in_timing": false,
+    "measurement_scope": "MMDataParallel scatter + model forward + detector post-processing",
+    "cuda_synchronize_before_and_after": true
+  },
+  "parameters": {
+    "total": 69200067,
+    "trainable": 68872313,
+    "non_trainable": 327754,
+    "total_millions": 69.200067
+  },
+  "gpu_memory": {
+    "baseline_allocated_bytes": 281163776,
+    "baseline_allocated_mib": 268.138671875,
+    "baseline_reserved_bytes": 295698432,
+    "baseline_reserved_mib": 282.0,
+    "peak_allocated_bytes": 2241935360,
+    "peak_allocated_mib": 2138.076171875,
+    "peak_reserved_bytes": 2699034624,
+    "peak_reserved_mib": 2574.0,
+    "current_allocated_bytes": 299923968,
+    "current_allocated_mib": 286.02978515625,
+    "current_reserved_bytes": 2699034624,
+    "current_reserved_mib": 2574.0
+  },
+  "latency_ms": {
+    "avg": 506.79709389805794,
+    "p50": 506.79709389805794,
+    "p95": 506.79709389805794,
+    "p99": 506.79709389805794,
+    "std": 0.0,
+    "min": 506.79709389805794,
+    "max": 506.79709389805794,
+    "per_iteration": [
+      506.79709389805794
+    ]
+  },
+  "end_to_end_latency_ms": {
+    "avg": 705.2248711697757,
+    "p50": 705.2248711697757,
+    "p95": 705.2248711697757,
+    "p99": 705.2248711697757,
+    "std": 0.0,
+    "min": 705.2248711697757,
+    "max": 705.2248711697757,
+    "per_iteration": [
+      705.2248711697757
+    ]
+  },
+  "throughput": {
+    "fps": 1.9731762712142735,
+    "iterations_per_second": 1.9731762712142735,
+    "total_timed_seconds": 0.5067970938980579
+  }
+}

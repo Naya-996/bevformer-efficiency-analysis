@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RC-BEV experiment record",
+  "type": "object",
+  "required": ["id", "family", "status"],
+  "properties": {
+    "id": {"type": "string"},
+    "family": {"type": "string"},
+    "status": {"enum": ["NOT RUN", "BLOCKED", "COMPLETE"]},
+    "seed": {"type": "integer"},
+    "resolution": {"type": "integer"},
+    "precision": {"enum": ["FP32", "FP16"]},
+    "checkpoint_path": {"type": "string"},
+    "metrics_path": {"type": "string"},
+    "profile_path": {"type": "string"},
+    "controller_trace_path": {"type": "string"},
+    "accuracy": {
+      "type": "object",
+      "properties": {
+        "nds": {"type": "number"}, "map": {"type": "number"},
+        "mATE": {"type": "number"}, "mASE": {"type": "number"},
+        "mAOE": {"type": "number"}, "mAVE": {"type": "number"},
+        "mAAE": {"type": "number"},
+        "per_class_ap": {"type": "object"},
+        "distance_bins": {"type": "object"},
+        "visibility_bins": {"type": "object"},
+        "dynamic_scenes": {"type": "object"},
+        "switch_stability": {"type": "object"}
+      }
+    },
+    "efficiency": {
+      "type": "object",
+      "properties": {
+        "parameters": {"type": "integer"},
+        "macs": {"type": ["number", "null"]},
+        "unsupported_flop_operators": {"type": "array", "items": {"type": "string"}},
+        "peak_allocated_mib": {"type": "number"},
+        "peak_reserved_mib": {"type": "number"},
+        "model_latency_ms": {"type": "object"},
+        "end_to_end_latency_ms": {"type": "object"},
+        "energy_joules": {"type": ["number", "null"]},
+        "controller_ms": {"type": ["number", "null"]},
+        "history_resize_ms": {"type": ["number", "null"]}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "COMPLETE"}}},
+      "then": {"required": ["checkpoint_path", "metrics_path", "profile_path"]}
+    }
+  ]
+}
+

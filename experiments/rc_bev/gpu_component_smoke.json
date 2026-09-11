@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "status": "SMOKE_PASS",
+  "scope": "components_only_not_accuracy_or_production_profile",
+  "timestamp_utc": "2026-09-11T03:17:19.184629+00:00",
+  "device": "NVIDIA GeForce RTX 5090",
+  "torch": "2.7.1+cu128",
+  "torch_cuda": "12.8",
+  "query_shapes": [
+    {
+      "shape": [
+        100,
+        100
+      ],
+      "query_shape": [
+        10000,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        100,
+        100
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        125,
+        125
+      ],
+      "query_shape": [
+        15625,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        125,
+        125
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        140,
+        140
+      ],
+      "query_shape": [
+        19600,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        140,
+        140
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        150,
+        150
+      ],
+      "query_shape": [
+        22500,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        150,
+        150
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        160,
+        160
+      ],
+      "query_shape": [
+        25600,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        160,
+        160
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        175,
+        175
+      ],
+      "query_shape": [
+        30625,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        175,
+        175
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        180,
+        180
+      ],
+      "query_shape": [
+        32400,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        180,
+        180
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        200,
+        200
+      ],
+      "query_shape": [
+        40000,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        200,
+        200
+      ],
+      "finite": true
+    },
+    {
+      "shape": [
+        96,
+        144
+      ],
+      "query_shape": [
+        13824,
+        256
+      ],
+      "position_shape": [
+        1,
+        256,
+        96,
+        144
+      ],
+      "finite": true
+    }
+  ],
+  "transitions": [
+    {
+      "source": [
+        100,
+        100
+      ],
+      "target": [
+        150,
+        150
+      ],
+      "output_shape": [
+        22500,
+        1,
+        256
+      ],
+      "elapsed_ms": 4.299239721149206,
+      "constant_max_error": 0.0
+    },
+    {
+      "source": [
+        150,
+        150
+      ],
+      "target": [
+        200,
+        200
+      ],
+      "output_shape": [
+        40000,
+        1,
+        256
+      ],
+      "elapsed_ms": 0.26241177693009377,
+      "constant_max_error": 0.0
+    },
+    {
+      "source": [
+        200,
+        200
+      ],
+      "target": [
+        100,
+        100
+      ],
+      "output_shape": [
+        10000,
+        1,
+        256
+      ],
+      "elapsed_ms": 0.16356585547327995,
+      "constant_max_error": 0.0
+    },
+    {
+      "source": [
+        100,
+        100
+      ],
+      "target": [
+        96,
+        144
+      ],
+      "output_shape": [
+        13824,
+        1,
+        256
+      ],
+      "elapsed_ms": 0.15430757775902748,
+      "constant_max_error": 0.0
+    }
+  ],
+  "peak_allocated_mib": 446.25146484375,
+  "peak_reserved_mib": 1184.0
+}

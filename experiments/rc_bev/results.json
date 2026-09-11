@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "method": "Resolution-Continuous and Budget-Adaptive BEVFormer",
+  "truth_policy": "Metrics are loaded from referenced raw JSON files only after status COMPLETE; NOT RUN rows contain no metrics.",
+  "hardware_protocol": {
+    "physical_gpu": 1,
+    "batch_size": 1,
+    "warmup_iterations": 20,
+    "measured_iterations": 200,
+    "timing_boundaries": ["model_only", "end_to_end"],
+    "percentiles": [50, 95, 99],
+    "precisions": ["FP32", "FP16"]
+  },
+  "records": [
+    {"id": "base200_s0", "family": "matched_fixed_baseline", "seed": 0, "resolution": 200, "status": "NOT RUN"},
+    {"id": "base200_s1", "family": "matched_fixed_baseline", "seed": 1, "resolution": 200, "status": "NOT RUN"},
+    {"id": "base200_s2", "family": "matched_fixed_baseline", "seed": 2, "resolution": 200, "status": "NOT RUN"},
+    {"id": "fixed150_s0", "family": "fixed_150", "seed": 0, "resolution": 150, "status": "NOT RUN"},
+    {"id": "fixed150_s1", "family": "fixed_150", "seed": 1, "resolution": 150, "status": "NOT RUN"},
+    {"id": "fixed150_s2", "family": "fixed_150", "seed": 2, "resolution": 150, "status": "NOT RUN"},
+    {"id": "rc_multires_s0", "family": "continuous_multires", "seed": 0, "train_resolutions": [100, 125, 150, 175, 200], "status": "NOT RUN"},
+    {"id": "rc_multires_s1", "family": "continuous_multires", "seed": 1, "train_resolutions": [100, 125, 150, 175, 200], "status": "NOT RUN"},
+    {"id": "rc_multires_s2", "family": "continuous_multires", "seed": 2, "train_resolutions": [100, 125, 150, 175, 200], "status": "NOT RUN"},
+    {"id": "rc_eval_100", "family": "continuous_fixed_eval_seen", "resolution": 100, "status": "NOT RUN"},
+    {"id": "rc_eval_125", "family": "continuous_fixed_eval_seen", "resolution": 125, "status": "NOT RUN"},
+    {"id": "rc_eval_140", "family": "continuous_fixed_eval_unseen", "resolution": 140, "status": "NOT RUN"},
+    {"id": "rc_eval_150", "family": "continuous_fixed_eval_seen", "resolution": 150, "status": "NOT RUN"},
+    {"id": "rc_eval_160", "family": "continuous_fixed_eval_unseen", "resolution": 160, "status": "NOT RUN"},
+    {"id": "rc_eval_175", "family": "continuous_fixed_eval_seen", "resolution": 175, "status": "NOT RUN"},
+    {"id": "rc_eval_180", "family": "continuous_fixed_eval_unseen", "resolution": 180, "status": "NOT RUN"},
+    {"id": "rc_eval_200", "family": "continuous_fixed_eval_seen", "resolution": 200, "status": "NOT RUN"},
+    {"id": "rc_dynamic", "family": "budget_adaptive", "resolutions": [100, 150, 200], "status": "NOT RUN"},
+    {"id": "bevformer_small", "family": "competitive_lightweight_baseline", "status": "NOT RUN"},
+    {"id": "bevformer_tiny", "family": "competitive_lightweight_baseline", "status": "NOT RUN"}
+  ]
+}
+

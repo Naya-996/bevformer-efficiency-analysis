@@ -21,6 +21,7 @@ from .spatial_cross_attention import MSDeformableAttention3D
 from .decoder import CustomMSDeformableAttention
 from projects.mmdet3d_plugin.models.utils.bricks import run_time
 from mmcv.runner import force_fp32, auto_fp16
+from .resolution_continuous import timed_resize_prev_bev
 
 
 @TRANSFORMER.register_module()
@@ -66,6 +67,7 @@ class PerceptionTransformer(BaseModule):
         self.two_stage_num_proposals = two_stage_num_proposals
         self.init_layers()
         self.rotate_center = rotate_center
+        self.last_prev_bev_resize_ms = 0.0
 
     def init_layers(self):
         """Initialize layers of the Detr3DTransformer."""
@@ -141,16 +143,42 @@ class PerceptionTransformer(BaseModule):
             [shift_x, shift_y]).permute(1, 0)  # xy, bs -> bs, xy
 
         if prev_bev is not None:
+            if kwargs.get('continuous_bev_enabled', False):
+                source_shape = kwargs.get('prev_bev_shape')
+                if source_shape is None:
+                    source_shape = getattr(prev_bev, 'rc_bev_shape', None)
+                if source_shape is None:
+                    target_length = bev_h * bev_w
+                    if prev_bev.shape[0] == target_length or prev_bev.shape[1] == target_length:
+                        source_shape = (bev_h, bev_w)
+                    else:
+                        raise ValueError(
+                            'cross-resolution prev_bev requires an explicit source shape')
+                source_shape = tuple(source_shape)
+                if (source_shape != (bev_h, bev_w) and
+                        kwargs.get('prev_bev_migration') == 'reset_on_change'):
+                    prev_bev = None
+                    self.last_prev_bev_resize_ms = 0.0
+                else:
+                    prev_bev, self.last_prev_bev_resize_ms = timed_resize_prev_bev(
+                        prev_bev, source_shape, (bev_h, bev_w),
+                        kwargs['bev_pc_range'])
+            else:
+                self.last_prev_bev_resize_ms = 0.0
+        if prev_bev is not None:
             if prev_bev.shape[1] == bev_h * bev_w:
                 prev_bev = prev_bev.permute(1, 0, 2)
             if self.rotate_prev_bev:
+                rotate_center = ((bev_w / 2.0, bev_h / 2.0)
+                                 if kwargs.get('continuous_bev_enabled', False)
+                                 else self.rotate_center)
                 for i in range(bs):
                     # num_prev_bev = prev_bev.size(1)
                     rotation_angle = kwargs['img_metas'][i]['can_bus'][-1]
                     tmp_prev_bev = prev_bev[:, i].reshape(
                         bev_h, bev_w, -1).permute(2, 0, 1)
                     tmp_prev_bev = rotate(tmp_prev_bev, rotation_angle,
-                                          center=self.rotate_center)
+                                          center=rotate_center)
                     tmp_prev_bev = tmp_prev_bev.permute(1, 2, 0).reshape(
                         bev_h * bev_w, 1, -1)
                     prev_bev[:, i] = tmp_prev_bev[:, 0]

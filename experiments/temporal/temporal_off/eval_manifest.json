@@ -5,9 +5,7 @@
   },
   "config": {
     "path": "projects/configs/bevformer_ablation/temporal_off.py",
-    "sha256": "05b19e488b5109c779ec303e0b8c96d16dd2bd82f6642fe4301c79f69d630728",
-    "legacy_declared_sha256": "92f96328932a08c215ea034f9f0d7f46d10b7f87e838bad6eff9735a792a583d",
-    "provenance_note": "Legacy hash did not match any available file or Git revision; sha256 now records the archived current source file. The original manifest is preserved in the 20260911 provenance archive."
+    "sha256": "92f96328932a08c215ea034f9f0d7f46d10b7f87e838bad6eff9735a792a583d"
   },
   "exit_code": 0,
   "experiment": "temporal_off",

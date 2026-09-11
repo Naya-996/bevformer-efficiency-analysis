@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "PLANNED",
+  "common_protocol": {
+    "dataset": "nuScenes v1.0 train/val",
+    "seeds": [0, 1, 2],
+    "physical_gpu": 1,
+    "same_hardware_required_within_table": true,
+    "profile": {"warmup": 20, "iterations": 200, "batch_size": 1, "percentiles": [50, 95, 99]},
+    "precisions": ["FP32", "FP16"]
+  },
+  "main": [
+    "matched Base-200 full/same-budget training",
+    "fixed BEV-150 full training",
+    "continuous multi-resolution training",
+    "seen resolution evaluation: 100,125,150,175,200",
+    "unseen resolution evaluation: 140,160,180",
+    "budget-adaptive evaluation on identical ordered validation sequences",
+    "BEVFormer-S and BEVFormer-Tiny matched profiling"
+  ],
+  "ablations": [
+    "discrete versus continuous position encoding",
+    "single-resolution versus multi-resolution training",
+    "with versus without optional consistency loss (not implemented)",
+    "physical history migration versus reset on grid change",
+    "controller with versus without hysteresis/minimum residency",
+    "fixed 100/150/200 versus dynamic",
+    "direct 200-to-150 versus progressive 200-to-175-to-150",
+    "weight-only versus weight-and-Adam-state migration (not implemented)"
+  ],
+  "accuracy_slices": [
+    "NDS/mAP/mATE/mASE/mAOE/mAVE/mAAE", "per-class AP", "distance bins",
+    "visibility/occlusion bins", "turning and high-dynamic scenes",
+    "frames around resolution switches"
+  ],
+  "efficiency": [
+    "parameters", "MACs and unsupported operators", "allocated/reserved memory",
+    "model and end-to-end latency", "mean/std/P50/P95/P99", "FP32/FP16",
+    "controller overhead", "history migration overhead", "energy when telemetry is available"
+  ]
+}
+
