@@ -10,10 +10,11 @@ fixed 200x200 configuration and builds with zero continuous-generator parameters
 This is an implementation milestone, not a paper result. The method checkpoint has
 not been trained or evaluated on the full nuScenes validation set. The initial
 single-GPU seed-0 run was stopped at iteration 729 without a checkpoint so it could
-be replaced by an explicitly requested GPU0+GPU1 DDP run. The replacement run is
-active from seed 0 using the Gloo backend because the currently loaded NVIDIA
-kernel module and installed NVML library do not match. Neither run is counted as a
-result until complete validation.
+be replaced by an explicitly requested GPU0+GPU1 DDP run. The replacement seed-0
+run uses the Gloo backend because the currently loaded NVIDIA kernel module and
+installed NVML library do not match, and is paused after iteration 2538 with its
+process and CUDA state retained. Neither run is counted as a result until complete
+validation.
 
 ## Delivered files
 
