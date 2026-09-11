@@ -5,7 +5,9 @@
   },
   "config": {
     "path": "projects/configs/bevformer_ablation/bev150.py",
-    "sha256": "977737c6f73daa52d134c89878b5a5f6f4060d586a403491ed0e89c6c9717e09"
+    "sha256": "0347fd3c6fdfef7cfc43ffcf42769bcaac18d77862275d6486f5a07ee65f8b0c",
+    "legacy_declared_sha256": "977737c6f73daa52d134c89878b5a5f6f4060d586a403491ed0e89c6c9717e09",
+    "provenance_note": "Legacy hash did not match any available file or Git revision; sha256 now records the archived current source file. The original manifest is preserved in the 20260911 provenance archive."
   },
   "exit_code": 0,
   "experiment": "bev150",

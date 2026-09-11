@@ -5,7 +5,9 @@
   },
   "config": {
     "path": "projects/configs/bevformer_ablation/encoder3.py",
-    "sha256": "e36bd62611fef7cc535e07fb55b45af4aaa16a71aa79f7390f93b19dfa9bf8dc"
+    "sha256": "241ea8ea1e1d67ad5861363e4c34a89683ce01e7541bd169357396386aaabad9",
+    "legacy_declared_sha256": "e36bd62611fef7cc535e07fb55b45af4aaa16a71aa79f7390f93b19dfa9bf8dc",
+    "provenance_note": "Legacy hash did not match any available file or Git revision; sha256 now records the archived current source file. The original manifest is preserved in the 20260911 provenance archive."
   },
   "exit_code": 0,
   "experiment": "encoder3",

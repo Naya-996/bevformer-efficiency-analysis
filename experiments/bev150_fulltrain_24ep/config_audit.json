@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "config": "/home/abc/smq/BEVFormer/projects/configs/bevformer_ablation/bev150_fulltrain_24ep.py",
+  "seed": 0,
+  "model": {
+    "bev_grid": [
+      150,
+      150
+    ],
+    "bev_queries": 22500,
+    "embedding_dim": 256,
+    "encoder_layers": 6,
+    "decoder_layers": 6,
+    "fpn_levels": 4,
+    "backbone": "ResNet-101 + DCNv2",
+    "temporal_history": true,
+    "video_test_mode": true,
+    "rotate_center": [
+      75.0,
+      75.0
+    ]
+  },
+  "data": {
+    "train": {
+      "path": "/data/data1/infos/nuscenes_infos_temporal_train.pkl",
+      "samples": 28130,
+      "cameras": [
+        "CAM_BACK",
+        "CAM_BACK_LEFT",
+        "CAM_BACK_RIGHT",
+        "CAM_FRONT",
+        "CAM_FRONT_LEFT",
+        "CAM_FRONT_RIGHT"
+      ]
+    },
+    "validation": {
+      "path": "/data/data1/infos/nuscenes_infos_temporal_val.pkl",
+      "samples": 6019,
+      "cameras": [
+        "CAM_BACK",
+        "CAM_BACK_LEFT",
+        "CAM_BACK_RIGHT",
+        "CAM_FRONT",
+        "CAM_FRONT_LEFT",
+        "CAM_FRONT_RIGHT"
+      ]
+    },
+    "queue_length": 4
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "base_lr": 0.0002,
+    "backbone_lr_multiplier": 0.1,
+    "weight_decay": 0.01,
+    "epochs": 24,
+    "scheduler": "CosineAnnealing",
+    "warmup_iters": 500
+  },
+  "initialization": "ckpts/r101_dcn_fcos3d_pretrain.pth",
+  "resume_from": null
+}

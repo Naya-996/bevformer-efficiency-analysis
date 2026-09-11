@@ -1,0 +1,2855 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-11T01:51:14.627945+00:00",
+  "archive_root": "/home/abc/smq/BEVFormer_archive_20260911",
+  "source_git_commit": "282c79a8a9d5fa6b8cf1764f72a0be8482798f1d",
+  "file_count": 474,
+  "logical_bytes": 14988298484,
+  "unique_inode_count": 472,
+  "files": [
+    {
+      "path": "artifacts/ckpts/ablation/bev150_epoch2_resume_lr5e-6.pth",
+      "bytes": 773468971,
+      "sha256": "6844dafe4adc4762720288c5bb3cd01e20eee3f018a3dd02842b7aa9e01b3b29",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/ckpts/ablation/bevformer_r101_dcn_24ep_bev100_interp.pth",
+      "bytes": 246210570,
+      "sha256": "4a2f8a900eec9293b7b943fc01a8f0325ba4410e4a28d8bdaf5c64fa0f8c4f5d",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/ckpts/ablation/bevformer_r101_dcn_24ep_bev150_interp.pth",
+      "bytes": 259061770,
+      "sha256": "ce16a45d6c0ee97db419b1d6d5b1dad41b646807b70087bbb4bf41211a8da374",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/ckpts/bevformer_r101_dcn_24ep.pth",
+      "bytes": 276980568,
+      "sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/ckpts/r101_dcn_fcos3d_pretrain.pth",
+      "bytes": 225215819,
+      "sha256": "91d8a649e007663121a64c0511d486fff1d421b77d61359399dd0a821fe633e8",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/experiments_original/baseline/README.md",
+      "bytes": 757,
+      "sha256": "3ee3a105c27ced52166be8ac77684479e82d2afd713e1eebdd29a611d709fa18",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/baseline/eval_manifest.json",
+      "bytes": 729,
+      "sha256": "0f80beedb6245a32fcda58e5e931c87874240e8c3651de901abeb21136fa590a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/baseline/profile.json",
+      "bytes": 4990,
+      "sha256": "a6d7df1c7b12ffda197e491fcba2965b46eddae7d13b238d79c1bf2f2c40203c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/baseline/profile.log",
+      "bytes": 13893,
+      "sha256": "280cec5df89c1e827262a99b597bb897430ebf750719f7cd20b318e8de158bd9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/README.md",
+      "bytes": 1090,
+      "sha256": "e808a29e346e5d878c5ef92e3d56de7a4e50466d9a65140bed08b5d3e69cd5e0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/epoch_3_eval.json",
+      "bytes": 685,
+      "sha256": "ff4616f397f8874eb4488ecd34e154a626ebf605501292d19275c34007c1f8dc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/epoch_4_eval.json",
+      "bytes": 682,
+      "sha256": "439505555dc5694651ebf7f62e28de9885e313567498275dba6039a5e5eff0ac",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/epoch_5_eval.json",
+      "bytes": 684,
+      "sha256": "cde9ba3c3ed06188ce67402a2c54fd7adf67c18dfdf2c82f603dac230ed0c71d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/epoch_6_eval.json",
+      "bytes": 684,
+      "sha256": "5d5e4a5e2ebc5b3ccac51b744018dc1f94079d71c8f4e7f852959b58feca7838",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/paired_2ep_profile_gpu1.json",
+      "bytes": 7580,
+      "sha256": "347f9943094cf5abb1af6b351f3d855dca155c913d7d5bf54c2336522fb13f56",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/paired_base_profile_gpu1.json",
+      "bytes": 7566,
+      "sha256": "00b42fb4de1915c8e76d9e5eea124093a4dcde8075ff4a311bb6b77782684f01",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/paired_best_profile_gpu1.json",
+      "bytes": 7575,
+      "sha256": "41e739978e31acb5a7fd6abbfdd6a2d3d22a5df1d5a0a04de0d7c213fb27248c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/result_report.md",
+      "bytes": 1698,
+      "sha256": "138b1ef3c0dec11c44dd816edd261ac45fa61b3bbd4fbc8c7ccc873a862831da",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_extended/summary.json",
+      "bytes": 3734,
+      "sha256": "0e63ed1648f84a28f611de054273fa51202f391206e8833c15bf4dc3817c8b7a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/README.md",
+      "bytes": 820,
+      "sha256": "8098ef82151c44132652ff8ccd5fc5476e5aab9cc1fb96737d0a04e9c48922af",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/checkpoint_manifest.json",
+      "bytes": 613,
+      "sha256": "63328425d2dfb0749bc3eaef8120705294a3723b924ba7104cd4c1a831d307d8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/config_audit.json",
+      "bytes": 1377,
+      "sha256": "207e0e1e0dd6f8119ac25c049f447e8861ed8266598afa9f9877d263f0848ef8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/smoke_test.json",
+      "bytes": 1393,
+      "sha256": "df4822e645cfb9d691ac7197162aa69b8d0f4653fc0c1d9b70889c28ed3870f9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/smoke_test.log",
+      "bytes": 191481,
+      "sha256": "9424f6646d94aede7882dfdc4c80df8fa2a2362cdcf7855bb111e8a7ec4e70e9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/summary.json",
+      "bytes": 395,
+      "sha256": "bbf9c1d73b4e91dcd6805c07461dcce820d89928ecd5825f199f508e3a46e7c6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev150_fulltrain_24ep/training_manifest.json",
+      "bytes": 1780,
+      "sha256": "99c5d0104c16cd67093a419a77bc6d2163014ad8964ce0ea4b91af645751af2f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev_resolution/bev100/eval_manifest.json",
+      "bytes": 705,
+      "sha256": "ce2ef98d110ed529172c95dd9b24d2a885e0a119353c06bcb26798f9430b93ca",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev_resolution/bev100/profile.json",
+      "bytes": 5016,
+      "sha256": "aa0f3aa2f7a6eaf9a5092205c9a945157a34fb4f91c0a1333a3a06cb68086325",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev_resolution/bev100/profile.log",
+      "bytes": 14028,
+      "sha256": "ac2074886380d7593458d0262bd4538507413e492082f80f42cea591ce089041",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev_resolution/bev150/eval_manifest.json",
+      "bytes": 705,
+      "sha256": "c4732bc56ee99ab053226493825ea63615eef1bfd6f66fc5e76cc7f106601390",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev_resolution/bev150/profile.json",
+      "bytes": 5011,
+      "sha256": "4d3884d76ca8858e05a59fb5432d1cf446e061faa8d3d7e6d37b1e9f0d18d940",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/bev_resolution/bev150/profile.log",
+      "bytes": 14023,
+      "sha256": "8a95f1ed1724f4fa4809495f712b144ea223ec240e59250a300914c0b22af92c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/encoder_depth/encoder3/eval_manifest.json",
+      "bytes": 688,
+      "sha256": "074c23834d2eb3722386c16562537fc91ee9592bf007ad01280548d95784bcd4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/encoder_depth/encoder3/profile.json",
+      "bytes": 4988,
+      "sha256": "4f98f58945583f7a8e8fc78ec9e9aa205a58205eb32164189c73a34c8518da11",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/encoder_depth/encoder3/profile.log",
+      "bytes": 20007,
+      "sha256": "af5932e3cb849025093190524b447f6c99a4adfa1ba2099aec93a7f095a34e04",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/encoder_depth/encoder4/eval_manifest.json",
+      "bytes": 688,
+      "sha256": "252dd8c50d40f45c59ae6aafed82cb667d99a3ca976407c0212931f4a0fba52b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/encoder_depth/encoder4/profile.json",
+      "bytes": 4984,
+      "sha256": "6dc494aa3a6b57173d490c9463dee8137451001ad7fb669b9db430aa02397299",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/encoder_depth/encoder4/profile.log",
+      "bytes": 18021,
+      "sha256": "769b6e34b8dff3b39ae7797b62be63d6aa79e4067b58316929f26a4c1f2154df",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/lite/README.md",
+      "bytes": 1726,
+      "sha256": "068ad8e5d8005153dd6596aaffc22878ec81df936102e02c35032832e836edc7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/lite/visualization_manifest.json",
+      "bytes": 2735,
+      "sha256": "83c3ed23446b94ffeb02ca860276cd0ec7a8bbe713772ad850179d1e52c9adf4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/lite_finetuned/eval_manifest.json",
+      "bytes": 728,
+      "sha256": "8ceccc6999f377d1ad1454ca180dc448345602e259345b1097e2396017d091bd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/lite_finetuned/profile.json",
+      "bytes": 4994,
+      "sha256": "c1158b16ece7b7b209c0a8659c586a4f4320a265c16df4d76588a5e140e7e810",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/lite_finetuned/profile.log",
+      "bytes": 13068,
+      "sha256": "e8ae4e1a47338b605a20ace2c085ca6f28b120e275a3becf7605d90100a5bd79",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/lite_finetuned/result_report.md",
+      "bytes": 1251,
+      "sha256": "6a748066c2a96ed1d16cf776b4a46e12d84399b5fab281e6c764e6072a588945",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/summary.csv",
+      "bytes": 3089,
+      "sha256": "511585329f65f3f5d55bb6bafa87c829afeb57822eed2a6c7b1b9547810e9f10",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/summary.json",
+      "bytes": 6579,
+      "sha256": "205257d2f9651bc114c51cc854398bdc6da5987f18dfc86ea6b18454708fe9d0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/temporal/temporal_off/eval_manifest.json",
+      "bytes": 700,
+      "sha256": "cbd1c81d488b32436b5fab1c11e96ffd1e5a6bc9596c27d83f74bf044c53b646",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/temporal/temporal_off/profile.json",
+      "bytes": 5006,
+      "sha256": "27a1f8f07c9700a541fe82886879b6b8f916aeef9b1d1b192051a6ed25eb0995",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/experiments_original/temporal/temporal_off/profile.log",
+      "bytes": 14008,
+      "sha256": "8e04add5add4c513a482dcc2bfee6189aa0d7c003c27cdc4ad57ef76c2e2f770",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/.bev150_finetune_scheduler.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/.bevformer_gpu1_extended.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/.experiment_scheduler.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/.gpu0_bevformer_experiment.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_bev100_eval.log",
+      "bytes": 980074,
+      "sha256": "340ef9d17aa4e737668fa9c409a33d64885ed4ec3ebd609d43fc3b1af2e6e58f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_bev150_eval.log",
+      "bytes": 980063,
+      "sha256": "8d130617295720b9d25822aa58b8a3babed198f3648134ebeb91bdf6d7fb021c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_encoder3_eval.log",
+      "bytes": 985967,
+      "sha256": "b862bc6c6ba43495e7464aeb7f1cba87b0ac66a833c4dcc5f330a8a9ba87b17e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_encoder4_eval.log",
+      "bytes": 1128636,
+      "sha256": "079c2cef3b96d354b99d44ebefef38eb651393b7eeb01ef54469383e4a3e3d0e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_profile_queue_status.log",
+      "bytes": 5545,
+      "sha256": "c331357301c7e844d8723fdd749f8e407a445d7a741431cd5a37d23eeb339b8b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_queue_status.log",
+      "bytes": 209411,
+      "sha256": "8d8e310c8714c9443c0fc57c24e6a52eb5627dcd38d40b613a076088a8ff4596",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/ablation_temporal_off_eval.log",
+      "bytes": 980133,
+      "sha256": "288d459bd0914931f7a4cdac4735b1d8c42fbf32f90df3add774fe0b97ab5645",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_extended_best_profile.log",
+      "bytes": 12738,
+      "sha256": "832039961e0e2e7271c19dad581c1f9dfe8ee953665fbd78800f67c86293db20",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_extended_epoch_3_eval.log",
+      "bytes": 979378,
+      "sha256": "3b9449d59663653973d6cf8847be289062779fd88353dd20e2500ae4a8087b99",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_extended_epoch_4_eval.log",
+      "bytes": 979371,
+      "sha256": "f72722d22e3519c611142bea70cd2978ba9139772f889df3978fc7301afdd6d6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_extended_epoch_5_eval.log",
+      "bytes": 979377,
+      "sha256": "e3e90a1d93239773710e3af89326e4523d198306ad00051f61340470ef7f730d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_extended_epoch_6_eval.log",
+      "bytes": 979375,
+      "sha256": "8034f513e9438a43ce88cd28babb4269f6650aa71de7fde8bc2ec3fd91a7899e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_extended_pipeline_status.log",
+      "bytes": 1567,
+      "sha256": "0eab2c53f2dd2ac7ec8ccc8b565dae271ad581682c33ec9dc1a5bc093963aa87",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_finetune_2ep.log",
+      "bytes": 1245135,
+      "sha256": "33e9ea2ee19bc500f5f9003f86ab5e80ddcfad970885345f4b91bf615cb24f04",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_finetune_6ep.log",
+      "bytes": 1996397,
+      "sha256": "d7f5596a51d7a596b022bbbf6a68ba692fae97fc53894cbc2e9f8c780fc49b84",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_finetune_eval.log",
+      "bytes": 979688,
+      "sha256": "895d34db457cb352cff002d3ac0370288afa9c89423196688284a5a3c09454e7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_finetune_pipeline.log",
+      "bytes": 3931,
+      "sha256": "2f01747ca405048270fcb83d3ad7a5af1cc38e81260565bad25adcedba5009bb",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_finetune_scheduler.log",
+      "bytes": 164129,
+      "sha256": "f30d82da22edf07216d0d6f217dc7ee0d1be81629ff5e167f1b0b597ddcaa5d8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_fulltrain_24ep.log",
+      "bytes": 509386,
+      "sha256": "6931c232bbb7b601990f3304367257242f74ff00aed44a789f5f0152618ebcf8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bev150_fulltrain_postprocess.log",
+      "bytes": 134,
+      "sha256": "85bd81d75aa54ce7e373b416c4a58eb30bf2845d43d42fb76ebfc432f3c366b1",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bevformer_base_eval.log",
+      "bytes": 982405,
+      "sha256": "928505a20c62e7a8de525280513385a388e52bd829e551177b91407ea48aa7e8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bevformer_base_eval_cuda128_system.log",
+      "bytes": 22088,
+      "sha256": "7fe0424f98cc7c87c6b2a12c52c0b7675770290655def5a956019624d039907a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bevformer_base_eval_ddp_attempt.log",
+      "bytes": 6817,
+      "sha256": "5b4019346bd71a19a8ffc2ea82f96a8370b7cc894cf03714585c0558083857f8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/bevformer_base_eval_scatter_attempt.log",
+      "bytes": 9989,
+      "sha256": "d6c78a8ed81c7adbfaf8ecf16de9db619a3b597d97dcdb8305f1cae835c91a0d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/experiment_scheduler.log",
+      "bytes": 5733534,
+      "sha256": "5937d429a1bcc40046bf70b2592cb03fe305aa5f4ec98e8048e0523b5c989ca9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/mmcv_build.log",
+      "bytes": 103710,
+      "sha256": "ef57ecea946ab45d57d87ab7ff8fa7e53c23a8084fb1c5b8128eb5980b27e306",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/mmcv_py39_build.log",
+      "bytes": 287032,
+      "sha256": "63fe028a5c92211d3f746e2bc2dbd70f699ba86b866a8514bcc2f506e9acc8c2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/mmdet3d_ops_build.log",
+      "bytes": 168758,
+      "sha256": "48fd82949f2b029d2d4e6431c82f58e83b595a3453b75158bdf7daa5f34f72b2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/paired_2ep_profile_gpu1.log",
+      "bytes": 15330,
+      "sha256": "b51b737e09dda0c0f74486dca5295350fdf12f8d9df6c6a8ea3edd0cb15723fc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/paired_base_profile_gpu1.log",
+      "bytes": 15309,
+      "sha256": "1464725bf510de0e298fe5668154d17e95c97cdf4681e8978984041d63d2c9fd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/logs_snapshot/paired_best_profile_gpu1.log",
+      "bytes": 15326,
+      "sha256": "c237c93da3cedaa618008107404884515df8411e99fc8ab1ba5cc32e5449e649",
+      "hardlink_count": 1
+    },
+    {
+      "path": "artifacts/test/bev100/Wed_Aug_12_12_40_31_2026/pts_bbox/metrics_details.json",
+      "bytes": 746619,
+      "sha256": "44d33b85d1005c8c26554f3d229d5a0988b48bce21612e533837bcc2638671ff",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev100/Wed_Aug_12_12_40_31_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5264,
+      "sha256": "70f6af1522ac63e7680eaf1471d60d06c6ebcff6ff9df49b9a297737fd290de0",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev100/Wed_Aug_12_12_40_31_2026/pts_bbox/results_nusc.json",
+      "bytes": 624912162,
+      "sha256": "cdd501c14db1566178a06f83c83243b350c530caae7cf76949bdb951ffa3125a",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150/Wed_Aug_12_12_18_15_2026/pts_bbox/metrics_details.json",
+      "bytes": 753038,
+      "sha256": "01261fb2ef3bafc84258595aacc568d067aa5990969685d00b8b68be86ed76df",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150/Wed_Aug_12_12_18_15_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5253,
+      "sha256": "58063ecc9232a02c71d367b03a885395734edb5954fda243f53e9ed420b97e4f",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150/Wed_Aug_12_12_18_15_2026/pts_bbox/results_nusc.json",
+      "bytes": 617232603,
+      "sha256": "77d085d16ae447f6c5a05654733972a736a81a27c76d2387bf0d7c39c24ca5b9",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune/Fri_Aug_14_04_43_21_2026/pts_bbox/metrics_details.json",
+      "bytes": 753344,
+      "sha256": "c4f257ca10990e83101e382263af2a25bf3e5bced46c1865e0c9f45b43aff115",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune/Fri_Aug_14_04_43_21_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5253,
+      "sha256": "a142262fb20771e8c427e2107ee52c62bea1fae3b5ac686b8e38df0d10c442cd",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune/Fri_Aug_14_04_43_21_2026/pts_bbox/results_nusc.json",
+      "bytes": 611743586,
+      "sha256": "18d9f65a7ed7f65f54ae36b057742b38bc2c94ee3a9770dd4174d5a04cd4b319",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_08_27_38_2026/pts_bbox/metrics_details.json",
+      "bytes": 752311,
+      "sha256": "ef2a035398390c68f2f0e4d6bc05c5127f7e06cb687768b550776b7562afb97f",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_08_27_38_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5263,
+      "sha256": "a2aaef172a20b5d7ce1e22eb54d5c658eda508044ec5155e47fa21e895702312",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_08_27_38_2026/pts_bbox/results_nusc.json",
+      "bytes": 629791763,
+      "sha256": "7cbeefad230be9b231894ca12793d9f45b7ff3309634082c6d08c2253f1f87a6",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_08_55_34_2026/pts_bbox/metrics_details.json",
+      "bytes": 752309,
+      "sha256": "5d409984c6b85decad84737ca53dd3c308538c86cf3a9c587733dfcf01a82a0d",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_08_55_34_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5248,
+      "sha256": "aeca42aadc06b5af700c285e09b3d4509d58a29ee6b2605cbfcf34f168f68b5a",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_08_55_34_2026/pts_bbox/results_nusc.json",
+      "bytes": 627931242,
+      "sha256": "bf8c07b9e1d8914990daa5081340898f84491261bcfa6954e9762b7406270bad",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_09_23_29_2026/pts_bbox/metrics_details.json",
+      "bytes": 751688,
+      "sha256": "c1f5200b74330a80bc3a573882fef2d41f5f229d2ec3fb44b5b10a92af08bd3e",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_09_23_29_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5250,
+      "sha256": "4683003ff293c98f67db2ca32b75d19b4b960ac5edfa09606e6244a18b5d0df9",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_09_23_29_2026/pts_bbox/results_nusc.json",
+      "bytes": 620721492,
+      "sha256": "c96510c4f3427dc895f50aa715949eb521a7b319df9654454339cd8a3a2ffe6f",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_09_51_23_2026/pts_bbox/metrics_details.json",
+      "bytes": 754106,
+      "sha256": "e7fc0f42d8d0402fcdacfa6fd88ff2a1e375e41734e14fb83045f8369698a6a1",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_09_51_23_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5249,
+      "sha256": "59218be0f7441e08948493aec308807ec07139af7b06ab4fdc82d568283eade5",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bev150_finetune_6ep/Wed_Sep__9_09_51_23_2026/pts_bbox/results_nusc.json",
+      "bytes": 628891691,
+      "sha256": "3f97b4e474543db247dc654c37a1996ab805bb789d59f5e13ad43a6e6b7e72d9",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bevformer_base/Mon_Aug_10_17_02_09_2026/pts_bbox/metrics_details.json",
+      "bytes": 755738,
+      "sha256": "77b5dceaf2aaf5355800c872b3e9e0ae1ed6c792d1f882cc0d4c1e32e1de4566",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bevformer_base/Mon_Aug_10_17_02_09_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5251,
+      "sha256": "ad66a738e8cbcffa806d627900aa14a3688583a8f59ecdb3cbd852c1e807f1f8",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/bevformer_base/Mon_Aug_10_17_02_09_2026/pts_bbox/results_nusc.json",
+      "bytes": 613761582,
+      "sha256": "d336dde7fa59a716d3c7cad881a2e306131f11d1f7cf03403d92b60fa6a709cb",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/encoder3/Wed_Aug_12_11_28_48_2026/pts_bbox/metrics_details.json",
+      "bytes": 490040,
+      "sha256": "9ac257630510675268e0f3076691b1e6883917dcd0e0ac2296200d81db1f6371",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/encoder3/Wed_Aug_12_11_28_48_2026/pts_bbox/metrics_summary.json",
+      "bytes": 3870,
+      "sha256": "311912cc6a6cc1eb946fa05ca55c5773180cf3ae03175e84f59593f81961b229",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/encoder3/Wed_Aug_12_11_28_48_2026/pts_bbox/results_nusc.json",
+      "bytes": 737536698,
+      "sha256": "9b6fa716e6b05b1aadddcb54cc3f48549d60bf964e6451731a080d29bcc36ebd",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/encoder4/Wed_Aug_12_11_06_25_2026/pts_bbox/metrics_details.json",
+      "bytes": 556189,
+      "sha256": "28c290b10bc0d82ab2f72849503ea41582d2a3fd09c640c88cb4f56e05799e60",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/encoder4/Wed_Aug_12_11_06_25_2026/pts_bbox/metrics_summary.json",
+      "bytes": 3884,
+      "sha256": "e883940db683045792dd63c6c8a6695743aed8406367e0b55d362394089eccf0",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/encoder4/Wed_Aug_12_11_06_25_2026/pts_bbox/results_nusc.json",
+      "bytes": 557713650,
+      "sha256": "e01accbddf2c471866fc6bd6785c8afdd502832949b364ad9857f1e82893b451",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/temporal_off/Wed_Aug_12_11_55_06_2026/pts_bbox/metrics_details.json",
+      "bytes": 748119,
+      "sha256": "f8486e85bd6c8504353f74fda72c47aee16703fe73a221d9be6377dc38a3c404",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/temporal_off/Wed_Aug_12_11_55_06_2026/pts_bbox/metrics_summary.json",
+      "bytes": 5247,
+      "sha256": "3afb8f676eb444f66b9b802818ddb03d18dd48929efca57088b57dd235b93d9a",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/test/temporal_off/Wed_Aug_12_11_55_06_2026/pts_bbox/results_nusc.json",
+      "bytes": 650686012,
+      "sha256": "ea40db494ab2e9e18dc66b5233f7d22cbd94a75b8f957fb0965e83530dc37174",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_013715.log",
+      "bytes": 172572,
+      "sha256": "8eebe44abdc71b1d2de91ce7a9a1f79b4467daeac26214d648004e4995e8f411",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_013715.log.json",
+      "bytes": 18067,
+      "sha256": "eff09a60762e161b4b43247f801fde75f0cd10eea9fe208d412855bc25b82b02",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_013921.log",
+      "bytes": 173843,
+      "sha256": "b8d73d4b4ccf0f31f1d67921fc534260488656b1c2712ed3e0c077bedd14b2e2",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_013921.log.json",
+      "bytes": 19380,
+      "sha256": "828133ddd5f2158cabde3b9a7b341f7a7ff0327bc7cc407e36f78493a338410a",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_014301.log",
+      "bytes": 172420,
+      "sha256": "5f63fc90a0f106993a37ac118d760ffae51b302088dc3968d50b4d1e216dee11",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_014301.log.json",
+      "bytes": 18069,
+      "sha256": "135d1071a2842e6d76bef3b260a2b26bbf46ba89ffc03ababe6424167103b559",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_101626.log",
+      "bytes": 652252,
+      "sha256": "bd22f87afcafa4d52703aeaf0928b086597680fe50eee47e37c64aec8c93365a",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/20260813_101626.log.json",
+      "bytes": 513648,
+      "sha256": "eb5f65360fb0dcaa742f68b430447957c3f47e6b2ea3b448b5d11068bdd8dd3d",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/bev150_finetune.py",
+      "bytes": 15107,
+      "sha256": "013596cbe8f078a356270441c619bf6ffb5bfc6cf88692d89a3ff1b03bdb6726",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/epoch_1.pth",
+      "bytes": 773294351,
+      "sha256": "623d9bbefe3ffe75f8b7799c416e34feb5c97c90974123133a0e8c65f8b810d6",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/epoch_2.pth",
+      "bytes": 773294479,
+      "sha256": "268a83dbd256bc993e3eb8538a7b98c316b884bec8ea60919cf90ca82aac8e11",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/latest.pth",
+      "bytes": 773294479,
+      "sha256": "268a83dbd256bc993e3eb8538a7b98c316b884bec8ea60919cf90ca82aac8e11",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/tf_logs/events.out.tfevents.1786556242.abc-Z790-UD.2273246.0",
+      "bytes": 88,
+      "sha256": "4d93314cde609bcb3e715451f7c74bcd7c36667a442e28349b5f9dd943ee8879",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/tf_logs/events.out.tfevents.1786556367.abc-Z790-UD.2276933.0",
+      "bytes": 2678,
+      "sha256": "3a4f768602e91abfc63b9a16985f4a8821ad53f5333067f3f1feb84863e82735",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/tf_logs/events.out.tfevents.1786556690.abc-Z790-UD.2281584.0",
+      "bytes": 88,
+      "sha256": "3a8e5cf53907ae184abe529c9e30052956ab2abe65537d9880aab326e5a523db",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_2ep/tf_logs/events.out.tfevents.1786587392.abc-Z790-UD.2400984.0",
+      "bytes": 995184,
+      "sha256": "1bc80c3b0ef3b8606a75c790a092bbfa5ef7322b8fa1a885b45cf444b87391e2",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/20260907_143159.log",
+      "bytes": 1137151,
+      "sha256": "2419498ee0e27827b156375860c55c98737a809420fcda8fc66fa10d119df2b7",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/20260907_143159.log.json",
+      "bytes": 1073135,
+      "sha256": "06930adb2b3446d7612f80d0a6977fdd7d38f92073ef15ae77766fe761bc7faf",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/bev150_finetune_6ep.py",
+      "bytes": 15115,
+      "sha256": "302f52840464c05856e322c73cc200802fa28d7a09c1969489df23b5f227b306",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/epoch_3.pth",
+      "bytes": 773385359,
+      "sha256": "ce5ee010fd0f346fc856c0fc45c315a4aa04460fc7aefd414cea45273fc6b571",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/epoch_4.pth",
+      "bytes": 773385359,
+      "sha256": "5f62ec3d1d7b6ce14ae9cddbab193025183b52aa330dd30b6a0aa1989c603ea0",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/epoch_5.pth",
+      "bytes": 773385359,
+      "sha256": "3ceb8a48619798b537ce189cf6f9da3d9815c90fc106653f49280304d434a99a",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/epoch_6.pth",
+      "bytes": 773385359,
+      "sha256": "396fb656bcbf1848419613192e1316bfd11f7d86f032a5e2bf6b8c634444d9a6",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/latest.pth",
+      "bytes": 773385359,
+      "sha256": "396fb656bcbf1848419613192e1316bfd11f7d86f032a5e2bf6b8c634444d9a6",
+      "hardlink_count": 2
+    },
+    {
+      "path": "artifacts/work_dirs/bev150_finetune_6ep/tf_logs/events.out.tfevents.1788762726.abc-Z790-UD.2906401.0",
+      "bytes": 2000808,
+      "sha256": "53b9bab9d5900445a9dcc6cdcfdc9d25dff85b9edb73a03a82f5943bf3d253b4",
+      "hardlink_count": 2
+    },
+    {
+      "path": "code/repository_all_refs.bundle",
+      "bytes": 30603097,
+      "sha256": "d5b8aea828fa2eb6429cd646af2f72e8d65a5d5a541a672892d7de75ea56e091",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/.gitignore",
+      "bytes": 2272,
+      "sha256": "37a80d8813a2d99ff85316dee38b731b833e4dcf5b0076da3775c03b1b123fef",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/README.md",
+      "bytes": 5871,
+      "sha256": "3fc553ac590190de33fb9fbfa27cdd42001863ec30ea124cc6606a4461f4b606",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/assets/accuracy_vs_fps.png",
+      "bytes": 147926,
+      "sha256": "54b691780340332243c2de46fa91dd87b3f76a1fca9b88e3700d9eafd900f546",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/assets/accuracy_vs_memory.png",
+      "bytes": 162823,
+      "sha256": "952dde9cb02611237e2da9d738658f049bc25a2ad1eba314535775e2bfabacff",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/assets/visualizations/dense_94126983bc0c4de89fb27cefb81f24ef.png",
+      "bytes": 6808915,
+      "sha256": "738f0148b0792bd3f7f788d2ff783e3e2ea78c5bbf3a8cbc3ffc4e13f31cab75",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/assets/visualizations/far_cdc90732e957479da6c8a80c9fad6f78.png",
+      "bytes": 6351171,
+      "sha256": "85b45b43f1a3106459d0b6e438ac260b73e6a7cd3c5759c1b3c76a556061e3b9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/assets/visualizations/occlusion_2ff5689a089844f0a2097b1883916003.png",
+      "bytes": 6683928,
+      "sha256": "1a00f670016fde72464a98109b485848d06669f43a93eab0ff2ace271e3c409d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/assets/visualizations/turning_1eeeb68791084aa7b2e5d05223796e1e.png",
+      "bytes": 9716856,
+      "sha256": "e2a75ac850b738b30f0c2844fe194cf1db043bb65bc70d7a46e04c1027d540ce",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/can_bus.ipynb",
+      "bytes": 7360,
+      "sha256": "857d1e7e0103dbf2ec9df4fe3bce737e921bbadbd12942009354e96feba739be",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/experiments.md",
+      "bytes": 9563,
+      "sha256": "bd1ac34e875d9f35ac23e7fce936d75fdf9c65fe04d3eac4d8341f5fc205f0c2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/getting_started.md",
+      "bytes": 875,
+      "sha256": "7dcc1e72a3a703f94c939582ae52fb0438fac22412368342ae05ce1b925246d0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/install.md",
+      "bytes": 1919,
+      "sha256": "c404b62d7a5a205929323aba75e4538a49df18fa21a1212745dce887700bd1c7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/paper_draft_zh.md",
+      "bytes": 21293,
+      "sha256": "3a120a9197fa7efe40d1fb8950b96cc3ac7541352148f2309a0f283539b9c932",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/prepare_dataset.md",
+      "bytes": 1125,
+      "sha256": "fb3013b5aa0b72d987667832da270d907534b5c2d13286c6047daf7273812728",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/docs/resume_and_interview.md",
+      "bytes": 7923,
+      "sha256": "762e2fbffdab24cdcf48b4dc06aaf909d3936c6794037a8fd8575852a8738b6e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/baseline/README.md",
+      "bytes": 757,
+      "sha256": "3ee3a105c27ced52166be8ac77684479e82d2afd713e1eebdd29a611d709fa18",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/baseline/eval_manifest.json",
+      "bytes": 729,
+      "sha256": "0f80beedb6245a32fcda58e5e931c87874240e8c3651de901abeb21136fa590a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/baseline/profile.json",
+      "bytes": 4990,
+      "sha256": "a6d7df1c7b12ffda197e491fcba2965b46eddae7d13b238d79c1bf2f2c40203c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/baseline/profile.log",
+      "bytes": 13893,
+      "sha256": "280cec5df89c1e827262a99b597bb897430ebf750719f7cd20b318e8de158bd9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/README.md",
+      "bytes": 1090,
+      "sha256": "e808a29e346e5d878c5ef92e3d56de7a4e50466d9a65140bed08b5d3e69cd5e0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/epoch_3_eval.json",
+      "bytes": 685,
+      "sha256": "ff4616f397f8874eb4488ecd34e154a626ebf605501292d19275c34007c1f8dc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/epoch_4_eval.json",
+      "bytes": 682,
+      "sha256": "439505555dc5694651ebf7f62e28de9885e313567498275dba6039a5e5eff0ac",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/epoch_5_eval.json",
+      "bytes": 684,
+      "sha256": "cde9ba3c3ed06188ce67402a2c54fd7adf67c18dfdf2c82f603dac230ed0c71d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/epoch_6_eval.json",
+      "bytes": 684,
+      "sha256": "5d5e4a5e2ebc5b3ccac51b744018dc1f94079d71c8f4e7f852959b58feca7838",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/paired_2ep_profile_gpu1.json",
+      "bytes": 7580,
+      "sha256": "347f9943094cf5abb1af6b351f3d855dca155c913d7d5bf54c2336522fb13f56",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/paired_base_profile_gpu1.json",
+      "bytes": 7566,
+      "sha256": "00b42fb4de1915c8e76d9e5eea124093a4dcde8075ff4a311bb6b77782684f01",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/paired_best_profile_gpu1.json",
+      "bytes": 7575,
+      "sha256": "41e739978e31acb5a7fd6abbfdd6a2d3d22a5df1d5a0a04de0d7c213fb27248c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/result_report.md",
+      "bytes": 1698,
+      "sha256": "138b1ef3c0dec11c44dd816edd261ac45fa61b3bbd4fbc8c7ccc873a862831da",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_extended/summary.json",
+      "bytes": 3734,
+      "sha256": "0e63ed1648f84a28f611de054273fa51202f391206e8833c15bf4dc3817c8b7a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/README.md",
+      "bytes": 820,
+      "sha256": "8098ef82151c44132652ff8ccd5fc5476e5aab9cc1fb96737d0a04e9c48922af",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/checkpoint_manifest.json",
+      "bytes": 613,
+      "sha256": "63328425d2dfb0749bc3eaef8120705294a3723b924ba7104cd4c1a831d307d8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/config_audit.json",
+      "bytes": 1377,
+      "sha256": "207e0e1e0dd6f8119ac25c049f447e8861ed8266598afa9f9877d263f0848ef8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/smoke_test.json",
+      "bytes": 1393,
+      "sha256": "df4822e645cfb9d691ac7197162aa69b8d0f4653fc0c1d9b70889c28ed3870f9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/smoke_test.log",
+      "bytes": 191481,
+      "sha256": "9424f6646d94aede7882dfdc4c80df8fa2a2362cdcf7855bb111e8a7ec4e70e9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/summary.json",
+      "bytes": 395,
+      "sha256": "bbf9c1d73b4e91dcd6805c07461dcce820d89928ecd5825f199f508e3a46e7c6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev150_fulltrain_24ep/training_manifest.json",
+      "bytes": 1780,
+      "sha256": "99c5d0104c16cd67093a419a77bc6d2163014ad8964ce0ea4b91af645751af2f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev_resolution/bev100/eval_manifest.json",
+      "bytes": 705,
+      "sha256": "ce2ef98d110ed529172c95dd9b24d2a885e0a119353c06bcb26798f9430b93ca",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev_resolution/bev100/profile.json",
+      "bytes": 5016,
+      "sha256": "aa0f3aa2f7a6eaf9a5092205c9a945157a34fb4f91c0a1333a3a06cb68086325",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev_resolution/bev100/profile.log",
+      "bytes": 14028,
+      "sha256": "ac2074886380d7593458d0262bd4538507413e492082f80f42cea591ce089041",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev_resolution/bev150/eval_manifest.json",
+      "bytes": 705,
+      "sha256": "c4732bc56ee99ab053226493825ea63615eef1bfd6f66fc5e76cc7f106601390",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev_resolution/bev150/profile.json",
+      "bytes": 5011,
+      "sha256": "4d3884d76ca8858e05a59fb5432d1cf446e061faa8d3d7e6d37b1e9f0d18d940",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/bev_resolution/bev150/profile.log",
+      "bytes": 14023,
+      "sha256": "8a95f1ed1724f4fa4809495f712b144ea223ec240e59250a300914c0b22af92c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/encoder_depth/encoder3/eval_manifest.json",
+      "bytes": 688,
+      "sha256": "074c23834d2eb3722386c16562537fc91ee9592bf007ad01280548d95784bcd4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/encoder_depth/encoder3/profile.json",
+      "bytes": 4988,
+      "sha256": "4f98f58945583f7a8e8fc78ec9e9aa205a58205eb32164189c73a34c8518da11",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/encoder_depth/encoder3/profile.log",
+      "bytes": 20007,
+      "sha256": "af5932e3cb849025093190524b447f6c99a4adfa1ba2099aec93a7f095a34e04",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/encoder_depth/encoder4/eval_manifest.json",
+      "bytes": 688,
+      "sha256": "252dd8c50d40f45c59ae6aafed82cb667d99a3ca976407c0212931f4a0fba52b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/encoder_depth/encoder4/profile.json",
+      "bytes": 4984,
+      "sha256": "6dc494aa3a6b57173d490c9463dee8137451001ad7fb669b9db430aa02397299",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/encoder_depth/encoder4/profile.log",
+      "bytes": 18021,
+      "sha256": "769b6e34b8dff3b39ae7797b62be63d6aa79e4067b58316929f26a4c1f2154df",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/lite/README.md",
+      "bytes": 1726,
+      "sha256": "068ad8e5d8005153dd6596aaffc22878ec81df936102e02c35032832e836edc7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/lite/visualization_manifest.json",
+      "bytes": 2735,
+      "sha256": "83c3ed23446b94ffeb02ca860276cd0ec7a8bbe713772ad850179d1e52c9adf4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/lite_finetuned/eval_manifest.json",
+      "bytes": 728,
+      "sha256": "8ceccc6999f377d1ad1454ca180dc448345602e259345b1097e2396017d091bd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/lite_finetuned/profile.json",
+      "bytes": 4994,
+      "sha256": "c1158b16ece7b7b209c0a8659c586a4f4320a265c16df4d76588a5e140e7e810",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/lite_finetuned/profile.log",
+      "bytes": 13068,
+      "sha256": "e8ae4e1a47338b605a20ace2c085ca6f28b120e275a3becf7605d90100a5bd79",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/lite_finetuned/result_report.md",
+      "bytes": 1251,
+      "sha256": "6a748066c2a96ed1d16cf776b4a46e12d84399b5fab281e6c764e6072a588945",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/summary.csv",
+      "bytes": 3089,
+      "sha256": "511585329f65f3f5d55bb6bafa87c829afeb57822eed2a6c7b1b9547810e9f10",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/summary.json",
+      "bytes": 6579,
+      "sha256": "205257d2f9651bc114c51cc854398bdc6da5987f18dfc86ea6b18454708fe9d0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/temporal/temporal_off/eval_manifest.json",
+      "bytes": 700,
+      "sha256": "cbd1c81d488b32436b5fab1c11e96ffd1e5a6bc9596c27d83f74bf044c53b646",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/temporal/temporal_off/profile.json",
+      "bytes": 5006,
+      "sha256": "27a1f8f07c9700a541fe82886879b6b8f916aeef9b1d1b192051a6ed25eb0995",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/experiments/temporal/temporal_off/profile.log",
+      "bytes": 14008,
+      "sha256": "8e04add5add4c513a482dcc2bfee6189aa0d7c003c27cdc4ad57ef76c2e2f770",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/figs/arch.png",
+      "bytes": 265865,
+      "sha256": "23e0316a4fd7b446508e7cfd80717484eab2bc0aeb514772f202aba2a7f9c1a2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/figs/sota_results.png",
+      "bytes": 204949,
+      "sha256": "1ddbd519d76ea56366f60da2efe4bafe4d9a8a4407891730c46ecdfa152f9018",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 135,
+      "sha256": "9307d68ca5980e5988de012b75537935ad44b5c7d312f53408f3cf736a135d21",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/coco_instance.py",
+      "bytes": 1718,
+      "sha256": "1306f8c091776ad10a8cdc871c47e4e451490b7b3686c2c5c787cf3666398f6a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/kitti-3d-3class.py",
+      "bytes": 4597,
+      "sha256": "248b74f968fa20413e7064b52a4d7e4fb236ea025e6fb00634eda929b25af4a7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/kitti-3d-car.py",
+      "bytes": 4503,
+      "sha256": "045cc89e3e3d34fd5027d549aaca3fbd8706947fb3d9c34e64d35aa99f62aa7e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/lyft-3d.py",
+      "bytes": 4568,
+      "sha256": "5d4ed5b36fc6d178b87686493a5dd199ed82f016ba06c1a15ebe949ef6bca817",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/nuim_instance.py",
+      "bytes": 1991,
+      "sha256": "b6bf9ae488b3c56b04666d2a6ce769ed012880887311aea5fe82ac0ce707779c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/nus-3d.py",
+      "bytes": 4915,
+      "sha256": "89f7e6d1fa1707826b6d409d522cddea06ab6489ab030222e25cd83af7e77445",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/nus-mono3d.py",
+      "bytes": 3236,
+      "sha256": "c8d44052e8444e9292511c8dc654f2cff468ba5421b40b6b4c7deb308f979e83",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/range100_lyft-3d.py",
+      "bytes": 4572,
+      "sha256": "73311a145fba735ae5360de7ab8c7461b464256f6a88497b97284cda52ed2451",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/s3dis-3d-5class.py",
+      "bytes": 3562,
+      "sha256": "5f6110beb0b28900bbb5c6bfe26b453ca2f48596e970fdeda4f08be2edbfbc97",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/s3dis_seg-3d-13class.py",
+      "bytes": 4323,
+      "sha256": "18f113eb8e2fcf1784a711d4ca2e11b5319ed52828501c7c6b66a4e5b951bd00",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/scannet-3d-18class.py",
+      "bytes": 4037,
+      "sha256": "dad612b78d80a76a0101bbb01cdd9e9bb5bc3953972ca28aeca71b82a2cc43bd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/scannet_seg-3d-20class.py",
+      "bytes": 4253,
+      "sha256": "4a898d55a252131dd6a8237179364c5e3d321d0ce57beb4bf6f051953449c8a9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/sunrgbd-3d-10class.py",
+      "bytes": 3289,
+      "sha256": "3d3a48580c8378d74eb31e63d2d58044ebfa423970d26041b58d2a3f68526f87",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/waymoD5-3d-3class.py",
+      "bytes": 4789,
+      "sha256": "cc5c0704f04bb03c580f10bf1ceeefc1d171cbb01c382519afed3eae8595ae1c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/datasets/waymoD5-3d-car.py",
+      "bytes": 4683,
+      "sha256": "870ca5cca4f4d01c23a791bfaf31e7a8d706c8008463a7b1b931441438be93b5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/default_runtime.py",
+      "bytes": 485,
+      "sha256": "778df7b551bf0348f09490f0e8df0252d2bd8c006ba916153a6b0f74e4b5c988",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/3dssd.py",
+      "bytes": 3085,
+      "sha256": "d5d7cf484537d442ada2c9662d0f1f139d98c11b04f15ec5aea7646a034dd646",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/cascade_mask_rcnn_r50_fpn.py",
+      "bytes": 6976,
+      "sha256": "621113589edd597c560fda1c8f7099a0d5af5500c549d0a58e8ffa462910ecb7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/centerpoint_01voxel_second_secfpn_nus.py",
+      "bytes": 3275,
+      "sha256": "f6163544fe3e3418b515313057fec34242126440fb278684cc055f210f2a5b04",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/centerpoint_02pillar_second_secfpn_nus.py",
+      "bytes": 3183,
+      "sha256": "413c49c57712f4e623db37dc62173daad04760aa71c32a030322547c88f6caf2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/fcos3d.py",
+      "bytes": 2279,
+      "sha256": "bab967a7491acbdf3924ce743dc581b91156ec1bef13548ac6bb9885722c4621",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/groupfree3d.py",
+      "bytes": 2593,
+      "sha256": "fbbe18add44f9b13cc41bdebf77c4fffcef90bf903b5738a816b5a6d0e18d1ca",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/h3dnet.py",
+      "bytes": 10970,
+      "sha256": "9aa03ba4e3a8345421ed525ea601d76f79c13038a89a79b811f86de1acafe46e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_pointpillars_fpn_lyft.py",
+      "bytes": 963,
+      "sha256": "cb0a3ab6233900184a8a2e97031d0ced8d4980254752f620d0f9296a4c977433",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_pointpillars_fpn_nus.py",
+      "bytes": 3314,
+      "sha256": "f417182670ab50b553b29db05d4b2b8df68a7f676d6bf1e078bc0f91ebe2f995",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_pointpillars_fpn_range100_lyft.py",
+      "bytes": 975,
+      "sha256": "4928c31fcbc6ff33c9a97e5e76c329fb5b534eacbabb0604005c5c5d23f7cd50",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_pointpillars_secfpn_kitti.py",
+      "bytes": 3136,
+      "sha256": "2480a7d3cbc41f30b601e69106327a5b69636c4a049ae4a45047283fcede5a66",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_pointpillars_secfpn_waymo.py",
+      "bytes": 3987,
+      "sha256": "37455b4c78dfb4ed1c7c3dab5e59d269887852abefb2a83e55576883ba2194a9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_second_secfpn_kitti.py",
+      "bytes": 2909,
+      "sha256": "0cb5d1a3581c7c6443b379c02c766f77c2840c4e492ee5598adc4de71dea508f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/hv_second_secfpn_waymo.py",
+      "bytes": 3503,
+      "sha256": "2c35d39544abcfe6f904e1eeeef477fec6b1040c54e3735e8279ab6dd586130f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/imvotenet_image.py",
+      "bytes": 3563,
+      "sha256": "795e83d38570572f16dee355fb616162206e5e0afe3c05686e5628a16be68936",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/mask_rcnn_r50_fpn.py",
+      "bytes": 4080,
+      "sha256": "ff1bedf9c7428fa5ce86db3cfa8e9b72d3c6ede6745175cc88fee08a0bb72112",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/paconv_cuda_ssg.py",
+      "bytes": 180,
+      "sha256": "47645b3f815fe910b09deabb45fab95e56944aeb0f6caf51322ed2cc288373fd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/paconv_ssg.py",
+      "bytes": 2005,
+      "sha256": "dfa6be75021f499fbc4b2eb664de74f99777cef6e11b1fad1b2c9ba11c8867a8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/parta2.py",
+      "bytes": 7012,
+      "sha256": "6864b671e942c982d96f1f80103f8262a080b7bfcb074a6589349d7b3f0503fc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/pointnet2_msg.py",
+      "bytes": 1223,
+      "sha256": "a36a53be96d6698a68b88eb9aac2fc9af9288bf3f5e8f1c7fe86aba8eea2ba5d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/pointnet2_ssg.py",
+      "bytes": 1266,
+      "sha256": "949499445cf609cdc1a2f3fa1e2485b11b7b15b17f57fadd7c535509e8ebaadf",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/models/votenet.py",
+      "bytes": 2576,
+      "sha256": "c22033142265e9ea0b3154fb131ef1e32834b1363a01802243e6d879a5fd9a6d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/cosine.py",
+      "bytes": 536,
+      "sha256": "6ee1342ba6d129a160971e3e963f6f45564fe14b0fafb1e15c2ec5f0b7f4c767",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/cyclic_20e.py",
+      "bytes": 797,
+      "sha256": "66cf50b2bbcf06e9b2fe4f2be35f406e45d1d78bef9bea48a73335dd741295e2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/cyclic_40e.py",
+      "bytes": 1572,
+      "sha256": "c329bd5e71b8ff9234b74b07897d7a82840acd599c050ead994d49af54888187",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/mmdet_schedule_1x.py",
+      "bytes": 319,
+      "sha256": "b2234be7d7e85b929c966c3c938124ac0e674a34207acf638e9a970a7c366c38",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/schedule_2x.py",
+      "bytes": 459,
+      "sha256": "c56ad1fad25bae260ca483bd7e62a8f2a234de944e025c952d8305e15e48b2fc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/schedule_3x.py",
+      "bytes": 399,
+      "sha256": "01bc8ba7aaee522db4475a44c083d89ed2d2b75f67cbca95b397da02e0a791b6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/seg_cosine_150e.py",
+      "bytes": 361,
+      "sha256": "e9843bdd077a2f4ca1ada0755dd0967a45e3bca72e4ddd43aad19f78a8abd69a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/seg_cosine_200e.py",
+      "bytes": 349,
+      "sha256": "899e241ebd8129ece13c73a12769cb1cd9108627383e509b72e033bff517a630",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/_base_/schedules/seg_cosine_50e.py",
+      "bytes": 347,
+      "sha256": "e5aa3d7ee0162b6b40f65bfe3661c861199d8b7b2dfe80891f548ee6fe8f30d0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer/bevformer_base.py",
+      "bytes": 9111,
+      "sha256": "45905ac50a8afa841f0be43c81152277dd694de62054c3595dfd56efd33d6324",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer/bevformer_small.py",
+      "bytes": 9673,
+      "sha256": "f986f1474ee095bd3968565e1a41d730c1c6574a071f6110450cf3bd89020472",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer/bevformer_tiny.py",
+      "bytes": 9381,
+      "sha256": "85da2b393cb0103645bdc034c87028b6fcf5d7bdd79530ed6b4f4b2d05777882",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/bev100.py",
+      "bytes": 511,
+      "sha256": "2827073a5c32a3ca7053b0eb9ba6cc8d64f965de036009c183f9e6b99765406b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/bev150.py",
+      "bytes": 511,
+      "sha256": "0347fd3c6fdfef7cfc43ffcf42769bcaac18d77862275d6486f5a07ee65f8b0c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/bev150_finetune.py",
+      "bytes": 1046,
+      "sha256": "ae9a56a4ad241a2124c47c0e32255b194e7bffa71657494b80f3435597ef15fc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/bev150_finetune_6ep.py",
+      "bytes": 800,
+      "sha256": "a5341300ecd7f926389e5b55716a7fc85f13efc56c34bb9518fe30c0a98e0232",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/bev150_fulltrain_24ep.py",
+      "bytes": 1214,
+      "sha256": "f7e12525435e7364792b617b994f817ad7f54d4392b65c5e955b304f823172a4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/encoder3.py",
+      "bytes": 198,
+      "sha256": "241ea8ea1e1d67ad5861363e4c34a89683ce01e7541bd169357396386aaabad9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/encoder4.py",
+      "bytes": 197,
+      "sha256": "336a3523fcd97115a44ed767cfa74a625da902f2d5947c096e186327065dc298",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_ablation/temporal_off.py",
+      "bytes": 221,
+      "sha256": "05b19e488b5109c779ec303e0b8c96d16dd2bd82f6642fe4301c79f69d630728",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformer_fp16/bevformer_tiny_fp16.py",
+      "bytes": 9486,
+      "sha256": "698acc758a8fff99ed8dd088df031c37d85126f94a7e49f0870a7fbf1091b4f0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t1-24ep.py",
+      "bytes": 12824,
+      "sha256": "5296c56a08065c50cd07e3c1ffedfa159ea0faadea821cc8a8666c28530cd693",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t1-48ep.py",
+      "bytes": 12824,
+      "sha256": "b6004ba1518a6f5f00242cef2d503f6b62f212fc9f08f40aba731ed298d41967",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t1-base-24ep.py",
+      "bytes": 12386,
+      "sha256": "475a3fec8998a8ede20f42051623c6b0c0025b3645ec8c279caedcbe5b42a023",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t1-base-48ep.py",
+      "bytes": 12386,
+      "sha256": "17aba080bff72ac22232809f6b4299799c5e2369bc43fc502336fdf71bc6fc7c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t2-24ep.py",
+      "bytes": 12828,
+      "sha256": "39f0211136d1ee386e9170803d24153f73ed4a2701f367f5e0ed5b03f13d7098",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t2-48ep.py",
+      "bytes": 12828,
+      "sha256": "2b89118a6ec8a9d5dec05f915e15ad962160c784e7e46d26afc5f8c3f4ed28ba",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/bevformerv2/bevformerv2-r50-t8-24ep.py",
+      "bytes": 12880,
+      "sha256": "a86882a39a37079537c721be80e47bc8334e5f5b0d90c665a69fee06b9db3293",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/datasets/custom_lyft-3d.py",
+      "bytes": 4571,
+      "sha256": "d471844be37c2588fcd22fa5a4909ac8e2b805894100953718143364efe9cb77",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/datasets/custom_nus-3d.py",
+      "bytes": 4900,
+      "sha256": "d0482ff412b4f153f4fe513c65efa2fbc2467ccdb4f820ec5c3b90f534ff8d7d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/configs/datasets/custom_waymo-3d.py",
+      "bytes": 3914,
+      "sha256": "2d8f7946948535c894a62d02493269e74e06c473196bb508b3e9650c695e6cb5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/__init__.py",
+      "bytes": 726,
+      "sha256": "5612cb64f6b5d8231cb327906a0933d0df1c3b0e953cd94605eb1311bb3ea8fe",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 815,
+      "sha256": "1f2e806d0e749086ff107b9e583b3c6bb5095526e52d98ca69822b86b290faf4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/__init__.py",
+      "bytes": 125,
+      "sha256": "ddc3b5fba03539fe62e4b152697cc3f7e8673712d7fe34a5d92e0f7c9f3dcd69",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 263,
+      "sha256": "447ce598632d6d7461d5d7978b640936836dabbf14c5f741069380f1e8cb11d3",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/__init__.py",
+      "bytes": 126,
+      "sha256": "30104937bc12c9efe7dea9c91cf1256d93fe1397dba037e51f669684b94fded9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 270,
+      "sha256": "a6f9cc2b162461fc0c2946ac03c03f0fc5b09068f7a7fe85dc010072c9744df8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/__pycache__/mmdet_train.cpython-39.pyc",
+      "bytes": 4473,
+      "sha256": "2e4be4f62a5a87abd86b293894c3c1da85f3f6a73feff3afc7839e53acf5524c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/__pycache__/test.cpython-39.pyc",
+      "bytes": 4018,
+      "sha256": "7765870faaf8e712b5a6bae509de713f2c97c721d3c23ced1fbf0d5e6b5fd8e3",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/__pycache__/train.cpython-39.pyc",
+      "bytes": 1116,
+      "sha256": "6fa7f3be8309cae480145c801808f5f10cac029a9d59afbbf752f6d510eacc98",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/mmdet_train.py",
+      "bytes": 7863,
+      "sha256": "1c007b500beddffd643ed9c0a247484cea1291bb8a2081b0706f17a9307da89d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/test.py",
+      "bytes": 6332,
+      "sha256": "276b64759f7a3a9473ccc1ff6cc7713f4d3bfc8860eea42d2f51983c20ce2eef",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/apis/train.py",
+      "bytes": 1915,
+      "sha256": "cb6301c6a2bc57b9bf6b4caf6b0547ddbfb8c5fd12be2d10c1fc5aed21062f2f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/dense_heads/__init__.py",
+      "bytes": 97,
+      "sha256": "f889496713313604539ad259e75e6560b2306559b3063f19fde0308f66cb80a1",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/dense_heads/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 298,
+      "sha256": "c1b7d90079c65018d7439ad063ed2136758da5c12c7fe373373367bd103ee289",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/dense_heads/__pycache__/bev_head.cpython-39.pyc",
+      "bytes": 4502,
+      "sha256": "75461040df3046217eb07426c447349397560a78679b411f5ed3d446203a9cee",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/dense_heads/__pycache__/bevformer_head.cpython-39.pyc",
+      "bytes": 21006,
+      "sha256": "3c1b611c3901044920136034217240f2956939c485b6673653c6e7e914ca0134",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/dense_heads/bev_head.py",
+      "bytes": 4925,
+      "sha256": "3fd25b6810182ed3d9ea2004b165eaaed4b3f3fffd2825d3dbc90f420abbca7c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/dense_heads/bevformer_head.py",
+      "bytes": 30260,
+      "sha256": "e655b6d8ee6fecc27724f70017362c2bf7abbe95a49319c1dbcfbbc3129243b0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/__init__.py",
+      "bytes": 114,
+      "sha256": "10021c658e80c8ee2afc394a24fe46da3c9690592b9eddd1f1d87c026428417d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 313,
+      "sha256": "1e952d836d1c89271dd9eaed0527fff107622118035998e7e52f750ce218d750",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/__pycache__/bevformer.cpython-39.pyc",
+      "bytes": 9279,
+      "sha256": "94a828b35e9c38141bcff26c3bbeefa8afedb6f2ce1471af5fe60b9ab5996a5f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/__pycache__/bevformerV2.cpython-39.pyc",
+      "bytes": 8495,
+      "sha256": "017e705245819ee19be75fee07e8eb01868fb1026e0b886f8533cc261e7394c7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/__pycache__/bevformer_fp16.cpython-39.pyc",
+      "bytes": 3333,
+      "sha256": "1f6649a2622f75e0bb6b8e91f8be5a6c6924bd808ed545df0561b8a7ec9559a1",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/bevformer.py",
+      "bytes": 12279,
+      "sha256": "14b544006fefbdb3a27eaaedd673cbe2a1463b41df3b84e28291fd7ba2fce332",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/bevformerV2.py",
+      "bytes": 11004,
+      "sha256": "cd0d5000fafc8caf3e3a54830ae5362d5e156bfedd04833b4b3909d537690433",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/detectors/bevformer_fp16.py",
+      "bytes": 3721,
+      "sha256": "c538f1147fabf8ac6b7fc63cbbbca7ab3a5dc3654c6a7dd71f491252eb3a777b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/hooks/__init__.py",
+      "bytes": 40,
+      "sha256": "e4ca0395d60c1f72df6e680c40d1732e4f2823acbe1fc6c5ec3299a4b72ba20e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/hooks/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 217,
+      "sha256": "b8dc32c8b61c9f23ded14efab3c8d8be21e1249df5288816f514f5d3b13b3561",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/hooks/__pycache__/custom_hooks.cpython-39.pyc",
+      "bytes": 914,
+      "sha256": "c51532821e33ac26a25db0cc52984e7f7af1c07d2ecf9f0f6aeb0af5969e55f3",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/hooks/custom_hooks.py",
+      "bytes": 443,
+      "sha256": "56065ecdfb4d0854c02dbb44cdbd90c0a6bef2787719cb7d135314fefc80125a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__init__.py",
+      "bytes": 439,
+      "sha256": "f7e86a6b1ce0e6a1e40817afd5c041820c197f42450396c42320d1c50fa94fed",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 695,
+      "sha256": "0e2aa520ea88aecb1c6bf43ebb85e4a4b4bb2c13b7dfbb25a1f5530ab14c0201",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/custom_base_transformer_layer.cpython-39.pyc",
+      "bytes": 8644,
+      "sha256": "1c84839afae49b4f1cf22ef554f3d52b4357857892f9ca505b8c136a5ec580e5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/decoder.cpython-39.pyc",
+      "bytes": 10924,
+      "sha256": "6247c7c3de55d6a0471bc478ed07696eff6ddacdba86a81468ecf221d828d264",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/encoder.cpython-39.pyc",
+      "bytes": 13711,
+      "sha256": "c43f678eb2d2f79e7d44d00d2fecadb1f197d6e343083a590a77bc735ae46485",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/group_attention.cpython-39.pyc",
+      "bytes": 5828,
+      "sha256": "30999f8f0d3ef29481d4d00ddd4c836315f8b195fb7cfbd3d380c7a2abf0573b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/multi_scale_deformable_attn_function.cpython-39.pyc",
+      "bytes": 3510,
+      "sha256": "b4a8162dac01284dcb2b2d08765bcbb09dfd58f8c46ca5e413bf4acfdd215069",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/spatial_cross_attention.cpython-39.pyc",
+      "bytes": 12507,
+      "sha256": "6c54224561ea6ff5b1b5ebc84cba929f08ee36d35562e7d3b30fb8786a0b581a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/temporal_self_attention.cpython-39.pyc",
+      "bytes": 8237,
+      "sha256": "5c94be108ec935521c86159f348a1563ba918e06ae825954380abd98b2de49d8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/transformer.cpython-39.pyc",
+      "bytes": 8854,
+      "sha256": "4830385121bc163853e57b99092b726eeda6e5d7776950de6ae67df40605eeec",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/__pycache__/transformerV2.cpython-39.pyc",
+      "bytes": 10434,
+      "sha256": "b231d7fa83068cbc28ca107cb3af65e812792e7f8d237647a5f5a194353e8f9a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/custom_base_transformer_layer.py",
+      "bytes": 11610,
+      "sha256": "98887b6baeccada8b9981f757dbd8d342655388e69dbd11f67ae711040ca0173",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/decoder.py",
+      "bytes": 14536,
+      "sha256": "f6d270db1f5c6dc8751c9ca97effc534eb38e1daf14bc2d83eb9df06a3a41d91",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/encoder.py",
+      "bytes": 24489,
+      "sha256": "ebcf1e68f3807832c9fe7a45cbaf1d747cc2a196f14cd48019e06c751e849009",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/group_attention.py",
+      "bytes": 7034,
+      "sha256": "dcc0e350643059a6e693fb8bea8309a621b30954d4d07f8a396971d65ebebe01",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/multi_scale_deformable_attn_function.py",
+      "bytes": 6283,
+      "sha256": "4ae517761d3f4d362a05722c134e2f005315dc3df41c4e5551eafe7757a57ccb",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/spatial_cross_attention.py",
+      "bytes": 17947,
+      "sha256": "045ac69d3baec715f2d73065ea50dd799b214b4de1d7e030e5907e36a82b47de",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/temporal_self_attention.py",
+      "bytes": 12170,
+      "sha256": "c4c893779f9ba61d1397c8e691ca730d22e0e83ba88eef6c4f583c6f3975cce2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/transformer.py",
+      "bytes": 12207,
+      "sha256": "5bc369a36ec323c6e3d67f4fc8b0ca7628bb4748e336832a8cd50422fc01c62d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/modules/transformerV2.py",
+      "bytes": 15695,
+      "sha256": "53fd492f0922a1fe92edf7940fea31682bdd9ca355b34d6992dfa77963b3fc7a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/runner/__init__.py",
+      "bytes": 54,
+      "sha256": "56a228cb6de6ec48eda2f52e3c8cfbde443e14772e8ee6dd6517f232796b836d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/runner/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 232,
+      "sha256": "3f38571c577c001c7f7beec179344b24c590e19faada137bc808a1d3ac990621",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/runner/__pycache__/epoch_based_runner.cpython-39.pyc",
+      "bytes": 2927,
+      "sha256": "925c142f884cdbc2acfb02905170f8f4edfd35ffbea45f9d6952c2e42fc266a3",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/bevformer/runner/epoch_based_runner.py",
+      "bytes": 3960,
+      "sha256": "81491922aac6b1e13b896ebb5ac5a740738f1c654a24945738f9b991e438fd5b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/__pycache__/util.cpython-39.pyc",
+      "bytes": 1335,
+      "sha256": "b7b404802c4a3e2e1663b11e414a4e323fb18e82c83d05078a69df426f1d8a9d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/assigners/__init__.py",
+      "bytes": 90,
+      "sha256": "9765b4eb371ab92b56e934af6e45d5958c780e0c147ebbaefda44f27ffcf828b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/assigners/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 257,
+      "sha256": "d934887b6f38867ff8076b02d22e6ad5cf4169890d29c77a4fc34a48677f9354",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/assigners/__pycache__/hungarian_assigner_3d.cpython-39.pyc",
+      "bytes": 5186,
+      "sha256": "38463355edb1ab16019d5368b66fdcd81682f627332f1046cdc64750e9106c8b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py",
+      "bytes": 6404,
+      "sha256": "ceb59550dbb3299bdcdefae096d8c42c98525949d25288a0d05585cbd5a218e7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/coders/__init__.py",
+      "bytes": 69,
+      "sha256": "596887e8b1021fd1cfe737b4657031c7f37ba5e89aa7245a358558d3b7e4772b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/coders/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 240,
+      "sha256": "d19eeaf01bcb60d13402f1f0f1e7121cbfba852a9a9c3060167e600f1d472932",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/coders/__pycache__/nms_free_coder.cpython-39.pyc",
+      "bytes": 3784,
+      "sha256": "0b45a76ecc523e9adbb76893f7de086f7c8bd55ed16745d67b36f8bfe0d2be04",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/coders/nms_free_coder.py",
+      "bytes": 4476,
+      "sha256": "f9cd5871541d3074b29bcdb0a4f458cd2e1164fcefe3379890e6d59bb1ea66bb",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/match_costs/__init__.py",
+      "bytes": 171,
+      "sha256": "734d81633b21fd08316ad62c3a42f1ab0e797383afd5cb67d977cd42dbeb24dd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/match_costs/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 351,
+      "sha256": "a13726ed1701e3afc1b53baa5ec134a71b0fd58c4ecd2d87060708b8bee5b865",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/match_costs/__pycache__/match_cost.cpython-39.pyc",
+      "bytes": 3401,
+      "sha256": "416a4d26e2ac8c7940f53c7015e9933682ac4e01f06feedb8d0aa997955ffcde",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/match_costs/match_cost.py",
+      "bytes": 2845,
+      "sha256": "23dd851503afd946f717681cbc02ff075c2ae650b8ebf66067985767d2980129",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/bbox/util.py",
+      "bytes": 1467,
+      "sha256": "d24c61941209fa7a7be18d3b4c628dc06006f692fde0e7863fb54bca50282beb",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/evaluation/__init__.py",
+      "bytes": 42,
+      "sha256": "f2bf99095c9fe232bde6c2e26dd94097dfbc6f6407270e31d72b669a828a5c05",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/evaluation/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 219,
+      "sha256": "d533e20c523038c9611c44c62c75f16be1ba3bb03395671627c2ed0b54bf2ad0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/evaluation/__pycache__/eval_hooks.cpython-39.pyc",
+      "bytes": 3180,
+      "sha256": "b9a784e21bffc03f7a20b81322b72f51f25751509d72ae17de873d756c5d9531",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/evaluation/eval_hooks.py",
+      "bytes": 3512,
+      "sha256": "68fad4d46cdac54cc46a909daaf35d8a7fc4c572e3eaa725ea3992a5540a310a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/core/evaluation/kitti2waymo.py",
+      "bytes": 9736,
+      "sha256": "6a7eab0e433c2516f6dc79e90e3082f8254ca82449ac18a11642f02033f01678",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/__init__.py",
+      "bytes": 332,
+      "sha256": "9577c3238def5109b58fffcf8b7251e9a477884fdbc909a298cc787701a8ea23",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 493,
+      "sha256": "8245c05f73ae5f6246b0860885ac7ce128b48bf69e1e3d60d2ea57b4a66f5cb6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/__pycache__/builder.cpython-39.pyc",
+      "bytes": 4231,
+      "sha256": "b1bd7d7534cc93094bfc959c1f5682c84dedcf73c4dad4a3cb35b1f751ca3b7d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/__pycache__/nuscenes_dataset.cpython-39.pyc",
+      "bytes": 7458,
+      "sha256": "ede672dca6eabd857c53a30ed87fc5b3096dde57ba5131a56df6e5e3f23ac025",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/__pycache__/nuscenes_dataset_v2.cpython-39.pyc",
+      "bytes": 8860,
+      "sha256": "b17b68bf7aa15787b1f832c0e38719612e4865e7dac28be57d7c678ccd10cfb2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/__pycache__/nuscnes_eval.cpython-39.pyc",
+      "bytes": 20650,
+      "sha256": "bf7195e7d2ba62ec4295e3d489d4cee71d54e39b7ba0a1c0e28ae96646c537cb",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/builder.py",
+      "bytes": 6007,
+      "sha256": "48709aa86acd1343421137b84bc67d59dd2c8ae8118b131ad329241afff7989b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/nuscenes_dataset.py",
+      "bytes": 9395,
+      "sha256": "ed8b383d15d27ad858b5016fee50ad0f07602830d5b4e6aeaeb45e1b52a32396",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/nuscenes_dataset_v2.py",
+      "bytes": 12581,
+      "sha256": "7e7485d777adb520e6c8ca5b2f14260156c30f8c8e56e3cff0eaefb15d874fd8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/nuscenes_mono_dataset.py",
+      "bytes": 33803,
+      "sha256": "097e4baaf1fc2ccc3a527a4103ec1923f50791ec700903018e7bc76189d9a502",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/nuscnes_eval.py",
+      "bytes": 31669,
+      "sha256": "2bc963c934b569fe9cb348625dc7493118fac88bfbf220690737a0f265c1f6b6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/__init__.py",
+      "bytes": 712,
+      "sha256": "8b418a17a99e35fd6d0d2920fa3bbb4c98c673a39b1a3dda03b360904f8b2804",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 760,
+      "sha256": "b043bdb21fe29826176c54284a1d36a577abd96ddfb172407b565c41ca07bf96",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/__pycache__/augmentation.cpython-39.pyc",
+      "bytes": 9951,
+      "sha256": "ae0f391df936aa6732cef1024121cdf180c305cbcb29a50d906788f93309aa94",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/__pycache__/dd3d_mapper.cpython-39.pyc",
+      "bytes": 2763,
+      "sha256": "ce80e3c8d49677f33e3a760a7545f593ea5ab4b6231a31a6f7302e46bced529d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/__pycache__/formating.cpython-39.pyc",
+      "bytes": 1845,
+      "sha256": "2899618b89272524b0ee48fcc1071bf0a0aa9f0479f2929507ce0e00970273bc",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/__pycache__/transform_3d.cpython-39.pyc",
+      "bytes": 12991,
+      "sha256": "d601b5fd47183c11d73053f9b34ebecd2f87f5fc6de618b2c42dacfadb426d4b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/augmentation.py",
+      "bytes": 14906,
+      "sha256": "d72a9d6d37744324f064e57751dc9c4d45d26e607e4d1dc750e0c6edc935001f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/dd3d_mapper.py",
+      "bytes": 4044,
+      "sha256": "885b7fbefe48cc893a983ce3f6e0bc109a349eb76ff82a2a45070a54d902013d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/formating.py",
+      "bytes": 1569,
+      "sha256": "fc6ef704f492fa113686dfe9062f936e62aaa501c196c10aec76d231ea2c1bb1",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/loading.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/pipelines/transform_3d.py",
+      "bytes": 12987,
+      "sha256": "d0f1afb953943d088c0942ba67cd2536e7e0ba87c4c26de0fff0907edaa64c85",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/__init__.py",
+      "bytes": 148,
+      "sha256": "27cf0eb83d29bccdb2c8d016f7fbffb241372f33c4c31056ae82536abcf05356",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 354,
+      "sha256": "2438343338b286e4febd3e9029c32b74c20eb5659826c0aa7365633dd85c6666",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/__pycache__/distributed_sampler.cpython-39.pyc",
+      "bytes": 1239,
+      "sha256": "c556faa8869aa4fd46cba96e594db07a6779120a590d40a3116d658ecd796735",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/__pycache__/group_sampler.cpython-39.pyc",
+      "bytes": 3425,
+      "sha256": "f06e2968871d1c0ddaaf9e4a78e25032466d5db2573feff4993b9b261a7d17ef",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/__pycache__/sampler.cpython-39.pyc",
+      "bytes": 411,
+      "sha256": "b8c575103c970fdc746b19140bb0667c04c76c43c8b08207b476ddb18540bba9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/distributed_sampler.py",
+      "bytes": 1371,
+      "sha256": "84b977c197dbf5355c2fd1ee2fb971f32c4b07b18265113abfb9efa81fa1caec",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/group_sampler.py",
+      "bytes": 3933,
+      "sha256": "dc42a8a1b40479fbc6b9e62c8a8c7ef98890a0fa9de11dce24c5d54b6e9debf7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/datasets/samplers/sampler.py",
+      "bytes": 189,
+      "sha256": "a585ea9f5dd0ad49181cd9bf96f402279898dce760265b51994e3e5ae0f8baf0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/__init__.py",
+      "bytes": 23,
+      "sha256": "4ab3cafcc1d7a258f6630e35a32d305c23dd12f646236f4ad53dded5f48dcbb1",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 180,
+      "sha256": "1953c213a339075667ff940fff0c8d418716c7e26387ac6786620300bd2fc5a0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/datasets/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/datasets/nuscenes.py",
+      "bytes": 14263,
+      "sha256": "23ff45d23cdfa9c1a62c0bcabe22b41bd09f779f32bb065b6f6e4d53ff39acfb",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/datasets/transform_utils.py",
+      "bytes": 5429,
+      "sha256": "d7ee0e6614f3e39743ce64db46c366e29c44b0771d45dfdc5818b00f0ccd2fa4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/layers/iou_loss.py",
+      "bytes": 2374,
+      "sha256": "da36a61517dd48ddc77f2028887e4887bcf434b3bf52657414aadedbe4aefa15",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/layers/normalization.py",
+      "bytes": 1052,
+      "sha256": "a43db10a89702e6090ef7aed4ec6e37cde796b3071cd87b4b82eb79322c44859",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/layers/smooth_l1_loss.py",
+      "bytes": 3304,
+      "sha256": "981426b61e18eefefc848de4e793f79d2a7a48873d07bf3633e0bbe46c7c7241",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/__init__.py",
+      "bytes": 39,
+      "sha256": "c831a06063903ba86e6a682e38b60e90db4b3d1be543e32d44a56151b2b8e7ce",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 214,
+      "sha256": "030c46fa67421166d40b8902b10b930fe1774d8f13dc1809a5dec6c0ff5f61a8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/__pycache__/nuscenes_dd3d.cpython-39.pyc",
+      "bytes": 14112,
+      "sha256": "1d7068e32208cb44ab45dd24619e34d2bbde65c09f1494e2660c6aa89c268422",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/core.py",
+      "bytes": 9637,
+      "sha256": "55852378cb2748e4f5c65e4683410004f67a8a4f858e8e90bf046d74fd60051b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/disentangled_box3d_loss.py",
+      "bytes": 1702,
+      "sha256": "58b8469b42b67ce7f18d0f359bced21e8b9cc8e93fbe56f5c4daa43af860adad",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/fcos2d.py",
+      "bytes": 15668,
+      "sha256": "bb07d4d602f81f51b2d14891cc42d418f98b98f04eb0f2d2ceded7c0ebd32fa5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/fcos3d.py",
+      "bytes": 19415,
+      "sha256": "cdb0566c7f42728885256693e0dc02c1f9927ae3ccd06a84ebce163a6f43bdf4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/nuscenes_dd3d.py",
+      "bytes": 23791,
+      "sha256": "f9636a565eea21cb44717795bba6b2548cb3400877568f3825862ab2dbb97967",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/modeling/prepare_targets.py",
+      "bytes": 10420,
+      "sha256": "02604d9023aa3d6d5e46013e261dde3c07201922feeafb3c2f4b772d7ba01c87",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/structures/__init__.py",
+      "bytes": 100,
+      "sha256": "f48813a4d331e298c2b5c592f9f68889f53caabd3f17b661f93660b1e286f274",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/structures/boxes3d.py",
+      "bytes": 11889,
+      "sha256": "67109e185020a6acbafb6f2c897eb3d37fe03458714bee0a5cbdd57eb8c1f7e8",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/structures/image_list.py",
+      "bytes": 6216,
+      "sha256": "1f8f9bec68183855ac3cf9e46c3702acf6035089907d004ec566b670cfbe44da",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/structures/pose.py",
+      "bytes": 4919,
+      "sha256": "eaf54719a6d6db394cb3a075360552921be465a886cdf6953d3e4eed2f19995f",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/structures/transform3d.py",
+      "bytes": 30895,
+      "sha256": "a97fb7a1d0ea3cb50ef072d61d8c5459690e7cc53638ff1f2e488fbc09b4c649",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/utils/comm.py",
+      "bytes": 2619,
+      "sha256": "ce6e59b7bed03927276d3f872543def2e6fdd840ac68c94a87c90e01dda7ec46",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/utils/geometry.py",
+      "bytes": 6198,
+      "sha256": "0d65aa9c845f244ea40622eb09e121e313107e39336e5a3d08810a6b40aca9a6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/utils/tasks.py",
+      "bytes": 2474,
+      "sha256": "73bd58aa421558decf0014a818336fec4361e2f7353d16a1541a9a878891fba9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/utils/tensor2d.py",
+      "bytes": 1614,
+      "sha256": "6085482bbd72df2bdc1735f72ebca377477e15b26037a10e0087f4a936ad873a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/dd3d/utils/visualization.py",
+      "bytes": 5398,
+      "sha256": "09fcdb31a814fd949cedb2c22975118363abef360e748ebc00d5e13b4e8eee83",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/backbones/__init__.py",
+      "bytes": 48,
+      "sha256": "92129dbb7e627f4afe0d5ded49d58e1361bbfbdec875ff21a3c5745537ce71c5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/backbones/vovnet.py",
+      "bytes": 11701,
+      "sha256": "e88d70d33751bd9866fcb1316ee6f3ac35930091937d5ada028ff5f8d7cdb38a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/hooks/__init__.py",
+      "bytes": 30,
+      "sha256": "1a358f573ba5c067ffd79c5b48f248f890e4b1b575c96534c1393f0f649c4a3d",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/hooks/hooks.py",
+      "bytes": 403,
+      "sha256": "74f1ace44d417bcb23db1acc3bb1e3df6a1046bae859f152ead7a72fa1e186f2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/opt/__init__.py",
+      "bytes": 25,
+      "sha256": "99fc2cc6052f76f7e07e848c40cf2b57c49991eec388be7fd81aaaa5e19e0ba5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/opt/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 197,
+      "sha256": "b5c98273c23399a00fb45f9f658f4ff5fd47bd8d8b29bb9bcd630bfaa0f2bb16",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/opt/__pycache__/adamw.cpython-39.pyc",
+      "bytes": 4057,
+      "sha256": "10f7715018eeeadb8157cff72d1cef403075dd9e58a2cb3ad4e1860bcc074f0b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/opt/adamw.py",
+      "bytes": 5144,
+      "sha256": "305810a8d8e9168ecea7b42ac0675c53b9d5e2274f7f23ee0f856e9881886a2e",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/__init__.py",
+      "bytes": 146,
+      "sha256": "4cc4fc8112256e9f7de3fbf0aa9db57eab83511141ef6e8e8939c1199bd6c4dd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/__pycache__/__init__.cpython-39.pyc",
+      "bytes": 349,
+      "sha256": "3b9a30e0f5011bc25950de83713a3dcdab31d46fac867a11b535124bc743a85a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/__pycache__/bricks.cpython-39.pyc",
+      "bytes": 1156,
+      "sha256": "6c554a056ad7a2dc6f1e4659788692e8f00877796cc161fcb9043e65a1987cb7",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/__pycache__/grid_mask.cpython-39.pyc",
+      "bytes": 3709,
+      "sha256": "65b6677f2a97cae85b2da18c68a396a56c479ee85958458efa55d34e4749946b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/__pycache__/position_embedding.cpython-39.pyc",
+      "bytes": 1357,
+      "sha256": "5bc3d015f68e90507ae22d39344fb51221f0870d255bf465e449a78cf8532582",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/__pycache__/visual.cpython-39.pyc",
+      "bytes": 1070,
+      "sha256": "688a570236434688a692085594988ec2656bd4e811fa87aedab603fa3763a07c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/bricks.py",
+      "bytes": 725,
+      "sha256": "62d1095bca8ac51c374a39f175db1d452b6670ef0bc4ab199fbec9315e584031",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/grid_mask.py",
+      "bytes": 3935,
+      "sha256": "92589caffcd8102b02cafff78e64614ecf8bc8ad548ab95cbf4d1a898327f150",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/position_embedding.py",
+      "bytes": 1437,
+      "sha256": "a96996531fff9b390323b837567826a18af4d712d5686fb4ef5ae307460ee268",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/projects/mmdet3d_plugin/models/utils/visual.py",
+      "bytes": 768,
+      "sha256": "af1108b82e6e8a02664810d1bac5feb097b7422ad4d747b9f6cba9217be0b247",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/run_bev150_extended_gpu1.sh",
+      "bytes": 5841,
+      "sha256": "e61407ff53ca317de70d6cfb9bf4860254ec00014feb3830e2f7cb3b039303cd",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/run_bev150_fulltrain_postprocess_gpu1.sh",
+      "bytes": 3516,
+      "sha256": "4690d182bda247c9143449d790f5c26545abd644ee5356034a430aaf7a05fd1b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/audit_bev150_fulltrain.cpython-39.pyc",
+      "bytes": 5305,
+      "sha256": "dbeaf81a7d2116508a0226fbc030920f0ad6323885d1c7ca16413474bd16142b",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/collect_experiment_results.cpython-39.pyc",
+      "bytes": 15563,
+      "sha256": "2bbf225bb0960163751c1fabc4a83a8e913d153bd791210e3cc17c1769645a59",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/manage_extended_experiment.cpython-39.pyc",
+      "bytes": 6813,
+      "sha256": "9f54c0dbace231bee55eb2d293dbe948cf640e6fe2e2d451bfecfd499a4f5745",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/profile_bevformer.cpython-39.pyc",
+      "bytes": 11554,
+      "sha256": "46720b12b8416f2aeb54d29a01c34055c4d4fd0638d31c67b06950208a26444a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/rebase_optimizer_lr.cpython-39.pyc",
+      "bytes": 3583,
+      "sha256": "d04685456bee36523692dd639599084796b0586eff05ad0cfa76c89441a9a786",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/render_extended_report.cpython-39.pyc",
+      "bytes": 6071,
+      "sha256": "53f518cb68ad6b15862029015b6e86b563c61851a3b12a8db34448705b6c93aa",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/__pycache__/smoke_test_bev150_fulltrain.cpython-39.pyc",
+      "bytes": 5298,
+      "sha256": "87d7c58d3f72b7d567f46b9eb37923140d4e27abf8977d6c14564032f14db697",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/analysis_tools/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/analysis_tools/analyze_logs.py",
+      "bytes": 7468,
+      "sha256": "35c6b2b264bfe3453096eb9473f747744b24c5bb98c2d67377c06a1b9fed13e0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/analysis_tools/benchmark.py",
+      "bytes": 3245,
+      "sha256": "effc91ab4c3917a92db0ea3988ec47cf907d39bccd4441ebd1792a4af5ae62b2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/analysis_tools/get_params.py",
+      "bytes": 257,
+      "sha256": "338ccaec3e8f4c195d5a83280dd74d2147d90306a7c35dee15949d79e637434a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/analysis_tools/visual.py",
+      "bytes": 22347,
+      "sha256": "989402f996052a1348c015c42b6ec1bb24060ec388745f8bcee2a3c1b65e4290",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/audit_bev150_fulltrain.py",
+      "bytes": 5839,
+      "sha256": "faf0672974038960d5f99a880995f237bb0cc17eae66cb91ab33078aefbed171",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/create_data.py",
+      "bytes": 11182,
+      "sha256": "10fea6e625976aaa69f426c83dc4b97bf65fc997a28381bd511b12e5e6f370f5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/__init__.py",
+      "bytes": 48,
+      "sha256": "3977d5ce6a7f8d8b9c01b0daa82c17214e4f3b1520320349ce34140916192c13",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/create_gt_database.py",
+      "bytes": 12656,
+      "sha256": "70cf99117f064184863a7103c4475e21b82e373397f59206f4f08ac92f771902",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/indoor_converter.py",
+      "bytes": 4953,
+      "sha256": "22212df7c9f5aae620b8c8189597e2bea564d03ef21393101e503cf1001f05e5",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/kitti_converter.py",
+      "bytes": 20965,
+      "sha256": "08872e0d844781829a46ac826ac81834b442a89b3cb32e5f392a1455d3327a94",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/kitti_data_utils.py",
+      "bytes": 20491,
+      "sha256": "c012b8634e06b5810cdd938f22cc226b98b9b197d96ad999039ab1711de20766",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/lyft_converter.py",
+      "bytes": 10468,
+      "sha256": "80427c6fbd914a7cf8822c453be39cd070f902d33f393d07efc40542162bc253",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/lyft_data_fixer.py",
+      "bytes": 1410,
+      "sha256": "67b81f29f1e950c786c5c67b52a8461cecdee778a8ec833ef5764bc434e36053",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/nuimage_converter.py",
+      "bytes": 7599,
+      "sha256": "ae63f397e3b545f77f6bc046a780ce670d58ffbf2479997062c6ac376f1eef78",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/nuscenes_converter.py",
+      "bytes": 26065,
+      "sha256": "16e9b358f9aea39be134dd75c7dbf2d90339aa46a2ba5a7c2109ed990fb871b0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/s3dis_data_utils.py",
+      "bytes": 9967,
+      "sha256": "a45bcebf4377596570005b5546272fae6e4ed2b05471baff0f5524f3bdae31d4",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/scannet_data_utils.py",
+      "bytes": 12573,
+      "sha256": "ca676206db8698a380185bf191b9937e23d61101c485a7031680b148ae38a82a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/sunrgbd_data_utils.py",
+      "bytes": 8795,
+      "sha256": "7fd23f99e29a4875fc1ced3a36f0995eda0c224229b905390986e142c2bcd4f0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/data_converter/waymo_converter.py",
+      "bytes": 20632,
+      "sha256": "d33b9b3661002a92971d9630627b83b71438b6672d3a3766d2290362d885efa0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/dist_test.sh",
+      "bytes": 284,
+      "sha256": "f6c56f3b4dc775cb38fc851eca4f2c9e025db6b84212cbb36f2698a6fc32b699",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/dist_train.sh",
+      "bytes": 263,
+      "sha256": "13828072b9759b4a9233917540dfc7961f38b62a0f5e3450a92bcc23cba57a1a",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/fp16/dist_train.sh",
+      "bytes": 263,
+      "sha256": "a52390e97d2b734bfaf79fe97be0cb098f860ac844df3b9360be12b97db0f8d9",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/fp16/train.py",
+      "bytes": 10642,
+      "sha256": "8cb523e39f238a9a59ab27f1f07ad779d626eab310ef3fe6eae97f2899a5b27c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/interpolate_bev_checkpoint.py",
+      "bytes": 9064,
+      "sha256": "c1359eb80b37a9700038c2245a5f23b9285dccf938e83a8ca7ae45bb6de9cf33",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/manage_extended_experiment.py",
+      "bytes": 7088,
+      "sha256": "907509e851a7a896bbb47bfabd931b67bd81e6b6001e5e4f941571a9a368ffaf",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/misc/browse_dataset.py",
+      "bytes": 8551,
+      "sha256": "0b67f0b48a75d8a01921634803f877ed9adff7259e38ab43c6bff8216b8dfa4c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/misc/fuse_conv_bn.py",
+      "bytes": 2240,
+      "sha256": "21c45da1cec6c8198f2a0ed23b4c1c2022dfe805864848e2c3d2965c416ed0e2",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/misc/print_config.py",
+      "bytes": 638,
+      "sha256": "90d994aee46e0e0745905f0597f486e7e8c6f3f4cf3cd14c465e3c552fa7c8b6",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/misc/visualize_results.py",
+      "bytes": 1447,
+      "sha256": "c1e12b28aa564cbcd9f9640b5bb188cc083b2ae29550feec4dbbae83af047b0c",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/model_converters/convert_votenet_checkpoints.py",
+      "bytes": 5090,
+      "sha256": "c6e0463583397bc020ed290076e86ccd219b5a891c725ac5695ffa89a3a4ebe0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/model_converters/publish_model.py",
+      "bytes": 1075,
+      "sha256": "d493dd7f14f2f1b545f8b5a203ee1756f853895dbf34d67784763bd80c07df80",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/model_converters/regnet2mmdet.py",
+      "bytes": 3062,
+      "sha256": "5f932602c31a19128b8dcab9f0e39c2a0c2231febf49dac9642155ddfbb9f946",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/plot_experiment_tradeoffs.py",
+      "bytes": 10209,
+      "sha256": "7048c329fe3aa9e3b40a2fead019f1ce3bcbd41da96f840a39fe6ca9be00deea",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/profile_bevformer.py",
+      "bytes": 15023,
+      "sha256": "765b30387ee3ed8eed9c2fd30e11f9889d06f01c5ef698d47053f97a76e750a1",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/rebase_optimizer_lr.py",
+      "bytes": 4192,
+      "sha256": "70771f07da6b1337e0b62b2777eb382fdfdbac7ffc2673e1acc1dffeba21e5d0",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/render_extended_report.py",
+      "bytes": 6321,
+      "sha256": "babf10fff253092641d4d9fb54b76c8ac7a90b8e2c08c5afadc3ea9a244c6177",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/smoke_test_bev150_fulltrain.py",
+      "bytes": 5884,
+      "sha256": "b2209632d058fe73676dccbbb4f232bd504afe25fdd8a2aaf1ba7e2a6b9c9254",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/test.py",
+      "bytes": 10488,
+      "sha256": "89d932180dcc096c065acd62dff2c6db54d63265a9fa9aad73e5704a49e69028",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/train.py",
+      "bytes": 10195,
+      "sha256": "4620c1fbf1c2679850416bc8afdb695cf653d5e1a9f5e3d6865cfaa059823296",
+      "hardlink_count": 1
+    },
+    {
+      "path": "code/worktree/tools/visualize_base_lite.py",
+      "bytes": 15020,
+      "sha256": "21b7653f1e68fa955c433e2bc267861efd5e8429f9713df641977a2e6cb1b46a",
+      "hardlink_count": 1
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "experiment": "bev150_fulltrain_24ep",
+  "experiment_type": "full_training",
+  "status": "training",
+  "bev_size": [150, 150],
+  "initialization": "r101_dcn_fcos3d_pretrain",
+  "uses_interpolated_bevformer_checkpoint": false,
+  "epochs": 24,
+  "seed": 0,
+  "evaluated_epochs": [],
+  "best_epoch": null,
+  "selection_rule": "maximum NDS, then maximum mAP",
+  "metrics": {},
+  "profile": {}
+}

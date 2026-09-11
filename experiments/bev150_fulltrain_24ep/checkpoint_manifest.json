@@ -1,0 +1,16 @@
+{
+  "experiment": "bev150_fulltrain_24ep",
+  "initialization": {
+    "path": "ckpts/r101_dcn_fcos3d_pretrain.pth",
+    "bytes": 225215819,
+    "sha256": "91d8a649e007663121a64c0511d486fff1d421b77d61359399dd0a821fe633e8",
+    "source": "https://github.com/zhiqi-li/storage/releases/download/v1.0/r101_dcn_fcos3d_pretrain.pth",
+    "github_release_asset_id": 68245476
+  },
+  "smoke_checkpoint": {
+    "path": "work_dirs/bev150_fulltrain_24ep/smoke_checkpoint.pth",
+    "sha256": "978cb2d8fe67304bfc7ab0a5ac788478b5dccd9e5508c6fb227ec4f31c9df966",
+    "round_trip_load": "passed"
+  },
+  "training_checkpoints": []
+}
