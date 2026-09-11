@@ -4,6 +4,9 @@ from mmcv import Config
 from mmdet3d.models import build_model
 
 import projects.mmdet3d_plugin  # noqa: F401 - register custom modules
+from projects.mmdet3d_plugin.bevformer.apis.mmdet_train import (
+    _install_mmcv_ddp_sync_compat,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +52,24 @@ def test_continuous_model_freezes_bypassed_legacy_tables_for_ddp():
                for parameter in head.positional_encoding.parameters())
     assert all(parameter.requires_grad
                for parameter in head.continuous_query_generator.parameters())
+
+
+def test_recent_pytorch_ddp_compat_respects_buffer_broadcast_setting():
+    class FakeDDP:
+        def __init__(self, broadcast_buffers):
+            self.broadcast_buffers = broadcast_buffers
+            self.sync_calls = 0
+
+        def _sync_buffers(self):
+            self.sync_calls += 1
+
+    without_broadcast = _install_mmcv_ddp_sync_compat(FakeDDP(False))
+    without_broadcast._sync_params()
+    assert without_broadcast.sync_calls == 0
+
+    with_broadcast = _install_mmcv_ddp_sync_compat(FakeDDP(True))
+    with_broadcast._sync_params()
+    assert with_broadcast.sync_calls == 1
 
 
 def test_seen_unseen_and_dynamic_protocols_are_disjoint():

@@ -25,6 +25,25 @@ import os.path as osp
 from projects.mmdet3d_plugin.datasets.builder import build_dataloader
 from projects.mmdet3d_plugin.core.evaluation.eval_hooks import CustomDistEvalHook
 from projects.mmdet3d_plugin.datasets import custom_build_dataset
+
+
+def _install_mmcv_ddp_sync_compat(model):
+    """Restore the DDP hook expected by MMCV on recent PyTorch releases.
+
+    MMCV calls the former private ``DistributedDataParallel._sync_params``
+    method before ``module.train_step``.  PyTorch 2.7 removed that method;
+    its only relevant job here is buffer synchronization, which is disabled
+    by this training wrapper.  Keep the fallback correct if a future caller
+    enables buffer broadcasting.
+    """
+    if not hasattr(model, '_sync_params'):
+        if getattr(model, 'broadcast_buffers', False):
+            model._sync_params = model._sync_buffers
+        else:
+            model._sync_params = lambda: None
+    return model
+
+
 def custom_train_detector(model,
                    dataset,
                    cfg,
@@ -72,17 +91,17 @@ def custom_train_detector(model,
         find_unused_parameters = cfg.get('find_unused_parameters', False)
         # Sets the `find_unused_parameters` parameter in
         # torch.nn.parallel.DistributedDataParallel
-        model = MMDistributedDataParallel(
+        model = _install_mmcv_ddp_sync_compat(MMDistributedDataParallel(
             model.cuda(),
             device_ids=[torch.cuda.current_device()],
             broadcast_buffers=False,
-            find_unused_parameters=find_unused_parameters)
+            find_unused_parameters=find_unused_parameters))
         if eval_model is not None:
-            eval_model = MMDistributedDataParallel(
+            eval_model = _install_mmcv_ddp_sync_compat(MMDistributedDataParallel(
                 eval_model.cuda(),
                 device_ids=[torch.cuda.current_device()],
                 broadcast_buffers=False,
-                find_unused_parameters=find_unused_parameters)
+                find_unused_parameters=find_unused_parameters))
     else:
         model = MMDataParallel(
             model.cuda(cfg.gpu_ids[0]), device_ids=cfg.gpu_ids)
@@ -197,4 +216,3 @@ def custom_train_detector(model,
     elif cfg.load_from:
         runner.load_checkpoint(cfg.load_from)
     runner.run(data_loaders, cfg.workflow)
-
