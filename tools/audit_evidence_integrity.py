@@ -264,7 +264,13 @@ def main():
     payload = {
         'schema_version': 1,
         'generated_at_utc': datetime.now(timezone.utc).isoformat(),
-        'git': {'commit': git('rev-parse', 'HEAD'), 'dirty': bool(git('status', '--porcelain'))},
+        'git': {
+            'commit': git('rev-parse', 'HEAD'),
+            # Generated audit outputs are excluded to avoid a self-referential
+            # dirty flag; all source and experiment evidence remains included.
+            'dirty': bool(git('status', '--porcelain', '--', '.', ':(exclude)audit')),
+            'dirty_check_excludes': ['audit/'],
+        },
         'classification_counts': counts,
         'eval_manifests': manifests,
         'profiles': profiles,
