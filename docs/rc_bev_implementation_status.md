@@ -12,8 +12,9 @@ not been trained or evaluated on the full nuScenes validation set. The initial
 single-GPU seed-0 run was stopped at iteration 729 without a checkpoint so it could
 be replaced by an explicitly requested GPU0+GPU1 DDP run. The replacement seed-0
 run uses the Gloo backend because the currently loaded NVIDIA kernel module and
-installed NVML library do not match, and is paused after iteration 2538 with its
-process and CUDA state retained. Neither run is counted as a result until complete
+installed NVML library do not match. It reached iteration 2538, but its tmux session
+and ranks later exited while paused before an epoch checkpoint was written. A new
+seed-0 run is therefore required. Neither run is counted as a result until complete
 validation.
 
 ## Delivered files
