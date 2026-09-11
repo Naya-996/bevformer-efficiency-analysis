@@ -56,7 +56,9 @@ class ContinuousBEVQueryGenerator(nn.Module):
         feature_dims = 4 * self.num_bands
         self.register_buffer(
             'frequencies', 2.0 ** torch.arange(self.num_bands, dtype=torch.float32),
-            persistent=False)
+            # MMCV's checkpoint helper serializes buffers independently of
+            # PyTorch's non-persistent set, so keep this expected on strict reload.
+            persistent=True)
         # Checkpointed so resumed training continues the deterministic schedule.
         self.register_buffer('schedule_step', torch.zeros((), dtype=torch.long))
         self.content = nn.Parameter(torch.zeros(1, self.embed_dims))

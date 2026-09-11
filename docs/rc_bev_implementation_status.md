@@ -37,14 +37,17 @@ not been trained or evaluated on the full nuScenes validation set.
   order, same/cross-grid migration, constant and coordinate fields, non-square
   grids, deterministic sampling, controller hysteresis/reset, and config contracts).
 - Official Base-200 detector checkpoint loads into the opt-in model without any
-tensor-size mismatch. Exactly ten new generator tensors (nine parameters plus a
-persistent schedule step) are reported missing and initialized by the new module,
+tensor-size mismatch. Exactly eleven new generator tensors (nine parameters plus
+persistent Fourier-frequency and schedule-step buffers) are reported missing and initialized by the new module,
 as designed. The retained legacy query table is
   `[40000,256]`; fixed-150 is selected only at runtime.
 - GPU component smoke passes on physical GPU1 / RTX 5090 with PyTorch 2.7.1+cu128
   for 100, 125, 140, 150, 160, 175, 180, 200 and non-square 96x144 grids.
 - GPU history migration passes for 100->150, 150->200, 200->100 and
   100->96x144; the constant-field maximum error is zero.
+- A real nuScenes training batch at runtime 100x100 completed forward, backward,
+  optimizer update and strict checkpoint round-trip. All 563 gradient-bearing
+  tensors were finite; peak allocated/reserved memory was 18612.6/19688.0 MiB.
 - One full detector inference at 100x100 completed with the official detector
   checkpoint plus newly initialized continuous parameters. Its one-sample timing
   is stored in `experiments/rc_bev/gpu_smoke_profile_100.json` and is not a valid
@@ -83,7 +86,7 @@ rejected if result numbers are inserted. Generated LaTeX therefore currently say
 
 ## Remaining experiment work
 
-All 20 matched-protocol rows are `NOT RUN`: three seeds of Base-200, fixed-150 and
+All 20 matched-protocol result rows are `NOT RUN`: three seeds of Base-200, fixed-150 and
 continuous multi-resolution training; eight fixed-resolution evaluations; dynamic
 evaluation; and Small/Tiny baselines. Full validation, class/distance/visibility and
 switch-window slices, 20+200 FP32/FP16 profiling, MACs, energy, and statistical
