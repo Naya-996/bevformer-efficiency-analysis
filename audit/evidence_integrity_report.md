@@ -5,7 +5,7 @@ The audit is read-only with respect to historical evidence and does not repair d
 
 ## Scope and status
 
-- Git commit: `0bdf1670d29482330fd9518b8cce6cda5cfced91`
+- Git commit: `b1a1d853d21ac9e0e554655443d2c4bce922a625`
 - Worktree dirty during audit: `false`
 - Evaluation manifests: 7
 - Directly verifiable: 1
