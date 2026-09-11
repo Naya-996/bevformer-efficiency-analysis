@@ -1,6 +1,9 @@
 from pathlib import Path
 
 from mmcv import Config
+from mmdet3d.models import build_model
+
+import projects.mmdet3d_plugin  # noqa: F401 - register custom modules
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,6 +37,18 @@ def test_fixed150_keeps_official_table_shape_for_checkpoint_loading():
     assert (head.bev_h, head.bev_w) == (200, 200)
     assert head.train_bev_shapes == [150]
     assert head.test_bev_shape == (150, 150)
+
+
+def test_continuous_model_freezes_bypassed_legacy_tables_for_ddp():
+    cfg = config('projects/configs/bevformer_rc/rc_bev_multires.py')
+    model = build_model(
+        cfg.model, train_cfg=cfg.get('train_cfg'), test_cfg=cfg.get('test_cfg'))
+    head = model.pts_bbox_head
+    assert not head.bev_embedding.weight.requires_grad
+    assert all(not parameter.requires_grad
+               for parameter in head.positional_encoding.parameters())
+    assert all(parameter.requires_grad
+               for parameter in head.continuous_query_generator.parameters())
 
 
 def test_seen_unseen_and_dynamic_protocols_are_disjoint():

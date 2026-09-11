@@ -8,9 +8,10 @@ The additions are opt-in. `projects/configs/bevformer/bevformer_base.py` remains
 fixed 200x200 configuration and builds with zero continuous-generator parameters.
 
 This is an implementation milestone, not a paper result. The method checkpoint has
-not been trained or evaluated on the full nuScenes validation set. Seed-0
-multi-resolution training started on GPU1 at 2026-09-11 11:23 CST and remains in
-progress; it is not counted as a result.
+not been trained or evaluated on the full nuScenes validation set. The initial
+single-GPU seed-0 run was stopped at iteration 729 without a checkpoint so it could
+be replaced by an explicitly requested GPU0+GPU1 DDP run; neither is counted as a
+result until complete validation.
 
 ## Delivered files
 

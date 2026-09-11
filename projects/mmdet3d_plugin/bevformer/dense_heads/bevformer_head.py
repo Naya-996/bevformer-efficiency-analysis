@@ -126,6 +126,12 @@ class BEVFormerHead(DETRHead):
                 generator_cfg.setdefault('pc_range', self.pc_range)
                 self.continuous_query_generator = ContinuousBEVQueryGenerator(
                     **generator_cfg)
+                # These tensors are retained only so official fixed-grid
+                # checkpoints load without a size mismatch. They are bypassed by
+                # the continuous path and must not enter DDP gradient reduction.
+                self.bev_embedding.weight.requires_grad_(False)
+                for parameter in self.positional_encoding.parameters():
+                    parameter.requires_grad_(False)
 
     @property
     def continuous_bev_enabled(self):

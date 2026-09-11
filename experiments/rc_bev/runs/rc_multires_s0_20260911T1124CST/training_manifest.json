@@ -2,7 +2,7 @@
   "schema_version": 1,
   "experiment": "rc_multires_s0",
   "result_status": "NOT RUN",
-  "training_status": "RUNNING",
+  "training_status": "SUPERSEDED_BY_DUAL_GPU_RESTART",
   "started_at": "2026-09-11T11:23:39+08:00",
   "source_git_commit": "e990e5a",
   "tmux_session": "rc_bev_multires_s0_gpu1",
@@ -19,9 +19,12 @@
   "iterations_per_epoch": 28130,
   "initialization": "ckpts/r101_dcn_fcos3d_pretrain.pth",
   "initial_eta_observed_at_iteration_50": "approximately 10 days 22 hours",
-  "last_verified_iteration": 60,
+  "stopped_at": "2026-09-11T11:40:00+08:00",
+  "last_completed_iteration": 729,
+  "checkpoint_available": false,
+  "superseded_by": "rc_multires_s0_dual_20260911T1142CST",
+  "last_verified_iteration": 729,
   "all_declared_resolutions_observed": true,
   "resolution_200_completed_without_oom": true,
   "result_note": "Training progress and smoke observations are not accuracy results. Keep results.json as NOT RUN until full validation and protocol profiling complete."
 }
-
