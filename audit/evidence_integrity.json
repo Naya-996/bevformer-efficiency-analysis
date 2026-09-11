@@ -1,0 +1,556 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-11T03:21:20.873696+00:00",
+  "git": {
+    "commit": "0bdf1670d29482330fd9518b8cce6cda5cfced91",
+    "dirty": false,
+    "dirty_check_excludes": [
+      "audit/"
+    ]
+  },
+  "classification_counts": {
+    "hash_mismatch": 6,
+    "directly_verifiable": 1
+  },
+  "eval_manifests": [
+    {
+      "path": "experiments/baseline/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer/bevformer_base.py",
+          "exists": true,
+          "declared_sha256": "b9330b85d825c48971c37e3d6354a0cda181fc3ec853cbfde5f768e98707cca6",
+          "actual_sha256": "45905ac50a8afa841f0be43c81152277dd694de62054c3595dfd56efd33d6324",
+          "hash_matches": false
+        },
+        "checkpoint": {
+          "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+          "exists": true,
+          "declared_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "actual_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/bevformer_base/Mon_Aug_10_17_02_09_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "hash_mismatch"
+    },
+    {
+      "path": "experiments/bev_resolution/bev100/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer_ablation/bev100.py",
+          "exists": true,
+          "declared_sha256": "65b6131853c1075766a80a34a5fbf822ffc17ccaae1de2ce1a3bf28ded3b0858",
+          "actual_sha256": "2827073a5c32a3ca7053b0eb9ba6cc8d64f965de036009c183f9e6b99765406b",
+          "hash_matches": false
+        },
+        "checkpoint": {
+          "path": "ckpts/ablation/bevformer_r101_dcn_24ep_bev100_interp.pth",
+          "exists": true,
+          "declared_sha256": "4a2f8a900eec9293b7b943fc01a8f0325ba4410e4a28d8bdaf5c64fa0f8c4f5d",
+          "actual_sha256": "4a2f8a900eec9293b7b943fc01a8f0325ba4410e4a28d8bdaf5c64fa0f8c4f5d",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/bev100/Wed_Aug_12_12_40_31_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "hash_mismatch"
+    },
+    {
+      "path": "experiments/bev_resolution/bev150/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer_ablation/bev150.py",
+          "exists": true,
+          "declared_sha256": "977737c6f73daa52d134c89878b5a5f6f4060d586a403491ed0e89c6c9717e09",
+          "actual_sha256": "0347fd3c6fdfef7cfc43ffcf42769bcaac18d77862275d6486f5a07ee65f8b0c",
+          "hash_matches": false
+        },
+        "checkpoint": {
+          "path": "ckpts/ablation/bevformer_r101_dcn_24ep_bev150_interp.pth",
+          "exists": true,
+          "declared_sha256": "ce16a45d6c0ee97db419b1d6d5b1dad41b646807b70087bbb4bf41211a8da374",
+          "actual_sha256": "ce16a45d6c0ee97db419b1d6d5b1dad41b646807b70087bbb4bf41211a8da374",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/bev150/Wed_Aug_12_12_18_15_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "hash_mismatch"
+    },
+    {
+      "path": "experiments/encoder_depth/encoder3/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer_ablation/encoder3.py",
+          "exists": true,
+          "declared_sha256": "e36bd62611fef7cc535e07fb55b45af4aaa16a71aa79f7390f93b19dfa9bf8dc",
+          "actual_sha256": "241ea8ea1e1d67ad5861363e4c34a89683ce01e7541bd169357396386aaabad9",
+          "hash_matches": false
+        },
+        "checkpoint": {
+          "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+          "exists": true,
+          "declared_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "actual_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/encoder3/Wed_Aug_12_11_28_48_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "hash_mismatch"
+    },
+    {
+      "path": "experiments/encoder_depth/encoder4/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer_ablation/encoder4.py",
+          "exists": true,
+          "declared_sha256": "f07744de3b6ee6e9a2131aee1437d627a09b97244791ff58af0ac97c614229c2",
+          "actual_sha256": "336a3523fcd97115a44ed767cfa74a625da902f2d5947c096e186327065dc298",
+          "hash_matches": false
+        },
+        "checkpoint": {
+          "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+          "exists": true,
+          "declared_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "actual_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/encoder4/Wed_Aug_12_11_06_25_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "hash_mismatch"
+    },
+    {
+      "path": "experiments/lite_finetuned/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer_ablation/bev150_finetune.py",
+          "exists": true,
+          "declared_sha256": "ae9a56a4ad241a2124c47c0e32255b194e7bffa71657494b80f3435597ef15fc",
+          "actual_sha256": "ae9a56a4ad241a2124c47c0e32255b194e7bffa71657494b80f3435597ef15fc",
+          "hash_matches": true
+        },
+        "checkpoint": {
+          "path": "work_dirs/bev150_finetune_2ep/epoch_2.pth",
+          "exists": true,
+          "declared_sha256": "268a83dbd256bc993e3eb8538a7b98c316b884bec8ea60919cf90ca82aac8e11",
+          "actual_sha256": "268a83dbd256bc993e3eb8538a7b98c316b884bec8ea60919cf90ca82aac8e11",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/bev150_finetune/Fri_Aug_14_04_43_21_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/temporal/temporal_off/eval_manifest.json",
+      "parseable": true,
+      "references": {
+        "config": {
+          "path": "projects/configs/bevformer_ablation/temporal_off.py",
+          "exists": true,
+          "declared_sha256": "92f96328932a08c215ea034f9f0d7f46d10b7f87e838bad6eff9735a792a583d",
+          "actual_sha256": "05b19e488b5109c779ec303e0b8c96d16dd2bd82f6642fe4301c79f69d630728",
+          "hash_matches": false
+        },
+        "checkpoint": {
+          "path": "ckpts/bevformer_r101_dcn_24ep.pth",
+          "exists": true,
+          "declared_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "actual_sha256": "5fda3ed3e0d2d1dc09baca337aa1ed64aece057fed7d8238525c5ed342649177",
+          "hash_matches": true
+        },
+        "metrics": {
+          "path": "test/temporal_off/Wed_Aug_12_11_55_06_2026/pts_bbox/metrics_summary.json",
+          "exists": true
+        }
+      },
+      "classification": "hash_mismatch"
+    }
+  ],
+  "profiles": [
+    {
+      "path": "experiments/baseline/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/bev150_extended/paired_2ep_profile_gpu1.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 200,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/bev150_extended/paired_base_profile_gpu1.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 200,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/bev150_extended/paired_best_profile_gpu1.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 200,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/bev_resolution/bev100/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/bev_resolution/bev150/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/encoder_depth/encoder3/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/encoder_depth/encoder4/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/lite_finetuned/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/rc_bev/gpu_smoke_profile_100.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 1,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    },
+    {
+      "path": "experiments/temporal/temporal_off/profile.json",
+      "parseable": true,
+      "checks": {
+        "per_iteration_latency": true,
+        "warmup_iterations": true,
+        "measured_iterations": true,
+        "gpu_identity": true,
+        "software_versions": true,
+        "timing_boundary": true,
+        "cuda_synchronization_declared": true
+      },
+      "recorded_samples": 100,
+      "sample_count_matches": true,
+      "classification": "directly_verifiable"
+    }
+  ],
+  "aggregate_checks": [
+    {
+      "owner": "experiments/summary.json",
+      "id": "B0",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/summary.json",
+      "id": "B1",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/summary.json",
+      "id": "B2",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/summary.json",
+      "id": "E1",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/summary.json",
+      "id": "E2",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/summary.json",
+      "id": "T1",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/summary.json",
+      "id": "L2",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true,
+        "latency_avg_ms": true,
+        "latency_p50_ms": true,
+        "latency_p95_ms": true,
+        "fps": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/bev150_extended/summary.json",
+      "id": "epoch_3",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/bev150_extended/summary.json",
+      "id": "epoch_4",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/bev150_extended/summary.json",
+      "id": "epoch_5",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true
+      },
+      "reproducible": true
+    },
+    {
+      "owner": "experiments/bev150_extended/summary.json",
+      "id": "epoch_6",
+      "checks": {
+        "nd_score": true,
+        "mean_ap": true,
+        "trans_err": true,
+        "scale_err": true,
+        "orient_err": true,
+        "vel_err": true,
+        "attr_err": true
+      },
+      "reproducible": true
+    }
+  ],
+  "missing_artifacts": [],
+  "artifact_count": 87
+}
