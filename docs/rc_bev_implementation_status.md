@@ -8,7 +8,9 @@ The additions are opt-in. `projects/configs/bevformer/bevformer_base.py` remains
 fixed 200x200 configuration and builds with zero continuous-generator parameters.
 
 This is an implementation milestone, not a paper result. The method checkpoint has
-not been trained or evaluated on the full nuScenes validation set.
+not been trained or evaluated on the full nuScenes validation set. Seed-0
+multi-resolution training started on GPU1 at 2026-09-11 11:23 CST and remains in
+progress; it is not counted as a result.
 
 ## Delivered files
 
@@ -95,3 +97,8 @@ aggregation remain required before making method claims or updating NCA Results.
 The paused Full-24 fixed-grid job is independent of this method. Its valid resume
 point remains `work_dirs/bev150_fulltrain_24ep/epoch_1.pth`; no RC-BEV script resumes
 that job.
+
+The active method run is recorded at
+`experiments/rc_bev/runs/rc_multires_s0_20260911T1124CST/training_manifest.json`.
+It passed iteration 60 with all five training grids observed, including 200x200,
+and the initial ETA was approximately 10 days 22 hours.

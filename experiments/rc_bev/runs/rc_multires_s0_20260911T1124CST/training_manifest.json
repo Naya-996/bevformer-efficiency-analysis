@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment": "rc_multires_s0",
+  "result_status": "NOT RUN",
+  "training_status": "RUNNING",
+  "started_at": "2026-09-11T11:23:39+08:00",
+  "source_git_commit": "e990e5a",
+  "tmux_session": "rc_bev_multires_s0_gpu1",
+  "physical_gpu": 1,
+  "cuda_visible_devices": "1",
+  "proxy_unset": true,
+  "config": "projects/configs/bevformer_rc/rc_bev_multires.py",
+  "work_dir": "experiments/rc_bev/runs/rc_multires_s0_20260911T1124CST/work_dir",
+  "log": "experiments/rc_bev/runs/rc_multires_s0_20260911T1124CST/train.log",
+  "resolution_trace": "experiments/rc_bev/runs/rc_multires_s0_20260911T1124CST/work_dir/resolution_trace.jsonl",
+  "seed": 0,
+  "train_resolutions": [100, 125, 150, 175, 200],
+  "epochs": 24,
+  "iterations_per_epoch": 28130,
+  "initialization": "ckpts/r101_dcn_fcos3d_pretrain.pth",
+  "initial_eta_observed_at_iteration_50": "approximately 10 days 22 hours",
+  "last_verified_iteration": 60,
+  "all_declared_resolutions_observed": true,
+  "resolution_200_completed_without_oom": true,
+  "result_note": "Training progress and smoke observations are not accuracy results. Keep results.json as NOT RUN until full validation and protocol profiling complete."
+}
+
