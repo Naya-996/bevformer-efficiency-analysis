@@ -2,7 +2,7 @@
   "schema_version": 1,
   "experiment": "rc_multires_s0_dual_retry",
   "result_status": "NOT RUN",
-  "training_status": "RUNNING",
+  "training_status": "RUNNING_RESUMED_FROM_EPOCH_1",
   "started_at": "2026-09-11T22:25:38+08:00",
   "source_git_commit": "1d69515ec3fab09e26a501aeef6c41513e355178",
   "supersedes": "rc_multires_s0_dual_restart_20260911T2221CST",
@@ -50,6 +50,30 @@
     "loss": 17.9917,
     "grad_norm": 31.1008,
     "eta": "approximately 8 days 16 hours"
+  },
+  "epoch_1_completed_at": "2026-09-12T04:50:25+08:00",
+  "epoch_1_checkpoint": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_1.pth",
+  "epoch_1_checkpoint_meta": {
+    "epoch": 1,
+    "iteration": 14065,
+    "optimizer_present": true,
+    "state_dict_tensors": 1100
+  },
+  "post_epoch_1_exit": "Inline distributed validation failed because img_metas remained an MMCV DataContainer; training checkpoint was already complete.",
+  "resume_started_at": "2026-09-12T09:47:34+08:00",
+  "resume_git_commit": "9c390c4d8d588ac241e84c4cbe4644f76e470560",
+  "resume_tmux_session": "rc_bev_multires_s0_dual_resume_ep2_gpu01",
+  "resume_log": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/resume_epoch2.log",
+  "resume_from": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_1.pth",
+  "inline_validation": "temporarily disabled with --no-validate; formal validation remains pending",
+  "resume_last_verified_epoch": 2,
+  "resume_last_verified_iteration": 14114,
+  "epoch_2_iteration_50_metrics": {
+    "time_seconds": 2.788,
+    "data_time_seconds": 1.136,
+    "memory_mib": 24211,
+    "loss": 6.7181,
+    "grad_norm": 59.7782
   },
   "result_note": "Do not report training progress as an accuracy result before full validation."
 }
