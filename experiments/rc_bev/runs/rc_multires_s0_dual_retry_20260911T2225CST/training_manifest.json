@@ -1,79 +1,106 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "experiment": "rc_multires_s0_dual_retry",
-  "result_status": "NOT RUN",
-  "training_status": "RUNNING_RESUMED_FROM_EPOCH_1",
+  "result_status": "COMPLETE",
+  "training_status": "COMPLETE",
   "started_at": "2026-09-11T22:25:38+08:00",
+  "completed_at": "2026-09-19T00:34:51+08:00",
   "source_git_commit": "1d69515ec3fab09e26a501aeef6c41513e355178",
+  "resume_git_commit": "9c390c4d8d588ac241e84c4cbe4644f76e470560",
   "supersedes": "rc_multires_s0_dual_restart_20260911T2221CST",
-  "restart_from_iteration": 0,
-  "tmux_session": "rc_bev_multires_s0_dual_retry_gpu01",
-  "physical_gpus": [0, 1],
+  "config": {
+    "path": "projects/configs/bevformer_rc/rc_bev_multires.py",
+    "sha256": "326b9d6d21271e3bb0807649de166515804ef0c054b5f4eeabd87b796b117d3f"
+  },
+  "continuous_query_source": {
+    "path": "projects/mmdet3d_plugin/bevformer/modules/resolution_continuous.py",
+    "sha256": "92f3633302c534004a25418bbd542b55e4c50a78304bc7e11bd23b69abe152f3"
+  },
+  "work_dir": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir",
+  "physical_gpus": [
+    0,
+    1
+  ],
   "cuda_visible_devices": "0,1",
   "world_size": 2,
   "launcher": "pytorch_ddp",
-  "distributed_backend": "gloo",
-  "master_port": 28523,
+  "final_distributed_backend": "nccl",
   "proxy_unset": true,
-  "config": "projects/configs/bevformer_rc/rc_bev_multires.py",
-  "work_dir": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir",
-  "log": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/train.log",
-  "resolution_trace": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/resolution_trace.jsonl",
   "seed": 0,
   "deterministic": true,
-  "train_resolutions": [100, 125, 150, 175, 200],
+  "train_resolutions": [
+    100,
+    125,
+    150,
+    175,
+    200
+  ],
+  "all_declared_resolutions_observed": true,
   "epochs": 24,
+  "iterations": 337560,
+  "iterations_per_epoch": 14065,
   "samples_per_gpu": 1,
   "global_batch_size": 2,
   "learning_rate": 0.0002,
-  "expected_iterations_per_epoch": 14065,
   "initialization": "ckpts/r101_dcn_fcos3d_pretrain.pth",
-  "resource_note": "The two authorized Autoware containers and their CARLA graphics server were stopped. Pre-launch free memory was 31228 MiB on GPU0 and 31578 MiB on GPU1.",
-  "nccl_recovery": "A reboot is still required to resolve the loaded-driver/NVML mismatch; Gloo is used until then.",
-  "training_started_at": "2026-09-11T22:26:49+08:00",
-  "last_verified_at": "2026-09-11T22:30:31+08:00",
-  "last_verified_iteration": 107,
-  "all_declared_resolutions_observed": true,
-  "resolution_200_completed_without_oom": true,
-  "iteration_50_metrics": {
-    "time_seconds": 2.807,
-    "data_time_seconds": 1.167,
-    "memory_mib": 24245,
-    "loss": 20.4917,
-    "grad_norm": 33.3046,
-    "eta": "approximately 10 days 23 hours"
-  },
-  "iteration_100_metrics": {
-    "time_seconds": 1.629,
-    "data_time_seconds": 0.023,
-    "memory_mib": 24245,
-    "loss": 17.9917,
-    "grad_norm": 31.1008,
-    "eta": "approximately 8 days 16 hours"
-  },
-  "epoch_1_completed_at": "2026-09-12T04:50:25+08:00",
-  "epoch_1_checkpoint": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_1.pth",
-  "epoch_1_checkpoint_meta": {
-    "epoch": 1,
-    "iteration": 14065,
+  "recovery_history": [
+    {
+      "stage": "epochs_1_to_2",
+      "backend": "gloo",
+      "reason": "The loaded NVIDIA kernel module and NVML library initially had a version mismatch.",
+      "checkpoint": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_2.pth"
+    },
+    {
+      "stage": "inline_validation_after_epoch_1",
+      "status": "FAILED_AFTER_CHECKPOINT",
+      "reason": "MMCV img_metas remained a DataContainer in the inline distributed validation path.",
+      "effect": "Training checkpoints remained valid; later resumes used --no-validate."
+    },
+    {
+      "stage": "epochs_3_to_24",
+      "backend": "nccl",
+      "reason": "A reboot resolved the driver/library mismatch and training resumed from the epoch-2 checkpoint."
+    }
+  ],
+  "final_checkpoint": {
+    "path": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+    "sha256": "741e6b937fadc5083ca833ee2b1ed4a3339bcf4714a967124704f0baa6a71e73",
+    "bytes": 746878834,
+    "epoch": 24,
+    "iteration": 337560,
     "optimizer_present": true,
-    "state_dict_tensors": 1100
+    "distributed_in_git": false
   },
-  "post_epoch_1_exit": "Inline distributed validation failed because img_metas remained an MMCV DataContainer; training checkpoint was already complete.",
-  "resume_started_at": "2026-09-12T09:47:34+08:00",
-  "resume_git_commit": "9c390c4d8d588ac241e84c4cbe4644f76e470560",
-  "resume_tmux_session": "rc_bev_multires_s0_dual_resume_ep2_gpu01",
-  "resume_log": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/resume_epoch2.log",
-  "resume_from": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_1.pth",
-  "inline_validation": "temporarily disabled with --no-validate; formal validation remains pending",
-  "resume_last_verified_epoch": 2,
-  "resume_last_verified_iteration": 14114,
-  "epoch_2_iteration_50_metrics": {
-    "time_seconds": 2.788,
-    "data_time_seconds": 1.136,
-    "memory_mib": 24211,
-    "loss": 6.7181,
-    "grad_norm": 59.7782
+  "standalone_validation": {
+    "status": "COMPLETE",
+    "dataset": "nuScenes v1.0 trainval",
+    "validation_samples": 6019,
+    "resolutions": [
+      100,
+      125,
+      150,
+      175,
+      200
+    ],
+    "completed_at": "2026-09-20T19:18:50+08:00",
+    "evidence_dir": "experiments/rc_bev/evidence/seed0_epoch24/metrics"
   },
-  "result_note": "Do not report training progress as an accuracy result before full validation."
+  "fp32_profiling": {
+    "status": "COMPLETE",
+    "device": "NVIDIA GeForce RTX 5090",
+    "physical_gpu": 1,
+    "batch_size": 1,
+    "warmup_iterations": 20,
+    "measured_iterations": 200,
+    "resolutions": [
+      100,
+      125,
+      150,
+      175,
+      200
+    ],
+    "completed_at": "2026-09-21",
+    "evidence_dir": "experiments/rc_bev/evidence/seed0_epoch24/profiles"
+  },
+  "result_scope": "One complete seed-0 run. Multi-seed statistics and matched-budget baselines remain pending."
 }

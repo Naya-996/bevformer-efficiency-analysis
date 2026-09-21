@@ -1,113 +1,101 @@
-# RC-BEV implementation and handoff
+# RC-BEV implementation and experiment status
 
-## Current outcome
+## Completed scope
 
-The repository now contains a runnable method prototype for continuous BEV queries,
-physical-coordinate temporal-state migration and deterministic budget adaptation.
-The additions are opt-in. `projects/configs/bevformer/bevformer_base.py` remains a
-fixed 200x200 configuration and builds with zero continuous-generator parameters.
+RC-BEV now has one complete Seed 0 training and evaluation cycle:
 
-This is an implementation milestone, not a paper result. The method checkpoint has
-not been trained or evaluated on the full nuScenes validation set. The initial
-single-GPU seed-0 run was stopped at iteration 729 without a checkpoint so it could
-be replaced by an explicitly requested GPU0+GPU1 DDP run. The replacement seed-0
-run uses the Gloo backend because the currently loaded NVIDIA kernel module and
-installed NVML library do not match. It reached iteration 2538, but its tmux session
-and ranks later exited while paused before an epoch checkpoint was written. A new
-seed-0 GPU0+GPU1 run was started after the conflicting Autoware/CARLA processes
-were stopped and completed epoch 1 using Gloo. Its inline validation then exposed
-an MMCV `DataContainer` compatibility error after the checkpoint was safely
-written. Training has resumed from `epoch_1.pth` with inline validation temporarily
-disabled; formal validation remains pending. None of these runs is counted as a
-result until complete validation.
+- multi-resolution training at 100, 125, 150, 175 and 200;
+- 24 epochs / 337,560 iterations;
+- full 6,019-frame nuScenes validation at all five seen resolutions;
+- FP32 latency profiling at all five resolutions with 20 warmup and 200 measured
+  iterations;
+- archived metrics, per-iteration latency samples and provenance hashes;
+- reproducible rendering of CSV, LaTeX tables and plots from the evidence files.
 
-## Delivered files
+The final local checkpoint is:
 
-- Evidence audit: `audit/evidence_integrity_report.md`,
-  `audit/evidence_integrity.json`, `audit/artifact_hashes.csv`,
-  `audit/missing_artifacts.md`.
-- Design: `docs/resolution_continuous_design.md`.
-- Query and migration: `projects/mmdet3d_plugin/bevformer/modules/resolution_continuous.py`.
-- Controller: `projects/mmdet3d_plugin/bevformer/modules/budget_controller.py`.
-- Head/transformer/detector integration: `bevformer_head.py`, `transformer.py`,
-  and `detectors/bevformer.py` under the plugin.
-- Configs: fixed 150, multi-resolution, FP16, seen/unseen evaluation, adaptive
-  inference and no-history-migration ablation under `projects/configs/bevformer_rc/`.
-- Warm-start utility: `tools/convert_checkpoint_to_continuous_bev.py`.
-- CPU/GPU component tests: `tests/test_resolution_continuous.py`,
-  `tests/test_rc_bev_config_contract.py`, and
-  `tools/smoke_test_rc_bev_components.py`.
-- Experiment entry point: `run_rc_bev_experiments.sh`.
-- Single truth source and rendering: `experiments/rc_bev/results.json`,
-  `result_schema.json`, `experiment_matrix.json`, and
-  `tools/render_rc_bev_results.py`.
+~~~text
+experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth
+SHA256: 741e6b937fadc5083ca833ee2b1ed4a3339bcf4714a967124704f0baa6a71e73
+Size: 746878834 bytes
+~~~
 
-## Observed verification
+It is intentionally excluded from Git because it exceeds normal GitHub limits.
+The exact metadata is stored in
+experiments/rc_bev/evidence/seed0_epoch24/provenance.json.
 
-- 25 CPU tests pass (query shape/dtype/backward, physical coordinates, row-major
-  order, same/cross-grid migration, constant and coordinate fields, non-square
-  grids, deterministic sampling, controller hysteresis/reset, and config contracts).
-- Official Base-200 detector checkpoint loads into the opt-in model without any
-tensor-size mismatch. Exactly eleven new generator tensors (nine parameters plus
-persistent Fourier-frequency and schedule-step buffers) are reported missing and initialized by the new module,
-as designed. The retained legacy query table is
-  `[40000,256]`; fixed-150 is selected only at runtime.
-- GPU component smoke passes on physical GPU1 / RTX 5090 with PyTorch 2.7.1+cu128
-  for 100, 125, 140, 150, 160, 175, 180, 200 and non-square 96x144 grids.
-- GPU history migration passes for 100->150, 150->200, 200->100 and
-  100->96x144; the constant-field maximum error is zero.
-- A real nuScenes training batch at runtime 100x100 completed forward, backward,
-  optimizer update and strict checkpoint round-trip. All 563 gradient-bearing
-  tensors were finite; peak allocated/reserved memory was 18612.6/19688.0 MiB.
-- One full detector inference at 100x100 completed with the official detector
-  checkpoint plus newly initialized continuous parameters. Its one-sample timing
-  is stored in `experiments/rc_bev/gpu_smoke_profile_100.json` and is not a valid
-  benchmark.
-- Historical manifest files now match the pre-repair archive byte-for-byte. The
-  independent audit still reports the six original config-hash mismatches instead
-  of concealing them.
+## Verified implementation
 
-`nvidia-smi` cannot initialize NVML because the driver and NVML library versions
-differ. CUDA tensor allocation and model inference nevertheless work. Energy and
-reliable process telemetry are blocked until NVML is repaired.
+- ContinuousBEVQueryGenerator maps physical cell-centre coordinates through
+  multi-frequency Fourier features and two MLPs to BEV content queries and
+  positional encodings.
+- Runtime BEV shapes can be changed without resizing a learned query table.
+- Training selects one deterministic resolution for the complete batch and
+  temporal queue; the schedule step is checkpointed.
+- Previous-BEV tensors carry an explicit source shape and are resampled in physical
+  coordinates before ego-motion rotation when the grid changes.
+- The opt-in path preserves the original fixed-grid configuration. Official
+  fixed-grid tables remain available for checkpoint compatibility and are frozen
+  when the continuous path is active.
+- CPU contract tests, GPU component smoke tests, a real training batch and strict
+  checkpoint round-trip have passed.
+- Standalone full-dataset validation succeeded after the earlier inline-validation
+  DataContainer incompatibility.
 
-## Commands
+## Seed 0 results
 
-```bash
-# No proxy is used; all GPU actions expose physical GPU1 only.
-./run_rc_bev_experiments.sh audit
+| Resolution | NDS | mAP | Mean latency (ms) | P50 (ms) | P95 (ms) | FPS |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 100 | 0.509989 | 0.406942 | 219.176 | 219.165 | 219.593 | 4.563 |
+| 125 | 0.514720 | 0.412871 | 224.952 | 224.899 | 225.487 | 4.445 |
+| 150 | 0.519398 | 0.415204 | 232.035 | 232.006 | 232.305 | 4.310 |
+| 175 | 0.522037 | 0.416416 | 241.845 | 241.831 | 242.149 | 4.135 |
+| 200 | 0.523164 | 0.417212 | 254.634 | 254.599 | 255.043 | 3.927 |
+
+These are single-seed observations, not means or confidence intervals. The
+previously reproduced official Base-200 result is useful context but is not a
+matched-budget multi-seed baseline.
+
+## Training recovery history
+
+The run initially used Gloo because the loaded NVIDIA kernel module and NVML
+library did not match. Epoch 1 completed before inline validation encountered an
+MMCV DataContainer compatibility error. Training resumed with inline validation
+disabled. After reboot repaired the driver/library mismatch, the run resumed from
+epoch 3 with NCCL and completed epoch 24. Full standalone validation subsequently
+passed.
+
+This history describes execution recovery only; it is not presented as a method
+contribution.
+
+## Evidence and commands
+
+- Truth source: experiments/rc_bev/results.json
+- Archived raw summaries: experiments/rc_bev/evidence/seed0_epoch24/
+- Generated results: experiments/rc_bev/results.csv and
+  experiments/rc_bev/generated/
+- Training manifest:
+  experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/training_manifest.json
+
+~~~bash
 ./run_rc_bev_experiments.sh cpu-test
 ./run_rc_bev_experiments.sh gpu-component-smoke
-
-# Full training, unique timestamped output directory.
 SEED=0 ./run_rc_bev_experiments.sh train-multires
-
-# After a real continuous checkpoint exists:
 ./run_rc_bev_experiments.sh eval-seen /path/to/checkpoint.pth
-./run_rc_bev_experiments.sh eval-unseen /path/to/checkpoint.pth
-./run_rc_bev_experiments.sh eval-dynamic /path/to/checkpoint.pth
 ./run_rc_bev_experiments.sh profile-seen /path/to/checkpoint.pth
-./run_rc_bev_experiments.sh profile-seen-fp16 /path/to/checkpoint.pth
-```
+.venv5090py39/bin/python tools/render_rc_bev_results.py
+~~~
 
-The renderer rejects a `COMPLETE` row unless raw metrics/profile paths exist and
-the profile contains all declared per-iteration samples. Non-complete rows are
-rejected if result numbers are inserted. Generated LaTeX therefore currently says
-“No verified method results yet”.
+## Remaining work
 
-## Remaining experiment work
+- Train Seeds 1 and 2 for RC-BEV and matched Base-200/fixed-150 baselines.
+- Evaluate unseen 140, 160 and 180 grids.
+- Evaluate the adaptive controller and the no-history-migration ablation.
+- Complete FP16, MACs/FLOPs, peak-memory and energy measurements.
+- Add BEVFormer-S/Tiny under the same hardware and timing protocol.
+- Add per-class, distance, visibility/occlusion and velocity-error analyses.
+- Report mean, standard deviation or confidence intervals only after multi-seed
+  experiments are complete.
 
-All 20 matched-protocol result rows are `NOT RUN`: three seeds of Base-200, fixed-150 and
-continuous multi-resolution training; eight fixed-resolution evaluations; dynamic
-evaluation; and Small/Tiny baselines. Full validation, class/distance/visibility and
-switch-window slices, 20+200 FP32/FP16 profiling, MACs, energy, and statistical
-aggregation remain required before making method claims or updating NCA Results.
-
-The paused Full-24 fixed-grid job is independent of this method. Its valid resume
-point remains `work_dirs/bev150_fulltrain_24ep/epoch_1.pth`; no RC-BEV script resumes
-that job.
-
-The active method run is recorded at
-`experiments/rc_bev/runs/rc_multires_s0_20260911T1124CST/training_manifest.json`.
-It passed iteration 60 with all five training grids observed, including 200x200,
-and the initial ETA was approximately 10 days 22 hours.
+The paused fixed-grid BEV-150 Full-24 experiment is independent of RC-BEV and is
+not included in the results above.

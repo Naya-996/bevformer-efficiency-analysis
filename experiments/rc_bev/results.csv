@@ -8,14 +8,14 @@ fixed150_s2,fixed_150,2,150,NOT RUN,,,,,,,,,
 rc_multires_s0,continuous_multires,0,,NOT RUN,,,,,,,,,
 rc_multires_s1,continuous_multires,1,,NOT RUN,,,,,,,,,
 rc_multires_s2,continuous_multires,2,,NOT RUN,,,,,,,,,
-rc_eval_100,continuous_fixed_eval_seen,,100,NOT RUN,,,,,,,,,
-rc_eval_125,continuous_fixed_eval_seen,,125,NOT RUN,,,,,,,,,
+rc_eval_100,continuous_fixed_eval_seen,0,100,COMPLETE,0.5099890018422867,0.4069416599148076,219.1764909378253,219.16497591882944,219.59263260941952,219.87986033316702,4.5625331244292715,experiments/rc_bev/evidence/seed0_epoch24/metrics/metrics_100.json,experiments/rc_bev/evidence/seed0_epoch24/profiles/profile_100.json
+rc_eval_125,continuous_fixed_eval_seen,0,125,COMPLETE,0.5147203710731014,0.41287090163339474,224.95155442215037,224.89945450797677,225.48718446632847,226.0142560757231,4.445401600219094,experiments/rc_bev/evidence/seed0_epoch24/metrics/metrics_125.json,experiments/rc_bev/evidence/seed0_epoch24/profiles/profile_125.json
 rc_eval_140,continuous_fixed_eval_unseen,,140,NOT RUN,,,,,,,,,
-rc_eval_150,continuous_fixed_eval_seen,,150,NOT RUN,,,,,,,,,
+rc_eval_150,continuous_fixed_eval_seen,0,150,COMPLETE,0.5193981129223341,0.4152039901608431,232.03470949432813,232.00624203309417,232.3051125218626,232.96871784492396,4.30970005383804,experiments/rc_bev/evidence/seed0_epoch24/metrics/metrics_150.json,experiments/rc_bev/evidence/seed0_epoch24/profiles/profile_150.json
 rc_eval_160,continuous_fixed_eval_unseen,,160,NOT RUN,,,,,,,,,
-rc_eval_175,continuous_fixed_eval_seen,,175,NOT RUN,,,,,,,,,
+rc_eval_175,continuous_fixed_eval_seen,0,175,COMPLETE,0.5220371801303819,0.41641630702564925,241.845007398515,241.83055653702468,242.14854741003364,242.45666821603663,4.1348796518763296,experiments/rc_bev/evidence/seed0_epoch24/metrics/metrics_175.json,experiments/rc_bev/evidence/seed0_epoch24/profiles/profile_175.json
 rc_eval_180,continuous_fixed_eval_unseen,,180,NOT RUN,,,,,,,,,
-rc_eval_200,continuous_fixed_eval_seen,,200,NOT RUN,,,,,,,,,
+rc_eval_200,continuous_fixed_eval_seen,0,200,COMPLETE,0.5231638630518863,0.41721167777717627,254.6343291370431,254.59884403971955,255.04273895639926,255.68194577936083,3.9272002458938062,experiments/rc_bev/evidence/seed0_epoch24/metrics/metrics_200.json,experiments/rc_bev/evidence/seed0_epoch24/profiles/profile_200.json
 rc_dynamic,budget_adaptive,,,NOT RUN,,,,,,,,,
 bevformer_small,competitive_lightweight_baseline,,,NOT RUN,,,,,,,,,
 bevformer_tiny,competitive_lightweight_baseline,,,NOT RUN,,,,,,,,,

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "experiment": "rc_multires_seed0_epoch24",
+  "training": {
+    "config": "projects/configs/bevformer_rc/rc_bev_multires.py",
+    "config_sha256": "326b9d6d21271e3bb0807649de166515804ef0c054b5f4eeabd87b796b117d3f",
+    "seed": 0,
+    "epochs": 24,
+    "iterations": 337560,
+    "train_resolutions": [100, 125, 150, 175, 200],
+    "global_batch_size": 2,
+    "initialization": "ckpts/r101_dcn_fcos3d_pretrain.pth",
+    "completed_at": "2026-09-19T00:34:51+08:00"
+  },
+  "checkpoint": {
+    "local_path": "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+    "sha256": "741e6b937fadc5083ca833ee2b1ed4a3339bcf4714a967124704f0baa6a71e73",
+    "bytes": 746878834,
+    "distributed_in_git": false,
+    "note": "The checkpoint is intentionally excluded from Git because it exceeds normal GitHub file limits."
+  },
+  "evaluation": {
+    "dataset": "nuScenes v1.0 trainval",
+    "validation_samples": 6019,
+    "resolutions": [100, 125, 150, 175, 200],
+    "completed_at": "2026-09-20T19:18:50+08:00"
+  },
+  "profiling": {
+    "device": "NVIDIA GeForce RTX 5090",
+    "physical_gpu": 1,
+    "precision": "FP32",
+    "batch_size": 1,
+    "warmup_iterations": 20,
+    "measured_iterations": 200,
+    "data_loading_in_timing": false,
+    "measurement_scope": "MMDataParallel scatter + model forward + detector post-processing",
+    "completed_at": "2026-09-21"
+  },
+  "result_scope": "One complete seed-0 training run. Multi-seed statistics are not yet available."
+}

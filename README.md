@@ -1,137 +1,145 @@
-# BEVFormer 多视角 3D 感知轻量化与时序分析
+# RC-BEV：分辨率连续的 BEVFormer 多摄像头 3D 检测
 
-本项目基于 [BEVFormer](https://github.com/fundamentalvision/BEVFormer)，研究
-BEV 分辨率、Transformer Encoder 深度和历史 BEV 对多摄像头 3D 检测精度与
-推理效率的影响。实验使用 nuScenes v1.0-trainval，并在统一硬件和测试协议下完成
-全量评测与性能分析。
+本项目基于 [BEVFormer](https://github.com/fundamentalvision/BEVFormer)，研究如何让同一
+个多摄像头 3D 检测模型在不同 BEV 网格分辨率下运行。RC-BEV 使用物理坐标驱动的
+连续 Query 生成器替代固定网格查表，并在分辨率切换时迁移历史 BEV，使一个 checkpoint
+能够在 100、125、150、175 和 200 五档网格上形成可调节的精度—延迟曲线。
 
-## 主要结果
+当前仓库已完成一个随机种子（Seed 0）的 24 epoch 训练、五档分辨率完整 nuScenes
+验证和统一硬件性能测试。多种子统计、未见分辨率和动态分辨率控制仍属于后续工作，
+因此本文档只报告已经归档原始证据的结果。
 
-以下最终对照在同一张 RTX 5090（GPU1）上连续完成 20 次 warmup 和 200 次正式测量：
+## 方法概览
 
-| 模型 | NDS | mAP | 参数量 | 平均 / P95 延迟 | FPS |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Base，BEV-200 | 51.73 | 41.63 | 69.03 M | 253.12 / 253.61 ms | 3.951 |
-| BEV-150，2 epoch 适配 | 50.97 | 40.74 | 64.54 M | 231.20 / 231.90 ms | 4.325 |
-| **BEV-150，6 epoch 适配** | **51.23** | **40.82** | **64.54 M** | **231.33 / 231.77 ms** | **4.323** |
+原始 BEVFormer-base 为 200×200 网格维护 40,000 个独立可学习 BEV Query。RC-BEV
+改为对每个网格中心的真实物理坐标进行计算：
 
-最终选择 BEV-150 作为轻量化配置。与 Base 相比，它将 BEV query 数从 40,000
-降至 22,500，参数量减少 6.51%，平均延迟降低 8.61%，FPS 提升 9.42%；经过
-6 epoch 分阶段低学习率适配后，NDS 和 mAP 分别只下降 0.51 和 0.81 个点。
+1. 在点云范围内生成 BEV 单元中心坐标 \((x,y)\)，并归一化到 \([-1,1]\)；
+2. 使用 16 个二次幂频段构造正弦/余弦 Fourier 特征；
+3. 通过两个轻量 MLP 分别生成 256 维 BEV Query 和位置编码；
+4. 当相邻帧使用不同网格时，在物理坐标中重采样历史 BEV，再执行自车运动补偿和
+   Temporal Self-Attention。
 
-![Accuracy versus FPS](docs/assets/accuracy_vs_fps.png)
+生成器没有随 \(H\) 或 \(W\) 增长的可训练参数。训练时，每个完整 batch 及其时序
+队列从 100、125、150、175、200 中确定性选择一个网格，所有分辨率共享同一组
+生成器参数。原始固定网格配置保持不变，只有 RC-BEV 配置显式启用连续路径。
 
-## 实验结论
+实现与设计说明：
 
-- 降低 BEV 分辨率可以获得稳定的速度收益，但 BEV-100 的精度损失明显，BEV-150
-  是更合理的折中点。
-- 未经训练直接将 Encoder 从 6 层截断到 4/3 层会使 mAP 降至 0，说明网络深度
-  裁剪必须配合独立训练或微调。
-- 关闭历史 BEV 后 NDS 从 51.73 降至 41.28，mAVE 从 0.3938 恶化到 0.8918；
-  由于 Temporal Self-Attention 仍在执行，吞吐量没有提升。
-- BEV-150 分阶段微调将 NDS 从 zero-shot 的 49.17 提升至 51.23，恢复了相对
-  Base 约 80.1% 的 NDS 损失；epoch 3--6 全量验证后选择 epoch 6，而不是默认
-  采用最后一次训练结果。
+- [连续 Query 与历史 BEV 迁移](projects/mmdet3d_plugin/bevformer/modules/resolution_continuous.py)
+- [Head 接入与运行时网格选择](projects/mmdet3d_plugin/bevformer/dense_heads/bevformer_head.py)
+- [多分辨率训练配置](projects/configs/bevformer_rc/rc_bev_multires.py)
+- [方法设计与代码数据流](docs/resolution_continuous_design.md)
 
-完整实验表、指标定义和测试协议见
-[docs/experiments.md](docs/experiments.md)。
+## Seed 0 完整结果
 
-## 可视化
+训练使用 nuScenes v1.0-trainval、ResNet-101+DCNv2 初始化、两张 GPU、全局 batch
+size 2，共 24 epoch / 337,560 iterations。下表精度均来自包含 6,019 帧的完整
+nuScenes validation，性能均使用同一个 epoch-24 checkpoint。
 
-场景按照 GT 元数据选择，不使用预测结果挑选样例。图中三行依次为 GT、Base 和
-BEV-150，所有模型使用相同 token、置信度阈值和检测范围。
+| BEV 分辨率 | NDS | mAP | 平均延迟 (ms) | P50 (ms) | P95 (ms) | FPS |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 100×100 | 0.5100 | 0.4069 | 219.18 | 219.16 | 219.59 | 4.563 |
+| 125×125 | 0.5147 | 0.4129 | 224.95 | 224.90 | 225.49 | 4.445 |
+| 150×150 | 0.5194 | 0.4152 | 232.03 | 232.01 | 232.31 | 4.310 |
+| 175×175 | 0.5220 | 0.4164 | 241.85 | 241.83 | 242.15 | 4.135 |
+| 200×200 | 0.5232 | 0.4172 | 254.63 | 254.60 | 255.04 | 3.927 |
 
-![Dense traffic comparison](docs/assets/visualizations/dense_94126983bc0c4de89fb27cefb81f24ef.png)
+相对同一 RC-BEV checkpoint 的 200×200 推理：
 
-其余转弯、遮挡和远距离场景位于
-[`docs/assets/visualizations`](docs/assets/visualizations)。
+- 150×150 平均延迟降低 8.88%，FPS 提高 9.74%；
+- 100×100 平均延迟降低 13.93%，FPS 提高 16.18%。
 
-## 测试协议
+仓库此前复现的官方 Base-200 checkpoint 为 0.5173 NDS / 0.4163 mAP。RC-BEV
+Seed 0 在 200×200 下为 0.5232 / 0.4172，但两者不属于多随机种子、匹配训练预算
+的因果对照，因此不能据此声称连续 Query 必然提高精度。
 
-- 数据集：nuScenes v1.0-trainval，验证集 6,019 帧
-- 输入：六摄像头，1600×900
-- 硬件：NVIDIA GeForce RTX 5090，FP32，batch size 1
-- 最终配对测试：同一物理 GPU1，20 次 warmup、200 次正式测量；原始消融表采用
-  GPU0 上的 10/100 协议，两组绝对时间不混用
-- 延迟范围：数据 scatter、模型 forward 和检测后处理，不包含 DataLoader 解码
+![Resolution-NDS curve](experiments/rc_bev/generated/resolution_nds_curve.png)
 
-本机验证环境为 Python 3.9、PyTorch 2.7.1+cu128、CUDA 12.8、MMCV-full 1.4.0、
-MMDetection 2.14.0 和 MMDetection3D 0.17.1。
+![Accuracy-latency observations](experiments/rc_bev/generated/accuracy_latency_pareto.png)
 
-## 复现实验
+## 性能测试协议
 
-按照上游项目说明安装依赖并准备 nuScenes 数据，然后下载官方
-`bevformer_r101_dcn_24ep.pth` checkpoint。
+- 硬件：NVIDIA GeForce RTX 5090，物理 GPU1
+- 精度与 batch：FP32，batch size 1
+- 统计：20 次 warmup + 200 次正式测量
+- 同步：计时边界前后均执行 CUDA synchronize
+- 延迟范围：MMDataParallel scatter、模型 forward 和检测后处理
+- 不包含：DataLoader、图像读取和解码
 
-```bash
-export CUDA_HOME=/usr/local/cuda
-export PYTHONPATH="$(pwd)/mmdetection3d:$(pwd):${PYTHONPATH:-}"
+所有 P50、P95 和 FPS 都由逐次延迟样本计算。摘要 JSON、原始逐次样本和哈希位于
+[Seed 0 evidence](experiments/rc_bev/evidence/seed0_epoch24/)。表格和图片由
+[render_rc_bev_results.py](tools/render_rc_bev_results.py) 从
+[results.json](experiments/rc_bev/results.json) 自动生成；未完成的实验不能填写结果值。
 
-# Base 全量验证
-python tools/test.py \
-  projects/configs/bevformer/bevformer_base.py \
-  ckpts/bevformer_r101_dcn_24ep.pth \
-  --eval bbox
+## 复现
 
-# 生成 BEV-150 插值 checkpoint
-python tools/interpolate_bev_checkpoint.py \
-  ckpts/bevformer_r101_dcn_24ep.pth \
-  ckpts/ablation/bevformer_r101_dcn_24ep_bev150_interp.pth \
-  --dst-size 150
+依赖环境与上游 BEVFormer 一致。本机验证环境为 Python 3.9、PyTorch
+2.7.1+cu128、CUDA 12.8、MMCV-full 1.4.0、MMDetection 2.14.0 和
+MMDetection3D 0.17.1。准备 nuScenes 后，可使用统一入口执行测试和实验：
 
-# 两轮微调
-python tools/train.py \
-  projects/configs/bevformer_ablation/bev150_finetune.py \
-  --work-dir work_dirs/bev150_finetune_2ep \
-  --gpus 1 --seed 0 --no-validate
+~~~bash
+# 组件与配置契约测试
+./run_rc_bev_experiments.sh cpu-test
+./run_rc_bev_experiments.sh gpu-component-smoke
 
-# 保留 AdamW 动量，将学习率降至 5e-6 后续训至 epoch 6
-python tools/rebase_optimizer_lr.py \
-  work_dirs/bev150_finetune_2ep/epoch_2.pth \
-  ckpts/ablation/bev150_epoch2_resume_lr5e-6.pth \
-  --target-lr 5e-6
-python tools/train.py \
-  projects/configs/bevformer_ablation/bev150_finetune_6ep.py \
-  --work-dir work_dirs/bev150_finetune_6ep \
-  --resume-from ckpts/ablation/bev150_epoch2_resume_lr5e-6.pth \
-  --gpus 1 --seed 0 --no-validate
+# 单卡多分辨率训练
+SEED=0 ./run_rc_bev_experiments.sh train-multires
 
-# 统一性能测试
-python tools/profile_bevformer.py \
-  projects/configs/bevformer_ablation/bev150_finetune_6ep.py \
-  work_dirs/bev150_finetune_6ep/epoch_6.pth \
-  --warmup 20 --iters 200 --workers 2 \
-  --output work_dirs/bev150_profile.json
-```
+# 使用训练完成的连续 checkpoint
+CHECKPOINT=/path/to/epoch_24.pth
+./run_rc_bev_experiments.sh eval-seen "$CHECKPOINT"
+./run_rc_bev_experiments.sh profile-seen "$CHECKPOINT"
 
-核心实验文件：
+# 尚未纳入当前结论的扩展实验
+./run_rc_bev_experiments.sh eval-unseen "$CHECKPOINT"
+./run_rc_bev_experiments.sh eval-dynamic "$CHECKPOINT"
+./run_rc_bev_experiments.sh profile-seen-fp16 "$CHECKPOINT"
 
-- `projects/configs/bevformer_ablation/`：BEV 分辨率、Encoder 和 Temporal 配置
-- `tools/interpolate_bev_checkpoint.py`：BEV 与位置编码权重插值
-- `tools/rebase_optimizer_lr.py`：保留优化器状态并降低续训学习率
-- `tools/profile_bevformer.py`：延迟、FPS、显存和参数量统计
-- `tools/plot_experiment_tradeoffs.py`：Accuracy–Efficiency 曲线
-- `tools/visualize_base_lite.py`：GT/Base/Lite 场景对比
-- `experiments/summary.csv`：完整实验结果
-- `experiments/bev150_extended/result_report.md`：最终续训与配对性能报告
+# 校验证据并重新生成 CSV、LaTeX 和图片
+.venv5090py39/bin/python tools/render_rc_bev_results.py
+~~~
 
-## 项目边界
+训练用 epoch-24 checkpoint 为 746,878,834 bytes，超过普通 GitHub 文件限制，
+因此不会提交到 Git。其 SHA256 为：
 
-BEV-150 使用官方 Base 权重插值后进行 6 epoch 分阶段低学习率适配，不等同于完整
-24 epoch 从头训练。Encoder early-exit 和 Temporal OFF 用于机制分析，不作为
-训练后的部署模型。性能结果来自单张 RTX 5090 的 FP32 测试，不能直接外推到
-车端硬件。
+~~~text
+741e6b937fadc5083ca833ee2b1ed4a3339bcf4714a967124704f0baa6a71e73
+~~~
+
+精确配置、checkpoint 大小与哈希记录在
+[provenance.json](experiments/rc_bev/evidence/seed0_epoch24/provenance.json)。
+
+## 与早期固定 BEV-150 实验的关系
+
+仓库保留了早期固定分辨率研究：将官方 Base 权重中的 BEV Query 与行列位置编码插值到
+150×150，再进行 6 epoch 低学习率适配。该实验验证了降低 BEV 分辨率的效率收益，
+但每个网格仍依赖固定参数表。
+
+RC-BEV 是后续的方法升级：它从物理坐标生成 Query/位置编码，并显式处理跨分辨率历史
+BEV，因此一个训练完成的 checkpoint 可直接评估五档网格。两套实验的初始化、训练预算
+和目标不同，结果不应混作同一组消融。
+
+## 当前边界
+
+- 当前完整方法结果只有 Seed 0，不能报告均值、标准差或置信区间；
+- 140、160、180 未见分辨率与动态控制器尚未完成正式评测；
+- FP16、MACs、能耗、TensorRT/车端硬件结果尚未完成；
+- 匹配训练预算的 Base-200、固定 BEV-150、BEVFormer-S/Tiny 对照仍待补充；
+- checkpoint 和完整 nuScenes 预测文件因体积限制只在本地保存，Git 中提供指标、
+  profiling 样本和来源哈希。
 
 ## 致谢与许可
 
-代码基于 Fundamental Vision 的 BEVFormer 开源实现，原论文与模型版权归原作者
-所有。本仓库沿用上游 Apache 2.0 License。
+代码基于 Fundamental Vision 的
+[BEVFormer](https://github.com/fundamentalvision/BEVFormer) 开源实现。本仓库沿用
+上游 Apache 2.0 License；原论文、模型与上游代码版权归原作者所有。
 
-```bibtex
+~~~bibtex
 @inproceedings{li2022bevformer,
   title={BEVFormer: Learning Bird's-Eye-View Representation from Multi-Camera Images via Spatiotemporal Transformers},
   author={Li, Zhiqi and Wang, Wenhai and Li, Hongyang and Sima, Chonghao and Lu, Jifeng and Qiao, Yu},
   booktitle={European Conference on Computer Vision},
   year={2022}
 }
-```
+~~~

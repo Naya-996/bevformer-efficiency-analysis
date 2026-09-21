@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "complete_result_count": 0,
-  "not_run_count": 20,
+  "complete_result_count": 5,
+  "not_run_count": 15,
   "artifacts": [
     {
       "path": "experiments/rc_bev/results.json",
-      "sha256": "8a1af86f0b06bd50bd48ef872a68317e91e929590b454fb0d89162c8576d7179",
-      "bytes": 2739
+      "sha256": "c2b2e288c7dfc089a5e52583ecc74ffb29f35e5fe782558de443d83f666d4d81",
+      "bytes": 4479
     },
     {
       "path": "experiments/rc_bev/results.csv",
-      "sha256": "64763908eed1174da5a7b8badb6963b5fbcef96c2198f70955b01c26644ebbe5",
-      "bytes": 1299
+      "sha256": "47f4852e8a216ea8af5546a82d8e7f7b34cc30d6bab6c018a49372d617dda6b1",
+      "bytes": 2577
     },
     {
       "path": "experiments/rc_bev/generated/main_results.tex",
-      "sha256": "39d8c857a2fbd0a7b8ef14455bfdba5f7367372df043177c18a90ce9ab916dc0",
-      "bytes": 224
+      "sha256": "8e4323a15e4f038b4d09d9339d46b4dea5d6a86e05e38796105648899e0b44c0",
+      "bytes": 420
     },
     {
       "path": "experiments/rc_bev/generated/ablations.tex",
@@ -25,18 +25,18 @@
     },
     {
       "path": "experiments/rc_bev/generated/accuracy_latency_pareto.png",
-      "sha256": "6e0bd87773e02e61e3d44ce55106f4fd339cd4c8af64f8900974325876a210ab",
-      "bytes": 13549
+      "sha256": "8f03438182a36a2c20e108d430202d845d4b718789d6c21665dac0b1144336ae",
+      "bytes": 45598
     },
     {
       "path": "experiments/rc_bev/generated/resolution_nds_curve.png",
-      "sha256": "6e61f6fcacbfe5341516241c78d96a51a0ccee3816bf4f2e67b8fce227ddfeaf",
-      "bytes": 11933
+      "sha256": "ced807c27c4f43e997c677642bd0d479b8e7a86f53d86ad1fe32c1fa4b30a932",
+      "bytes": 46485
     },
     {
       "path": "experiments/rc_bev/generated/dynamic_resolution_timeline.png",
-      "sha256": "888041e83aa52f57f14c400aa060ab4e23a5fc28f0cba422fda348d201ef1585",
-      "bytes": 11071
+      "sha256": "341348cb99b92ddeabeed9b6c13d4e9cc786a8b64eb93bc14f29b9d4e5b764dc",
+      "bytes": 11603
     }
   ]
 }

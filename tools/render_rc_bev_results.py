@@ -86,7 +86,8 @@ def main():
               'latency_mean_ms', 'latency_p50_ms', 'latency_p95_ms',
               'latency_p99_ms', 'fps', 'metrics_path', 'profile_path')
     with (RESULTS.parent / 'results.csv').open('w', encoding='utf-8', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore')
+        writer = csv.DictWriter(
+            stream, fieldnames=fields, extrasaction='ignore', lineterminator='\n')
         writer.writeheader()
         writer.writerows(records)
     complete = [record for record in records if record['status'] == 'COMPLETE']
@@ -129,8 +130,17 @@ def main():
     if complete:
         ax.scatter([item['latency_mean_ms'] for item in complete],
                    [item['nds'] for item in complete])
+        right_edge = max(item['latency_mean_ms'] for item in complete)
         for item in complete:
-            ax.annotate(item['id'], (item['latency_mean_ms'], item['nds']), fontsize=7)
+            resolution = item.get('resolution')
+            label = (f'{resolution}x{resolution}' if resolution is not None
+                     else item['id'])
+            at_right_edge = item['latency_mean_ms'] == right_edge
+            ax.annotate(
+                label, (item['latency_mean_ms'], item['nds']), fontsize=7,
+                xytext=(-4 if at_right_edge else 4, 4),
+                textcoords='offset points',
+                ha='right' if at_right_edge else 'left')
         ax.set(xlabel='Mean latency (ms)', ylabel='NDS', title='Accuracy-latency observations')
     else:
         empty_or_label(ax, 'NOT RUN: no verified accuracy/latency pairs')
