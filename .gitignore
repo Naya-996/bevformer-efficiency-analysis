@@ -156,6 +156,8 @@ experiments/**/profile.log
 experiments/rc_bev/runs/*/work_dir/
 experiments/rc_bev/runs/rc_eval_*/
 experiments/rc_bev/runs/rc_profile_*/
+experiments/rc_bev/runs/rc_followup_*/
+experiments/rc_bev/runs/rc_training_followup_*/
 experiments/baseline/README.md
 experiments/lite/README.md
 

@@ -2,6 +2,11 @@
 
 ## Evidence status
 
+This section records the original design-stage evidence. Subsequent Seed 0
+training, seen/unseen validation, FP16 and dynamic-policy measurements are
+reported in the [current status](rc_bev_implementation_status.md) and repository
+README; the historical hypotheses below should not be read as current run status.
+
 This document is a code-derived design, not an experimental result. Statements about
 existing tensor flow are **observed** from commit
 `ddb0a3d413cd89b9d04c8f39f5419fb11cb53eb5`; expected accuracy or speed effects are

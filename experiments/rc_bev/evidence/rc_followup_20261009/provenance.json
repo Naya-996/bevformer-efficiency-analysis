@@ -1,0 +1,1453 @@
+{
+  "schema_version": 1,
+  "checkpoint_sha256": "741e6b937fadc5083ca833ee2b1ed4a3339bcf4714a967124704f0baa6a71e73",
+  "seed": 0,
+  "epochs": 24,
+  "validation_samples": 6019,
+  "physical_gpu": 1,
+  "started_at_utc": "2026-10-09T15:50:36.973965+00:00",
+  "finished_at_utc": "2026-10-09T20:09:51.990942+00:00",
+  "jobs_complete": 20,
+  "failed_jobs": [],
+  "source": {
+    "created_at": "2026-10-09T16:06:10.754943+00:00",
+    "git_commit": "25ff3e81683ab1a2778501da022ded83b9ea9736",
+    "files": [
+      {
+        "path": "projects/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/coco_instance.py",
+        "sha256": "1306f8c091776ad10a8cdc871c47e4e451490b7b3686c2c5c787cf3666398f6a"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/kitti-3d-3class.py",
+        "sha256": "248b74f968fa20413e7064b52a4d7e4fb236ea025e6fb00634eda929b25af4a7"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/kitti-3d-car.py",
+        "sha256": "045cc89e3e3d34fd5027d549aaca3fbd8706947fb3d9c34e64d35aa99f62aa7e"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/lyft-3d.py",
+        "sha256": "5d4ed5b36fc6d178b87686493a5dd199ed82f016ba06c1a15ebe949ef6bca817"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/nuim_instance.py",
+        "sha256": "b6bf9ae488b3c56b04666d2a6ce769ed012880887311aea5fe82ac0ce707779c"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/nus-3d.py",
+        "sha256": "89f7e6d1fa1707826b6d409d522cddea06ab6489ab030222e25cd83af7e77445"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/nus-mono3d.py",
+        "sha256": "c8d44052e8444e9292511c8dc654f2cff468ba5421b40b6b4c7deb308f979e83"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/range100_lyft-3d.py",
+        "sha256": "73311a145fba735ae5360de7ab8c7461b464256f6a88497b97284cda52ed2451"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/s3dis-3d-5class.py",
+        "sha256": "5f6110beb0b28900bbb5c6bfe26b453ca2f48596e970fdeda4f08be2edbfbc97"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/s3dis_seg-3d-13class.py",
+        "sha256": "18f113eb8e2fcf1784a711d4ca2e11b5319ed52828501c7c6b66a4e5b951bd00"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/scannet-3d-18class.py",
+        "sha256": "dad612b78d80a76a0101bbb01cdd9e9bb5bc3953972ca28aeca71b82a2cc43bd"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/scannet_seg-3d-20class.py",
+        "sha256": "4a898d55a252131dd6a8237179364c5e3d321d0ce57beb4bf6f051953449c8a9"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/sunrgbd-3d-10class.py",
+        "sha256": "3d3a48580c8378d74eb31e63d2d58044ebfa423970d26041b58d2a3f68526f87"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/waymoD5-3d-3class.py",
+        "sha256": "cc5c0704f04bb03c580f10bf1ceeefc1d171cbb01c382519afed3eae8595ae1c"
+      },
+      {
+        "path": "projects/configs/_base_/datasets/waymoD5-3d-car.py",
+        "sha256": "870ca5cca4f4d01c23a791bfaf31e7a8d706c8008463a7b1b931441438be93b5"
+      },
+      {
+        "path": "projects/configs/_base_/default_runtime.py",
+        "sha256": "778df7b551bf0348f09490f0e8df0252d2bd8c006ba916153a6b0f74e4b5c988"
+      },
+      {
+        "path": "projects/configs/_base_/models/3dssd.py",
+        "sha256": "d5d7cf484537d442ada2c9662d0f1f139d98c11b04f15ec5aea7646a034dd646"
+      },
+      {
+        "path": "projects/configs/_base_/models/cascade_mask_rcnn_r50_fpn.py",
+        "sha256": "621113589edd597c560fda1c8f7099a0d5af5500c549d0a58e8ffa462910ecb7"
+      },
+      {
+        "path": "projects/configs/_base_/models/centerpoint_01voxel_second_secfpn_nus.py",
+        "sha256": "f6163544fe3e3418b515313057fec34242126440fb278684cc055f210f2a5b04"
+      },
+      {
+        "path": "projects/configs/_base_/models/centerpoint_02pillar_second_secfpn_nus.py",
+        "sha256": "413c49c57712f4e623db37dc62173daad04760aa71c32a030322547c88f6caf2"
+      },
+      {
+        "path": "projects/configs/_base_/models/fcos3d.py",
+        "sha256": "bab967a7491acbdf3924ce743dc581b91156ec1bef13548ac6bb9885722c4621"
+      },
+      {
+        "path": "projects/configs/_base_/models/groupfree3d.py",
+        "sha256": "fbbe18add44f9b13cc41bdebf77c4fffcef90bf903b5738a816b5a6d0e18d1ca"
+      },
+      {
+        "path": "projects/configs/_base_/models/h3dnet.py",
+        "sha256": "9aa03ba4e3a8345421ed525ea601d76f79c13038a89a79b811f86de1acafe46e"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_pointpillars_fpn_lyft.py",
+        "sha256": "cb0a3ab6233900184a8a2e97031d0ced8d4980254752f620d0f9296a4c977433"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_pointpillars_fpn_nus.py",
+        "sha256": "f417182670ab50b553b29db05d4b2b8df68a7f676d6bf1e078bc0f91ebe2f995"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_pointpillars_fpn_range100_lyft.py",
+        "sha256": "4928c31fcbc6ff33c9a97e5e76c329fb5b534eacbabb0604005c5c5d23f7cd50"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_pointpillars_secfpn_kitti.py",
+        "sha256": "2480a7d3cbc41f30b601e69106327a5b69636c4a049ae4a45047283fcede5a66"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_pointpillars_secfpn_waymo.py",
+        "sha256": "37455b4c78dfb4ed1c7c3dab5e59d269887852abefb2a83e55576883ba2194a9"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_second_secfpn_kitti.py",
+        "sha256": "0cb5d1a3581c7c6443b379c02c766f77c2840c4e492ee5598adc4de71dea508f"
+      },
+      {
+        "path": "projects/configs/_base_/models/hv_second_secfpn_waymo.py",
+        "sha256": "2c35d39544abcfe6f904e1eeeef477fec6b1040c54e3735e8279ab6dd586130f"
+      },
+      {
+        "path": "projects/configs/_base_/models/imvotenet_image.py",
+        "sha256": "795e83d38570572f16dee355fb616162206e5e0afe3c05686e5628a16be68936"
+      },
+      {
+        "path": "projects/configs/_base_/models/mask_rcnn_r50_fpn.py",
+        "sha256": "ff1bedf9c7428fa5ce86db3cfa8e9b72d3c6ede6745175cc88fee08a0bb72112"
+      },
+      {
+        "path": "projects/configs/_base_/models/paconv_cuda_ssg.py",
+        "sha256": "47645b3f815fe910b09deabb45fab95e56944aeb0f6caf51322ed2cc288373fd"
+      },
+      {
+        "path": "projects/configs/_base_/models/paconv_ssg.py",
+        "sha256": "dfa6be75021f499fbc4b2eb664de74f99777cef6e11b1fad1b2c9ba11c8867a8"
+      },
+      {
+        "path": "projects/configs/_base_/models/parta2.py",
+        "sha256": "6864b671e942c982d96f1f80103f8262a080b7bfcb074a6589349d7b3f0503fc"
+      },
+      {
+        "path": "projects/configs/_base_/models/pointnet2_msg.py",
+        "sha256": "a36a53be96d6698a68b88eb9aac2fc9af9288bf3f5e8f1c7fe86aba8eea2ba5d"
+      },
+      {
+        "path": "projects/configs/_base_/models/pointnet2_ssg.py",
+        "sha256": "949499445cf609cdc1a2f3fa1e2485b11b7b15b17f57fadd7c535509e8ebaadf"
+      },
+      {
+        "path": "projects/configs/_base_/models/votenet.py",
+        "sha256": "c22033142265e9ea0b3154fb131ef1e32834b1363a01802243e6d879a5fd9a6d"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/cosine.py",
+        "sha256": "6ee1342ba6d129a160971e3e963f6f45564fe14b0fafb1e15c2ec5f0b7f4c767"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/cyclic_20e.py",
+        "sha256": "66cf50b2bbcf06e9b2fe4f2be35f406e45d1d78bef9bea48a73335dd741295e2"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/cyclic_40e.py",
+        "sha256": "c329bd5e71b8ff9234b74b07897d7a82840acd599c050ead994d49af54888187"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/mmdet_schedule_1x.py",
+        "sha256": "b2234be7d7e85b929c966c3c938124ac0e674a34207acf638e9a970a7c366c38"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/schedule_2x.py",
+        "sha256": "c56ad1fad25bae260ca483bd7e62a8f2a234de944e025c952d8305e15e48b2fc"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/schedule_3x.py",
+        "sha256": "01bc8ba7aaee522db4475a44c083d89ed2d2b75f67cbca95b397da02e0a791b6"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/seg_cosine_150e.py",
+        "sha256": "e9843bdd077a2f4ca1ada0755dd0967a45e3bca72e4ddd43aad19f78a8abd69a"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/seg_cosine_200e.py",
+        "sha256": "899e241ebd8129ece13c73a12769cb1cd9108627383e509b72e033bff517a630"
+      },
+      {
+        "path": "projects/configs/_base_/schedules/seg_cosine_50e.py",
+        "sha256": "e5aa3d7ee0162b6b40f65bfe3661c861199d8b7b2dfe80891f548ee6fe8f30d0"
+      },
+      {
+        "path": "projects/configs/bevformer/bevformer_base.py",
+        "sha256": "45905ac50a8afa841f0be43c81152277dd694de62054c3595dfd56efd33d6324"
+      },
+      {
+        "path": "projects/configs/bevformer/bevformer_small.py",
+        "sha256": "f986f1474ee095bd3968565e1a41d730c1c6574a071f6110450cf3bd89020472"
+      },
+      {
+        "path": "projects/configs/bevformer/bevformer_tiny.py",
+        "sha256": "85da2b393cb0103645bdc034c87028b6fcf5d7bdd79530ed6b4f4b2d05777882"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/bev100.py",
+        "sha256": "2827073a5c32a3ca7053b0eb9ba6cc8d64f965de036009c183f9e6b99765406b"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/bev150.py",
+        "sha256": "0347fd3c6fdfef7cfc43ffcf42769bcaac18d77862275d6486f5a07ee65f8b0c"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/bev150_finetune.py",
+        "sha256": "ae9a56a4ad241a2124c47c0e32255b194e7bffa71657494b80f3435597ef15fc"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/bev150_finetune_6ep.py",
+        "sha256": "a5341300ecd7f926389e5b55716a7fc85f13efc56c34bb9518fe30c0a98e0232"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/bev150_fulltrain_24ep.py",
+        "sha256": "f7e12525435e7364792b617b994f817ad7f54d4392b65c5e955b304f823172a4"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/encoder3.py",
+        "sha256": "241ea8ea1e1d67ad5861363e4c34a89683ce01e7541bd169357396386aaabad9"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/encoder4.py",
+        "sha256": "336a3523fcd97115a44ed767cfa74a625da902f2d5947c096e186327065dc298"
+      },
+      {
+        "path": "projects/configs/bevformer_ablation/temporal_off.py",
+        "sha256": "05b19e488b5109c779ec303e0b8c96d16dd2bd82f6642fe4301c79f69d630728"
+      },
+      {
+        "path": "projects/configs/bevformer_fp16/bevformer_tiny_fp16.py",
+        "sha256": "698acc758a8fff99ed8dd088df031c37d85126f94a7e49f0870a7fbf1091b4f0"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_dynamic.py",
+        "sha256": "b8bc72d7895ed281cb195c5b6eab8154d4eafda6eaf698ce72e8e902bdb247e4"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_eval_seen.py",
+        "sha256": "54d01abee3a9a3130ec280504bfb7db8866808046c5586c2bdb144893131844a"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "sha256": "e5e6b03755e73ed2b85becb9885c69de97c264b0304da992b1185947ec79491b"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_fixed150.py",
+        "sha256": "8be75b9748c26878ce1d4c34fdfc4606843c2f6cad6b6206d412556bea86948c"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_fixed200.py",
+        "sha256": "5364a7d845a3efea3f27d32a0d0c28f0f157561d93840cb36a27be285c8673c4"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_multires.py",
+        "sha256": "326b9d6d21271e3bb0807649de166515804ef0c054b5f4eeabd87b796b117d3f"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "sha256": "0be660aea45e4dbc86fcf525d59b19fe617dae7206ffbc12ae46ce7457eafc28"
+      },
+      {
+        "path": "projects/configs/bevformer_rc/rc_bev_no_history_migration.py",
+        "sha256": "7c711e05966fc64c1cb013813a056a4fd77e1b44e2bf546c9f8a9460dce78b73"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t1-24ep.py",
+        "sha256": "5296c56a08065c50cd07e3c1ffedfa159ea0faadea821cc8a8666c28530cd693"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t1-48ep.py",
+        "sha256": "b6004ba1518a6f5f00242cef2d503f6b62f212fc9f08f40aba731ed298d41967"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t1-base-24ep.py",
+        "sha256": "475a3fec8998a8ede20f42051623c6b0c0025b3645ec8c279caedcbe5b42a023"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t1-base-48ep.py",
+        "sha256": "17aba080bff72ac22232809f6b4299799c5e2369bc43fc502336fdf71bc6fc7c"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t2-24ep.py",
+        "sha256": "39f0211136d1ee386e9170803d24153f73ed4a2701f367f5e0ed5b03f13d7098"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t2-48ep.py",
+        "sha256": "2b89118a6ec8a9d5dec05f915e15ad962160c784e7e46d26afc5f8c3f4ed28ba"
+      },
+      {
+        "path": "projects/configs/bevformerv2/bevformerv2-r50-t8-24ep.py",
+        "sha256": "a86882a39a37079537c721be80e47bc8334e5f5b0d90c665a69fee06b9db3293"
+      },
+      {
+        "path": "projects/configs/datasets/custom_lyft-3d.py",
+        "sha256": "d471844be37c2588fcd22fa5a4909ac8e2b805894100953718143364efe9cb77"
+      },
+      {
+        "path": "projects/configs/datasets/custom_nus-3d.py",
+        "sha256": "d0482ff412b4f153f4fe513c65efa2fbc2467ccdb4f820ec5c3b90f534ff8d7d"
+      },
+      {
+        "path": "projects/configs/datasets/custom_waymo-3d.py",
+        "sha256": "2d8f7946948535c894a62d02493269e74e06c473196bb508b3e9650c695e6cb5"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/__init__.py",
+        "sha256": "5612cb64f6b5d8231cb327906a0933d0df1c3b0e953cd94605eb1311bb3ea8fe"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/__init__.py",
+        "sha256": "ddc3b5fba03539fe62e4b152697cc3f7e8673712d7fe34a5d92e0f7c9f3dcd69"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/apis/__init__.py",
+        "sha256": "30104937bc12c9efe7dea9c91cf1256d93fe1397dba037e51f669684b94fded9"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/apis/mmdet_train.py",
+        "sha256": "70ee2ce86ca9c229882292c3018ba2a231d78e2177cec2e7ea457690b76416b4"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/apis/test.py",
+        "sha256": "276b64759f7a3a9473ccc1ff6cc7713f4d3bfc8860eea42d2f51983c20ce2eef"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/apis/train.py",
+        "sha256": "cb6301c6a2bc57b9bf6b4caf6b0547ddbfb8c5fd12be2d10c1fc5aed21062f2f"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/dense_heads/__init__.py",
+        "sha256": "f889496713313604539ad259e75e6560b2306559b3063f19fde0308f66cb80a1"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/dense_heads/bev_head.py",
+        "sha256": "3fd25b6810182ed3d9ea2004b165eaaed4b3f3fffd2825d3dbc90f420abbca7c"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/dense_heads/bevformer_head.py",
+        "sha256": "ae8a7c7db606ddf0438fd5f2ee83d32e271344c1cd9ffa0931c8bb0d5c5b2d82"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/detectors/__init__.py",
+        "sha256": "10021c658e80c8ee2afc394a24fe46da3c9690592b9eddd1f1d87c026428417d"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/detectors/bevformer.py",
+        "sha256": "24bea122f6578c2c0ed321e410a62da88933daf36b07a0eaf83e44b2df537891"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/detectors/bevformerV2.py",
+        "sha256": "cd0d5000fafc8caf3e3a54830ae5362d5e156bfedd04833b4b3909d537690433"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/detectors/bevformer_fp16.py",
+        "sha256": "c538f1147fabf8ac6b7fc63cbbbca7ab3a5dc3654c6a7dd71f491252eb3a777b"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/hooks/__init__.py",
+        "sha256": "2d462e81008aa7982c150ea9fd71540b5bff50553730c3efc95c04fd89b58f0e"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/hooks/custom_hooks.py",
+        "sha256": "088799960306192c121326fb18303618de63f8c83674252d90c40e956ab0c9fd"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/__init__.py",
+        "sha256": "732a0000a6f4169e8ff9fc88e5cb44990412ae418d0c5fee4ed39e59d9156af0"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/budget_controller.py",
+        "sha256": "fe2b86b578aa44b9f43afbca55ad94362589b8d012eef5767742af09937d79c1"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/custom_base_transformer_layer.py",
+        "sha256": "98887b6baeccada8b9981f757dbd8d342655388e69dbd11f67ae711040ca0173"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/decoder.py",
+        "sha256": "f6d270db1f5c6dc8751c9ca97effc534eb38e1daf14bc2d83eb9df06a3a41d91"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/encoder.py",
+        "sha256": "ebcf1e68f3807832c9fe7a45cbaf1d747cc2a196f14cd48019e06c751e849009"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/group_attention.py",
+        "sha256": "dcc0e350643059a6e693fb8bea8309a621b30954d4d07f8a396971d65ebebe01"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/multi_scale_deformable_attn_function.py",
+        "sha256": "4ae517761d3f4d362a05722c134e2f005315dc3df41c4e5551eafe7757a57ccb"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/resolution_continuous.py",
+        "sha256": "92f3633302c534004a25418bbd542b55e4c50a78304bc7e11bd23b69abe152f3"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/spatial_cross_attention.py",
+        "sha256": "045ac69d3baec715f2d73065ea50dd799b214b4de1d7e030e5907e36a82b47de"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/temporal_self_attention.py",
+        "sha256": "c4c893779f9ba61d1397c8e691ca730d22e0e83ba88eef6c4f583c6f3975cce2"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/transformer.py",
+        "sha256": "c2d3d2e677e843a68fc39bb9246202147b3b64b49b1b46fa1a18b65c057b8ff0"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/modules/transformerV2.py",
+        "sha256": "53fd492f0922a1fe92edf7940fea31682bdd9ca355b34d6992dfa77963b3fc7a"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/runner/__init__.py",
+        "sha256": "56a228cb6de6ec48eda2f52e3c8cfbde443e14772e8ee6dd6517f232796b836d"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/bevformer/runner/epoch_based_runner.py",
+        "sha256": "81491922aac6b1e13b896ebb5ac5a740738f1c654a24945738f9b991e438fd5b"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/assigners/__init__.py",
+        "sha256": "9765b4eb371ab92b56e934af6e45d5958c780e0c147ebbaefda44f27ffcf828b"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py",
+        "sha256": "ceb59550dbb3299bdcdefae096d8c42c98525949d25288a0d05585cbd5a218e7"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/coders/__init__.py",
+        "sha256": "596887e8b1021fd1cfe737b4657031c7f37ba5e89aa7245a358558d3b7e4772b"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/coders/nms_free_coder.py",
+        "sha256": "f9cd5871541d3074b29bcdb0a4f458cd2e1164fcefe3379890e6d59bb1ea66bb"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/match_costs/__init__.py",
+        "sha256": "734d81633b21fd08316ad62c3a42f1ab0e797383afd5cb67d977cd42dbeb24dd"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/match_costs/match_cost.py",
+        "sha256": "23dd851503afd946f717681cbc02ff075c2ae650b8ebf66067985767d2980129"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/bbox/util.py",
+        "sha256": "d24c61941209fa7a7be18d3b4c628dc06006f692fde0e7863fb54bca50282beb"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/evaluation/__init__.py",
+        "sha256": "f2bf99095c9fe232bde6c2e26dd94097dfbc6f6407270e31d72b669a828a5c05"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/evaluation/eval_hooks.py",
+        "sha256": "68fad4d46cdac54cc46a909daaf35d8a7fc4c572e3eaa725ea3992a5540a310a"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/core/evaluation/kitti2waymo.py",
+        "sha256": "6a7eab0e433c2516f6dc79e90e3082f8254ca82449ac18a11642f02033f01678"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/__init__.py",
+        "sha256": "9577c3238def5109b58fffcf8b7251e9a477884fdbc909a298cc787701a8ea23"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/builder.py",
+        "sha256": "48709aa86acd1343421137b84bc67d59dd2c8ae8118b131ad329241afff7989b"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/nuscenes_dataset.py",
+        "sha256": "ed8b383d15d27ad858b5016fee50ad0f07602830d5b4e6aeaeb45e1b52a32396"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/nuscenes_dataset_v2.py",
+        "sha256": "7e7485d777adb520e6c8ca5b2f14260156c30f8c8e56e3cff0eaefb15d874fd8"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/nuscenes_mono_dataset.py",
+        "sha256": "097e4baaf1fc2ccc3a527a4103ec1923f50791ec700903018e7bc76189d9a502"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/nuscnes_eval.py",
+        "sha256": "2bc963c934b569fe9cb348625dc7493118fac88bfbf220690737a0f265c1f6b6"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/pipelines/__init__.py",
+        "sha256": "8b418a17a99e35fd6d0d2920fa3bbb4c98c673a39b1a3dda03b360904f8b2804"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/pipelines/augmentation.py",
+        "sha256": "d72a9d6d37744324f064e57751dc9c4d45d26e607e4d1dc750e0c6edc935001f"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/pipelines/dd3d_mapper.py",
+        "sha256": "885b7fbefe48cc893a983ce3f6e0bc109a349eb76ff82a2a45070a54d902013d"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/pipelines/formating.py",
+        "sha256": "fc6ef704f492fa113686dfe9062f936e62aaa501c196c10aec76d231ea2c1bb1"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/pipelines/loading.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/pipelines/transform_3d.py",
+        "sha256": "d0f1afb953943d088c0942ba67cd2536e7e0ba87c4c26de0fff0907edaa64c85"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/samplers/__init__.py",
+        "sha256": "27cf0eb83d29bccdb2c8d016f7fbffb241372f33c4c31056ae82536abcf05356"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/samplers/distributed_sampler.py",
+        "sha256": "84b977c197dbf5355c2fd1ee2fb971f32c4b07b18265113abfb9efa81fa1caec"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/samplers/group_sampler.py",
+        "sha256": "dc42a8a1b40479fbc6b9e62c8a8c7ef98890a0fa9de11dce24c5d54b6e9debf7"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/datasets/samplers/sampler.py",
+        "sha256": "a585ea9f5dd0ad49181cd9bf96f402279898dce760265b51994e3e5ae0f8baf0"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/__init__.py",
+        "sha256": "4ab3cafcc1d7a258f6630e35a32d305c23dd12f646236f4ad53dded5f48dcbb1"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/datasets/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/datasets/nuscenes.py",
+        "sha256": "23ff45d23cdfa9c1a62c0bcabe22b41bd09f779f32bb065b6f6e4d53ff39acfb"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/datasets/transform_utils.py",
+        "sha256": "d7ee0e6614f3e39743ce64db46c366e29c44b0771d45dfdc5818b00f0ccd2fa4"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/layers/iou_loss.py",
+        "sha256": "da36a61517dd48ddc77f2028887e4887bcf434b3bf52657414aadedbe4aefa15"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/layers/normalization.py",
+        "sha256": "a43db10a89702e6090ef7aed4ec6e37cde796b3071cd87b4b82eb79322c44859"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/layers/smooth_l1_loss.py",
+        "sha256": "981426b61e18eefefc848de4e793f79d2a7a48873d07bf3633e0bbe46c7c7241"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/__init__.py",
+        "sha256": "c831a06063903ba86e6a682e38b60e90db4b3d1be543e32d44a56151b2b8e7ce"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/core.py",
+        "sha256": "55852378cb2748e4f5c65e4683410004f67a8a4f858e8e90bf046d74fd60051b"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/disentangled_box3d_loss.py",
+        "sha256": "58b8469b42b67ce7f18d0f359bced21e8b9cc8e93fbe56f5c4daa43af860adad"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/fcos2d.py",
+        "sha256": "bb07d4d602f81f51b2d14891cc42d418f98b98f04eb0f2d2ceded7c0ebd32fa5"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/fcos3d.py",
+        "sha256": "cdb0566c7f42728885256693e0dc02c1f9927ae3ccd06a84ebce163a6f43bdf4"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/nuscenes_dd3d.py",
+        "sha256": "f9636a565eea21cb44717795bba6b2548cb3400877568f3825862ab2dbb97967"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/modeling/prepare_targets.py",
+        "sha256": "02604d9023aa3d6d5e46013e261dde3c07201922feeafb3c2f4b772d7ba01c87"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/structures/__init__.py",
+        "sha256": "f48813a4d331e298c2b5c592f9f68889f53caabd3f17b661f93660b1e286f274"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/structures/boxes3d.py",
+        "sha256": "67109e185020a6acbafb6f2c897eb3d37fe03458714bee0a5cbdd57eb8c1f7e8"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/structures/image_list.py",
+        "sha256": "1f8f9bec68183855ac3cf9e46c3702acf6035089907d004ec566b670cfbe44da"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/structures/pose.py",
+        "sha256": "eaf54719a6d6db394cb3a075360552921be465a886cdf6953d3e4eed2f19995f"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/structures/transform3d.py",
+        "sha256": "a97fb7a1d0ea3cb50ef072d61d8c5459690e7cc53638ff1f2e488fbc09b4c649"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/utils/comm.py",
+        "sha256": "ce6e59b7bed03927276d3f872543def2e6fdd840ac68c94a87c90e01dda7ec46"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/utils/geometry.py",
+        "sha256": "0d65aa9c845f244ea40622eb09e121e313107e39336e5a3d08810a6b40aca9a6"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/utils/tasks.py",
+        "sha256": "73bd58aa421558decf0014a818336fec4361e2f7353d16a1541a9a878891fba9"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/utils/tensor2d.py",
+        "sha256": "6085482bbd72df2bdc1735f72ebca377477e15b26037a10e0087f4a936ad873a"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/dd3d/utils/visualization.py",
+        "sha256": "09fcdb31a814fd949cedb2c22975118363abef360e748ebc00d5e13b4e8eee83"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/backbones/__init__.py",
+        "sha256": "92129dbb7e627f4afe0d5ded49d58e1361bbfbdec875ff21a3c5745537ce71c5"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/backbones/vovnet.py",
+        "sha256": "e88d70d33751bd9866fcb1316ee6f3ac35930091937d5ada028ff5f8d7cdb38a"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/hooks/__init__.py",
+        "sha256": "1a358f573ba5c067ffd79c5b48f248f890e4b1b575c96534c1393f0f649c4a3d"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/hooks/hooks.py",
+        "sha256": "74f1ace44d417bcb23db1acc3bb1e3df6a1046bae859f152ead7a72fa1e186f2"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/opt/__init__.py",
+        "sha256": "99fc2cc6052f76f7e07e848c40cf2b57c49991eec388be7fd81aaaa5e19e0ba5"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/opt/adamw.py",
+        "sha256": "305810a8d8e9168ecea7b42ac0675c53b9d5e2274f7f23ee0f856e9881886a2e"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/utils/__init__.py",
+        "sha256": "4cc4fc8112256e9f7de3fbf0aa9db57eab83511141ef6e8e8939c1199bd6c4dd"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/utils/bricks.py",
+        "sha256": "62d1095bca8ac51c374a39f175db1d452b6670ef0bc4ab199fbec9315e584031"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/utils/grid_mask.py",
+        "sha256": "92589caffcd8102b02cafff78e64614ecf8bc8ad548ab95cbf4d1a898327f150"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/utils/position_embedding.py",
+        "sha256": "a96996531fff9b390323b837567826a18af4d712d5686fb4ef5ae307460ee268"
+      },
+      {
+        "path": "projects/mmdet3d_plugin/models/utils/visual.py",
+        "sha256": "af1108b82e6e8a02664810d1bac5feb097b7422ad4d747b9f6cba9217be0b247"
+      },
+      {
+        "path": "tests/test_rc_bev_config_contract.py",
+        "sha256": "ff10bbf2e1cabca377593ac21ed10e688da354002a22a194eebfb6ba57a94343"
+      },
+      {
+        "path": "tests/test_resolution_continuous.py",
+        "sha256": "5303f347d92a7061c220bcd93716c66e27c316bac9dc4f949548c353f66d86d5"
+      },
+      {
+        "path": "tools/analysis_tools/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "tools/analysis_tools/analyze_logs.py",
+        "sha256": "35c6b2b264bfe3453096eb9473f747744b24c5bb98c2d67377c06a1b9fed13e0"
+      },
+      {
+        "path": "tools/analysis_tools/benchmark.py",
+        "sha256": "effc91ab4c3917a92db0ea3988ec47cf907d39bccd4441ebd1792a4af5ae62b2"
+      },
+      {
+        "path": "tools/analysis_tools/get_params.py",
+        "sha256": "338ccaec3e8f4c195d5a83280dd74d2147d90306a7c35dee15949d79e637434a"
+      },
+      {
+        "path": "tools/analysis_tools/visual.py",
+        "sha256": "989402f996052a1348c015c42b6ec1bb24060ec388745f8bcee2a3c1b65e4290"
+      },
+      {
+        "path": "tools/audit_bev150_fulltrain.py",
+        "sha256": "faf0672974038960d5f99a880995f237bb0cc17eae66cb91ab33078aefbed171"
+      },
+      {
+        "path": "tools/audit_evidence_integrity.py",
+        "sha256": "d7c3554d4cc1e993ec52805cbeb6628c4c8ffc5d295f89112d79f0c0bd91a5d1"
+      },
+      {
+        "path": "tools/build_archive_manifest.py",
+        "sha256": "9772c4095f327f71a250a6b3e732f8d67980d6965d395769fbdbdc5647603e6a"
+      },
+      {
+        "path": "tools/collect_rc_bev_followup.py",
+        "sha256": "926e048f0ea5fcf18240aee4ef985303311256d975e67bfb5608bf055259d8bd"
+      },
+      {
+        "path": "tools/convert_checkpoint_to_continuous_bev.py",
+        "sha256": "a0d730ef15f59fe1071247e1a72222861b51c931fcc3f6d88a4ce7715a74d923"
+      },
+      {
+        "path": "tools/create_data.py",
+        "sha256": "10fea6e625976aaa69f426c83dc4b97bf65fc997a28381bd511b12e5e6f370f5"
+      },
+      {
+        "path": "tools/data_converter/__init__.py",
+        "sha256": "3977d5ce6a7f8d8b9c01b0daa82c17214e4f3b1520320349ce34140916192c13"
+      },
+      {
+        "path": "tools/data_converter/create_gt_database.py",
+        "sha256": "70cf99117f064184863a7103c4475e21b82e373397f59206f4f08ac92f771902"
+      },
+      {
+        "path": "tools/data_converter/indoor_converter.py",
+        "sha256": "22212df7c9f5aae620b8c8189597e2bea564d03ef21393101e503cf1001f05e5"
+      },
+      {
+        "path": "tools/data_converter/kitti_converter.py",
+        "sha256": "08872e0d844781829a46ac826ac81834b442a89b3cb32e5f392a1455d3327a94"
+      },
+      {
+        "path": "tools/data_converter/kitti_data_utils.py",
+        "sha256": "c012b8634e06b5810cdd938f22cc226b98b9b197d96ad999039ab1711de20766"
+      },
+      {
+        "path": "tools/data_converter/lyft_converter.py",
+        "sha256": "80427c6fbd914a7cf8822c453be39cd070f902d33f393d07efc40542162bc253"
+      },
+      {
+        "path": "tools/data_converter/lyft_data_fixer.py",
+        "sha256": "67b81f29f1e950c786c5c67b52a8461cecdee778a8ec833ef5764bc434e36053"
+      },
+      {
+        "path": "tools/data_converter/nuimage_converter.py",
+        "sha256": "ae63f397e3b545f77f6bc046a780ce670d58ffbf2479997062c6ac376f1eef78"
+      },
+      {
+        "path": "tools/data_converter/nuscenes_converter.py",
+        "sha256": "16e9b358f9aea39be134dd75c7dbf2d90339aa46a2ba5a7c2109ed990fb871b0"
+      },
+      {
+        "path": "tools/data_converter/s3dis_data_utils.py",
+        "sha256": "a45bcebf4377596570005b5546272fae6e4ed2b05471baff0f5524f3bdae31d4"
+      },
+      {
+        "path": "tools/data_converter/scannet_data_utils.py",
+        "sha256": "ca676206db8698a380185bf191b9937e23d61101c485a7031680b148ae38a82a"
+      },
+      {
+        "path": "tools/data_converter/sunrgbd_data_utils.py",
+        "sha256": "7fd23f99e29a4875fc1ced3a36f0995eda0c224229b905390986e142c2bcd4f0"
+      },
+      {
+        "path": "tools/data_converter/waymo_converter.py",
+        "sha256": "d33b9b3661002a92971d9630627b83b71438b6672d3a3766d2290362d885efa0"
+      },
+      {
+        "path": "tools/fp16/train.py",
+        "sha256": "8cb523e39f238a9a59ab27f1f07ad779d626eab310ef3fe6eae97f2899a5b27c"
+      },
+      {
+        "path": "tools/interpolate_bev_checkpoint.py",
+        "sha256": "c1359eb80b37a9700038c2245a5f23b9285dccf938e83a8ca7ae45bb6de9cf33"
+      },
+      {
+        "path": "tools/manage_extended_experiment.py",
+        "sha256": "907509e851a7a896bbb47bfabd931b67bd81e6b6001e5e4f941571a9a368ffaf"
+      },
+      {
+        "path": "tools/misc/browse_dataset.py",
+        "sha256": "0b67f0b48a75d8a01921634803f877ed9adff7259e38ab43c6bff8216b8dfa4c"
+      },
+      {
+        "path": "tools/misc/fuse_conv_bn.py",
+        "sha256": "21c45da1cec6c8198f2a0ed23b4c1c2022dfe805864848e2c3d2965c416ed0e2"
+      },
+      {
+        "path": "tools/misc/print_config.py",
+        "sha256": "90d994aee46e0e0745905f0597f486e7e8c6f3f4cf3cd14c465e3c552fa7c8b6"
+      },
+      {
+        "path": "tools/misc/visualize_results.py",
+        "sha256": "c1e12b28aa564cbcd9f9640b5bb188cc083b2ae29550feec4dbbae83af047b0c"
+      },
+      {
+        "path": "tools/model_converters/convert_votenet_checkpoints.py",
+        "sha256": "c6e0463583397bc020ed290076e86ccd219b5a891c725ac5695ffa89a3a4ebe0"
+      },
+      {
+        "path": "tools/model_converters/publish_model.py",
+        "sha256": "d493dd7f14f2f1b545f8b5a203ee1756f853895dbf34d67784763bd80c07df80"
+      },
+      {
+        "path": "tools/model_converters/regnet2mmdet.py",
+        "sha256": "5f932602c31a19128b8dcab9f0e39c2a0c2231febf49dac9642155ddfbb9f946"
+      },
+      {
+        "path": "tools/plot_experiment_tradeoffs.py",
+        "sha256": "7048c329fe3aa9e3b40a2fead019f1ce3bcbd41da96f840a39fe6ca9be00deea"
+      },
+      {
+        "path": "tools/profile_bevformer.py",
+        "sha256": "45bd455a2e9dbb82c92d17731cb22e8cd8f52ad19fe562856ca9176342c3eeb5"
+      },
+      {
+        "path": "tools/rebase_optimizer_lr.py",
+        "sha256": "70771f07da6b1337e0b62b2777eb382fdfdbac7ffc2673e1acc1dffeba21e5d0"
+      },
+      {
+        "path": "tools/render_extended_report.py",
+        "sha256": "babf10fff253092641d4d9fb54b76c8ac7a90b8e2c08c5afadc3ea9a244c6177"
+      },
+      {
+        "path": "tools/render_rc_bev_results.py",
+        "sha256": "283264aeac3ec12971a0b4d3c3a5da2d5e962e69407b07f5d3500d104608e63b"
+      },
+      {
+        "path": "tools/run_rc_bev_followup.py",
+        "sha256": "c7cef0e62fe6f40a2af0f7cbe4d426bf1c9f98581291517bf5223f4291a8d9ec"
+      },
+      {
+        "path": "tools/run_rc_bev_training_followup.py",
+        "sha256": "fc195ed9614764237a95e448ea681003542c8992209c56d67a7c17ccd6932569"
+      },
+      {
+        "path": "tools/smoke_test_bev150_fulltrain.py",
+        "sha256": "b2209632d058fe73676dccbbb4f232bd504afe25fdd8a2aaf1ba7e2a6b9c9254"
+      },
+      {
+        "path": "tools/smoke_test_rc_bev_components.py",
+        "sha256": "967a10e7ae11cc60444cf5a5535e9a858b0d4ad950fd8212a92b5b84492f28a3"
+      },
+      {
+        "path": "tools/snapshot_rc_bev_run.py",
+        "sha256": "f9982f7a3569c03fda2e0fdc28f37382d001732f7904101cd4cc5cef779f68e9"
+      },
+      {
+        "path": "tools/test.py",
+        "sha256": "4b83f09e3c27b64fced984d72ef4e354473c53d5872d49c67870c3ebb71be6e0"
+      },
+      {
+        "path": "tools/train.py",
+        "sha256": "4620c1fbf1c2679850416bc8afdb695cf653d5e1a9f5e3d6865cfaa059823296"
+      },
+      {
+        "path": "tools/visualize_base_lite.py",
+        "sha256": "14c6a1ae5551bcb384d10042966ceb1268f87c28d0c0f8f34d04e3d53dc9ebd7"
+      },
+      {
+        "path": "tools/visualize_rc_bev.py",
+        "sha256": "59fb4007f732aaf0f5f42602cd9ed78ee6a553f6f5abbf3d6c724ffee24ab469"
+      }
+    ],
+    "note": "Snapshot includes local source edits; git commit alone is not the full code version."
+  },
+  "artifacts": [
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_dynamic/metrics.json",
+      "sha256": "dfb6ddcaec83301763d6515bf514b2fb321b6190ff3630cbfdd37f8266856b72",
+      "bytes": 5247
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_dynamic/profile.json",
+      "sha256": "bef689b5b5f3158bb509787b52ba1a2fb98bc5f32880445dc85351b409100261",
+      "bytes": 13088
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_dynamic/trace.jsonl",
+      "sha256": "1b7faf32962b227d3068f0b54f17ed58e0b6415b75325ceefdba9532b3e85048",
+      "bytes": 1803270
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_dynamic_reset/metrics.json",
+      "sha256": "f6b5e9bb1b09d71b77a2c529f08e9a9480c3180676c69369e157c7694960cc2e",
+      "bytes": 5260
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_dynamic_reset/profile.json",
+      "sha256": "d60bc70a39e1b290451d6333b3a2c81e666dc03a5d92ad4d5845d4aeaed14f61",
+      "bytes": 13084
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_dynamic_reset/trace.jsonl",
+      "sha256": "09c95e1bc64773696a383cba63463d8853f0d3d8dc099a54f2ab329c038fe941",
+      "bytes": 1802853
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_140/metrics.json",
+      "sha256": "92fd6e3c4eef34e75f7b15dfe466e0f1cfd0c558298a4ceaa3cd51f281af7d94",
+      "bytes": 5255
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_140/profile.json",
+      "sha256": "798a9ad4e0414deb21cae0ecf03ce8fed717b41744ea9eaa77ff303daf46127f",
+      "bytes": 13172
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_160/metrics.json",
+      "sha256": "1d929aa5dfa990ea1a319aa1f754780632aa05af774884a0d27c2a86c2331d47",
+      "bytes": 5254
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_160/profile.json",
+      "sha256": "a60a3ec0338f398408e53a9754975cf8cdf2c96b7d15d172a57da0fe12bf1f8b",
+      "bytes": 13179
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_180/metrics.json",
+      "sha256": "7e12232894b38bdf1235badf4578545ecbb9a0dcd820ea21db5f2ae8cc0493e2",
+      "bytes": 5257
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_180/profile.json",
+      "sha256": "b877aecdb34515d97367518ed6265948fe2f0bf8573b28a23ebdf8774419592a",
+      "bytes": 13175
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_100/metrics.json",
+      "sha256": "3c681f5d54bd5cac1738ad2aea20f8d5f448acd8b62081294d161c67679b1281",
+      "bytes": 5249
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_100/profile.json",
+      "sha256": "47e2c312a9d8c7e8000e21241949d61c6ba854b7326969b12ed9ed2fd37c8bc6",
+      "bytes": 13165
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_125/metrics.json",
+      "sha256": "68ea6cbe76b8b8bfa0ad5ee27d6c71475539c31e097cdc0fdcc4f772a4bd2eb0",
+      "bytes": 5242
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_125/profile.json",
+      "sha256": "be2f09d99b5c65eab1d0698bec1842710b16faaba9b5f98670a87ee22fafa4f1",
+      "bytes": 13166
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_150/metrics.json",
+      "sha256": "f6640f60ecb6cdcb96772bc5a30b496d0ec8b3dfe8ecee3947982c7b7e35dbce",
+      "bytes": 5257
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_150/profile.json",
+      "sha256": "b85aca773e918bb4bcf0cbbf8df953b0c7f4895162134a3ca745d69811161a10",
+      "bytes": 13188
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_175/metrics.json",
+      "sha256": "b23caad5dde877074b09cc64559551c629aa600f91999ec80a50395974bd92a6",
+      "bytes": 5251
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_175/profile.json",
+      "sha256": "21e79e32ab42bce982dd64e64fa86550932fd50f1eb48d6a558aa879e65055ab",
+      "bytes": 13156
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_200/metrics.json",
+      "sha256": "d9e9d57df8f744ec321ef94d7ad2d8d0a819f43f0762f73a10959c8a76b123a9",
+      "bytes": 5242
+    },
+    {
+      "path": "experiments/rc_bev/evidence/rc_followup_20261009/rc_eval_fp16_200/profile.json",
+      "sha256": "b96161383a27bd376ed79140283043ab27b860754deeeccad0071bfacc623fc6",
+      "bytes": 13191
+    }
+  ],
+  "jobs": {
+    "unseen_140": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T15:50:36.974229+00:00",
+      "finished_at": "2026-10-09T16:18:08.896630+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/unseen_140/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(140,140)"
+      ]
+    },
+    "profile_unseen_140": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T16:18:08.897208+00:00",
+      "finished_at": "2026-10-09T16:19:08.007022+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_unseen_140/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(140,140)"
+      ]
+    },
+    "unseen_160": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T16:19:08.007519+00:00",
+      "finished_at": "2026-10-09T16:47:08.685651+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/unseen_160/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(160,160)"
+      ]
+    },
+    "profile_unseen_160": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T16:47:08.686268+00:00",
+      "finished_at": "2026-10-09T16:48:09.045061+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_unseen_160/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(160,160)"
+      ]
+    },
+    "unseen_180": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T16:48:09.045548+00:00",
+      "finished_at": "2026-10-09T17:16:57.054997+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/unseen_180/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(180,180)"
+      ]
+    },
+    "profile_unseen_180": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T17:16:57.055476+00:00",
+      "finished_at": "2026-10-09T17:17:59.408868+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_eval_unseen.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_unseen_180/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(180,180)"
+      ]
+    },
+    "dynamic_physical": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T17:17:59.409423+00:00",
+      "finished_at": "2026-10-09T17:47:42.126624+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_dynamic.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/dynamic_physical/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.prev_bev_migration=physical",
+        "model.controller_trace_path=experiments/rc_bev/runs/rc_followup_20261009/dynamic_physical/trace.jsonl"
+      ]
+    },
+    "profile_dynamic_physical": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T17:47:42.127092+00:00",
+      "finished_at": "2026-10-09T17:48:46.780700+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_dynamic.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_dynamic_physical/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.prev_bev_migration=physical"
+      ]
+    },
+    "dynamic_reset_on_change": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T17:48:46.781206+00:00",
+      "finished_at": "2026-10-09T18:18:32.510846+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_dynamic.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/dynamic_reset_on_change/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.prev_bev_migration=reset_on_change",
+        "model.controller_trace_path=experiments/rc_bev/runs/rc_followup_20261009/dynamic_reset_on_change/trace.jsonl"
+      ]
+    },
+    "profile_dynamic_reset_on_change": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T18:18:32.511332+00:00",
+      "finished_at": "2026-10-09T18:19:37.140877+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_dynamic.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_dynamic_reset_on_change/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.prev_bev_migration=reset_on_change"
+      ]
+    },
+    "profile_fp16_100": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T18:19:37.141405+00:00",
+      "finished_at": "2026-10-09T18:20:21.072731+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_fp16_100/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(100,100)"
+      ]
+    },
+    "eval_fp16_100": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T18:20:21.073277+00:00",
+      "finished_at": "2026-10-09T18:40:41.394377+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/eval_fp16_100/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(100,100)"
+      ]
+    },
+    "profile_fp16_125": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T18:40:41.394958+00:00",
+      "finished_at": "2026-10-09T18:41:25.945419+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_fp16_125/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(125,125)"
+      ]
+    },
+    "eval_fp16_125": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T18:41:25.945980+00:00",
+      "finished_at": "2026-10-09T19:02:04.735701+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/eval_fp16_125/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(125,125)"
+      ]
+    },
+    "profile_fp16_150": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T19:02:04.736262+00:00",
+      "finished_at": "2026-10-09T19:02:50.477995+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_fp16_150/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(150,150)"
+      ]
+    },
+    "eval_fp16_150": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T19:02:50.478792+00:00",
+      "finished_at": "2026-10-09T19:23:57.372050+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/eval_fp16_150/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(150,150)"
+      ]
+    },
+    "profile_fp16_175": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T19:23:57.372635+00:00",
+      "finished_at": "2026-10-09T19:24:44.620345+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_fp16_175/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(175,175)"
+      ]
+    },
+    "eval_fp16_175": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T19:24:44.621138+00:00",
+      "finished_at": "2026-10-09T19:46:29.964748+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/eval_fp16_175/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(175,175)"
+      ]
+    },
+    "profile_fp16_200": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T19:46:29.965392+00:00",
+      "finished_at": "2026-10-09T19:47:18.813113+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/profile_bevformer.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--warmup",
+        "20",
+        "--iters",
+        "200",
+        "--workers",
+        "2",
+        "--output",
+        "experiments/rc_bev/runs/rc_followup_20261009/profile_fp16_200/profile.json",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(200,200)"
+      ]
+    },
+    "eval_fp16_200": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-09T19:47:18.813761+00:00",
+      "finished_at": "2026-10-09T20:09:51.990396+00:00",
+      "returncode": 0,
+      "command": [
+        ".venv5090py39/bin/python",
+        "tools/test.py",
+        "projects/configs/bevformer_rc/rc_bev_multires_fp16.py",
+        "experiments/rc_bev/runs/rc_multires_s0_dual_retry_20260911T2225CST/work_dir/epoch_24.pth",
+        "--eval",
+        "bbox",
+        "--seed",
+        "0",
+        "--eval-options",
+        "jsonfile_prefix=experiments/rc_bev/runs/rc_followup_20261009/eval_fp16_200/predictions",
+        "--cfg-options",
+        "data.workers_per_gpu=2",
+        "model.pts_bbox_head.test_bev_shape=(200,200)"
+      ]
+    }
+  },
+  "limitations": [
+    "Single training seed; no multi-seed confidence interval.",
+    "FP16 is mixed-precision inference of the FP32-trained checkpoint.",
+    "Dynamic latency measures a 200-frame window, not the full validation sequence.",
+    "Closed-loop policies have different switch sequences; no fixed-trace causal attribution."
+  ]
+}

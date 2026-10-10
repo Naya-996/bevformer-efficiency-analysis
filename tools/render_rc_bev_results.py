@@ -126,21 +126,35 @@ def main():
         ax.set_xticks([])
         ax.set_yticks([])
 
-    fig, ax = plt.subplots(figsize=(5.4, 3.6))
+    fig, ax = plt.subplots(figsize=(8.0, 4.8))
     if complete:
-        ax.scatter([item['latency_mean_ms'] for item in complete],
-                   [item['nds'] for item in complete])
-        right_edge = max(item['latency_mean_ms'] for item in complete)
+        groups = (
+            ('FP32 fixed grids', '#0072B2', 'o', lambda r: r.get('resolution') is not None
+             and r.get('precision', 'FP32') == 'FP32'),
+            ('FP16 mixed precision', '#E69F00', '^', lambda r: r.get('precision') == 'FP16'),
+            ('Dynamic policies', '#CC79A7', 's', lambda r: r.get('resolution') is None),
+        )
+        for label, color, marker, predicate in groups:
+            selected = [item for item in complete if predicate(item)]
+            if selected:
+                ax.scatter([item['latency_mean_ms'] for item in selected],
+                           [item['nds'] for item in selected], color=color,
+                           marker=marker, label=label)
         for item in complete:
             resolution = item.get('resolution')
-            label = (f'{resolution}x{resolution}' if resolution is not None
-                     else item['id'])
-            at_right_edge = item['latency_mean_ms'] == right_edge
+            label = str(resolution) if resolution is not None else (
+                'resample' if item['id'] == 'rc_dynamic' else 'reset')
+            offset = (4, 6)
+            if item['id'] == 'rc_dynamic':
+                offset = (-6, 4)
+            elif item['id'] == 'rc_dynamic_reset':
+                offset = (-6, -12)
             ax.annotate(
                 label, (item['latency_mean_ms'], item['nds']), fontsize=7,
-                xytext=(-4 if at_right_edge else 4, 4),
-                textcoords='offset points',
-                ha='right' if at_right_edge else 'left')
+                xytext=offset, textcoords='offset points',
+                ha='right' if offset[0] < 0 else 'left')
+        ax.margins(x=0.10, y=0.15)
+        ax.legend(loc='lower right', fontsize=8)
         ax.set(xlabel='Mean latency (ms)', ylabel='NDS', title='Accuracy-latency observations')
     else:
         empty_or_label(ax, 'NOT RUN: no verified accuracy/latency pairs')
@@ -148,12 +162,26 @@ def main():
     fig.savefig(OUTPUT_DIR / 'accuracy_latency_pareto.png', dpi=180)
     plt.close(fig)
 
-    resolution_rows = [item for item in complete if item.get('resolution') is not None]
+    resolution_rows = [item for item in complete
+                       if item.get('resolution') is not None
+                       and item['family'] in ('continuous_fixed_eval_seen',
+                                              'continuous_fixed_eval_unseen')
+                       and item.get('precision', 'FP32') == 'FP32'
+                       and item.get('seed', 0) == 0]
     fig, ax = plt.subplots(figsize=(5.4, 3.6))
     if resolution_rows:
         resolution_rows.sort(key=lambda item: item['resolution'])
         ax.plot([item['resolution'] for item in resolution_rows],
-                [item['nds'] for item in resolution_rows], marker='o')
+                [item['nds'] for item in resolution_rows], color='#999999', linewidth=1)
+        for family, label, marker, color in (
+                ('continuous_fixed_eval_seen', 'Seen grids', 'o', '#0072B2'),
+                ('continuous_fixed_eval_unseen', 'Unseen grids', '^', '#E69F00')):
+            selected = [row for row in resolution_rows if row['family'] == family]
+            if selected:
+                ax.scatter([row['resolution'] for row in selected],
+                           [row['nds'] for row in selected], marker=marker,
+                           color=color, label=label, zorder=3)
+        ax.legend(fontsize=8)
         ax.set(xlabel='BEV resolution', ylabel='NDS', title='Resolution-NDS observations')
     else:
         empty_or_label(ax, 'NOT RUN: no verified resolution sweep')

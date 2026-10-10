@@ -1,15 +1,18 @@
 # RC-BEV experiment status
 
-All 20 rows in `results.json` are currently `NOT RUN`. No accuracy or performance
-claim for the continuous-query model, cross-grid temporal migration, or adaptive
-controller has been inserted into the paper.
+As of 2026-10-10, results.json contains 15 completed accuracy/profile pairs:
+five seen FP32 resolutions, three unseen FP32 resolutions, five FP16 resolutions,
+and two closed-loop dynamic policies. All use the same Seed 0 epoch-24 checkpoint.
+These are not 15 independent training runs.
 
-CPU implementation tests are not substitutes for nuScenes validation. A component
-GPU smoke covered every declared grid and four history transitions, and one
-100x100 end-to-end model forward completed. The latter used zero warmup and one
-measurement, with newly initialized continuous parameters; its timing is therefore
-only an execution check and is excluded from Results. One real 100x100 training
-batch also passed forward/backward, optimizer update and checkpoint round-trip;
-this is a smoke test, not a trained checkpoint. Full training, full validation,
-protocol-compliant FP32/FP16 profiling, MACs and energy measurements remain
-unmeasured. `nvidia-smi` still reports an NVML driver/library version mismatch.
+Matched-budget Base-200 Seed 0 is training on two GPUs. The training queue also
+includes continuous fixed-200, RC-BEV Seeds 1/2, and discrete/continuous fixed-150
+controls. None of those new training runs is reported as a completed result yet.
+
+Multi-seed means, fixed-trace migration ablations, Small/Tiny comparisons, MACs,
+energy and vehicle-hardware deployment remain pending. The training-only
+rc_multires_s0 row has training_status COMPLETE; its accuracy/profile evidence is
+represented by the separate fixed-resolution evaluation rows.
+
+See the repository README and docs/rc_bev_implementation_status.md for measured
+results and limitations. Early smoke profiles remain excluded from benchmark tables.

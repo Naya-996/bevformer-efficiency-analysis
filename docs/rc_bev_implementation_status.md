@@ -1,5 +1,30 @@
 # RC-BEV implementation and experiment status
 
+## Follow-up status on 2026-10-10 (Asia/Shanghai)
+
+- All 20 short jobs completed successfully at 04:09 on October 10: unseen
+  140/160/180, two closed-loop dynamic policies and five FP16 resolutions, each
+  with full validation and separate 20+200 profiling.
+- Live evaluation state: experiments/rc_bev/runs/rc_followup_20261009/status.json.
+- The serial dual-GPU training queue started at 04:10 and runs matched-budget
+  Base-200, continuous fixed-200, RC-BEV Seeds 1/2, discrete fixed-150 and continuous
+  fixed-150 controls. The full plan has 12 new 24-epoch runs. Each run is followed
+  by standalone validation and GPU1 profiling. Base-200 Seed 0 is in epoch 2
+  (13,000/14,065 steps at 17:55); the remaining runs are queued, not completed.
+- Training state and plan:
+  experiments/rc_bev/runs/rc_training_followup_20261009/.
+- Detection visualizations are now available under docs/assets/rc_bev_visualizations/;
+  the manifest records the original prediction paths, hashes and GT-selected frames.
+- Dynamic reset/resample policies use prediction-dependent controllers, so their
+  resolution sequences may differ. A fixed-sequence replay is still needed to
+  isolate the causal contribution of history migration.
+
+Both queues run in tmux and survive an SSH disconnect. They do not automatically
+restart after a machine reboot. Reinvoke the corresponding Python queue command
+with the same run directory to skip completed jobs and resume training from the
+latest epoch checkpoint. Job failures are recorded explicitly; the long-training
+queue stops on a training/evaluation failure.
+
 ## Completed scope
 
 RC-BEV now has one complete Seed 0 training and evaluation cycle:
@@ -11,6 +36,9 @@ RC-BEV now has one complete Seed 0 training and evaluation cycle:
   iterations;
 - archived metrics, per-iteration latency samples and provenance hashes;
 - reproducible rendering of CSV, LaTeX tables and plots from the evidence files.
+- three unseen-resolution evaluations, five FP16 evaluations and two dynamic
+  policy evaluations, each paired with a complete latency profile;
+- four six-camera detection comparison figures with fixed GT-selected samples.
 
 The final local checkpoint is:
 
@@ -56,6 +84,16 @@ These are single-seed observations, not means or confidence intervals. The
 previously reproduced official Base-200 result is useful context but is not a
 matched-budget multi-seed baseline.
 
+## Follow-up results
+
+The new results are tabulated in the repository README and archived under
+experiments/rc_bev/evidence/rc_followup_20261009/. Unseen 140/160/180 achieve NDS
+0.516883/0.520736/0.522353. FP16 at 150 achieves 0.518590 NDS and 6.016 FPS.
+The dynamic controller selects 200 for more than 96% of validation frames, so the
+current policy does not establish a meaningful speed advantage. Reset and
+resampling policies have different closed-loop resolution traces; a fixed-trace
+comparison remains pending.
+
 ## Training recovery history
 
 The run initially used Gloo because the loaded NVIDIA kernel module and NVML
@@ -89,9 +127,8 @@ SEED=0 ./run_rc_bev_experiments.sh train-multires
 ## Remaining work
 
 - Train Seeds 1 and 2 for RC-BEV and matched Base-200/fixed-150 baselines.
-- Evaluate unseen 140, 160 and 180 grids.
-- Evaluate the adaptive controller and the no-history-migration ablation.
-- Complete FP16, MACs/FLOPs, peak-memory and energy measurements.
+- Optimize the adaptive controller and add a fixed-switch-sequence migration ablation.
+- Complete MACs/FLOPs and energy measurements; FP16 and peak-memory profiles exist.
 - Add BEVFormer-S/Tiny under the same hardware and timing protocol.
 - Add per-class, distance, visibility/occlusion and velocity-error analyses.
 - Report mean, standard deviation or confidence intervals only after multi-seed

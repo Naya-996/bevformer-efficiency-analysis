@@ -320,14 +320,17 @@ def boxes_for_camera(nusc, sample, camera, row_name, records, threshold, max_dis
     return sample_data, intrinsic, visible
 
 
-def render_scene(nusc, selection, base_records, lite_records, output, threshold, max_distance):
+def render_scene(nusc, selection, base_records, lite_records, output, threshold, max_distance,
+                 prediction_rows=None):
     sample = nusc.get("sample", selection["sample_token"])
     rows = (
         ("GT", None),
         ("Base", base_records),
         ("Lite", lite_records),
     )
-    figure, axes = plt.subplots(3, 6, figsize=(24, 11.2), dpi=120)
+    if prediction_rows is not None:
+        rows = (("GT", None),) + tuple(prediction_rows)
+    figure, axes = plt.subplots(len(rows), 6, figsize=(24, 3.7 * len(rows)), dpi=120)
     for row_index, (row_name, records) in enumerate(rows):
         for column_index, camera in enumerate(CAMERAS):
             axis = axes[row_index, column_index]
@@ -344,7 +347,8 @@ def render_scene(nusc, selection, base_records, lite_records, output, threshold,
             with Image.open(image_path) as image:
                 axis.imshow(image)
                 width, height = image.size
-            color = ROW_COLORS[row_name]
+            color = ROW_COLORS.get(row_name, ("#00B050", "#0072B2", "#E69F00",
+                                              "#CC79A7", "#D55E00")[row_index % 5])
             for box in boxes:
                 box.render(
                     axis,
